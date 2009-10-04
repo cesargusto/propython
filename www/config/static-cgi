@@ -1,0 +1,32 @@
+<VirtualHost *:80>
+	ServerAdmin luciano.ramalho@bireme.org
+        ServerName ersatz
+
+        AddCharset UTF-8 .html
+
+	DocumentRoot /home/luciano/www/public_html
+	<Directory "/home/luciano/www/public_html/">
+		Options Indexes FollowSymLinks MultiViews
+		DirectoryIndex index.html
+                AllowOverride None
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ScriptAlias /cgi-bin/ /home/luciano/www/cgi-bin/
+	<Directory "/home/luciano/www/cgi-bin/">
+		AllowOverride None
+		Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+		Order allow,deny
+		Allow from all
+	</Directory>
+
+	ErrorLog /var/log/apache2/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog /var/log/apache2/access.log combined
+
+</VirtualHost>
