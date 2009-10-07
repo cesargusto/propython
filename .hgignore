@@ -3,5 +3,6 @@ syntax: glob
 *.pyc
 *~
 *.sqlite
+*.wpr
 build/html/*
 build/doctrees/*

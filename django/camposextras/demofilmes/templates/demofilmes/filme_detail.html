@@ -18,7 +18,7 @@
         {% endfor %}
     </table>
     <p>
-        <a href="{% url demofilmes.edcomp object.id %}">Editar título/ano e créditos</a>       
+        <a href="{% url demofilmes.editar object.id %}">Editar título/ano e créditos</a>       
     </p>
     <form action="{% url demofilmes.del object.id %}">
         <input type="submit" value="Remover este filme">
