@@ -9,6 +9,9 @@ from demofilmes.views import cadastrar
 
 filmes = Filme.objects.all()
 
+def url_indice():
+    return reverse('demofilmes.indice')
+
 urlpatterns = patterns('',
     # CRUD básico com generic views
     url(r'^$', object_list, 

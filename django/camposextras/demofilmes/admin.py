@@ -10,5 +10,3 @@ class FilmeAdmin(admin.ModelAdmin):
     inlines = [CreditoInline]
 
 admin.site.register(Filme, FilmeAdmin)
-admin.site.register(Credito)
-

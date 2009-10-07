@@ -12,7 +12,8 @@ class Filme(models.Model):
     
     class Meta:
         ordering = ['titulo', 'ano']
-    
+        unique_together = ['titulo', 'ano']
+   
     def __unicode__(self):
         return u'%s (%s)' % (self.titulo, self.ano)
         
@@ -32,6 +33,7 @@ class Credito(models.Model):
 
     class Meta:
         order_with_respect_to = 'filme'
+        unique_together = 'filme nome papel'.split()
 
     def __unicode__(self):
         return u'%s (%s, %s)' % (self.nome, self.papel, self.filme.titulo)
