@@ -1,0 +1,6 @@
+syntax: glob
+
+*.pyc
+*~
+build/html/*
+build/doctrees/*
