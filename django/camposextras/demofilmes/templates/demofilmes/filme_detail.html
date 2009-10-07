@@ -6,6 +6,9 @@
 <body>
     <h1>{{ object }}</h1>
 
+    <p>
+        <a href="{% url demofilmes.edtit object.id %}">Editar título/ano</a>       
+    </p>
     <table>
         {% for credito in object.creditos %}
             <tr>
@@ -14,6 +17,9 @@
             </tr>
         {% endfor %}
     </table>
+    <form action="{% url demofilmes.del object.id %}">
+        <input type="submit" value="Remover este filme">
+    </form>    
     <hr>
     <a href="{% url demofilmes.indice %}">Voltar para a lista</a>       
 </body>

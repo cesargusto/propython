@@ -9,8 +9,13 @@
     <ol>
         {% for filme in object_list %}
             <li><a href="{{ filme.get_absolute_url }}"
-                >{{ filme.titulo }}({{ filme.ano }})</a></li>
+                >{{ filme.titulo }} ({{ filme.ano }})</a></li>
         {% endfor %}
     </ol>
+    <hr>
+    <strong>Cadastrar novo filme</strong>
+    <ul>
+        <li><a href="{% url demofilmes.simples %}">apenas título e ano</a></li>
+    </ul>
 </body>
 </html>

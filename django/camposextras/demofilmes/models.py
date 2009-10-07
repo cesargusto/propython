@@ -23,8 +23,7 @@ class Filme(models.Model):
         
     @models.permalink
     def get_absolute_url(self):
-        return ('demofilmes.filme', [str(self.id)])
-
+        return ('demofilmes.ver', [str(self.id)])
     
 class Credito(models.Model):
     filme = models.ForeignKey(Filme)
