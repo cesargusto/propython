@@ -26,7 +26,7 @@ class Filme(models.Model):
         return ('demofilmes.ver', [str(self.id)])
     
 class Credito(models.Model):
-    filme = models.ForeignKey(Filme)
+    filme = models.ForeignKey(Filme, editable=False)
     nome = models.CharField(max_length=255)
     papel = models.CharField(max_length=32, choices=[(i,i) for i in PAPEIS])
 

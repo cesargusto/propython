@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+    <title>Editar filme</title>
+</head>
+<body>
+    <h1>Editar título/ano</h1>
+
+    <form action="." method="POST">
+        {{ forms_creditos.management_form }}
+
+        <table>
+            {{ form_filme }}
+        </table>
+        <table>
+            <caption>Créditos</caption>
+            {{ forms_creditos }}
+        </table>
+        <input type="submit">
+    </form>    
+    <hr>
+    <a href="{% url demofilmes.indice %}">Voltar para a lista</a>       
+</body>
+</html>
