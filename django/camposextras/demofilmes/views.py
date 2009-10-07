@@ -16,14 +16,18 @@ class CreditoForm(ModelForm):
     class Meta:
         model = Credito
 
-CreditosFormSet = formset_factory(CreditoForm)
+CreditosFormSet = formset_factory(CreditoForm, extra=3)
 
 def cadastro(request):
     if request.method == 'POST':
         form_filme = FilmeForm(request.POST)
-        forms_creditos = CreditosFormSet(request.POST)
         if form_filme.is_valid():
             filme = Filme.objects.create(**form_filme.cleaned_data)
+            forms_creditos = CreditosFormSet(request.POST)
+            if forms_creditos.is_valid():
+                for cred in forms_creditos.cleaned_data:
+                    cred['filme'] = filme
+                    Credito.objects.create(**cred)
             # TODO: mais um caso em que não consegui usar um reverse...
             return HttpResponseRedirect('/demo/ver/%s/' % filme.id)
     else:
