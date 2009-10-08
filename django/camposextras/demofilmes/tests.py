@@ -42,8 +42,8 @@ Acesso à página índice da aplicação `demofilmes`
 -------------------------------------------------
 
     >>> from django.test.client import Client
-    >>> c = Client()
-    >>> resp = c.get(reverse('demofilmes.indice'))
+    >>> cli = Client()
+    >>> resp = cli.get(reverse('demofilmes.indice'))
     
 Podemos verificar o código HTTP da resposta::
 
@@ -65,13 +65,81 @@ Ou ainda acessar o contexto que foi usado para gerar a resposta::
 Acesso à página de detalhes do primeiro filme
 ----------------------------------------------
 
-    >>> resp = c.get(reverse('demofilmes.ver',args=(1,)))
-    >>> 'Coppola' in resp.content and 'Brando' in resp.content
+A primeira linha a seguir faz algo como `get('/demo/ver/1/')`::
+
+    >>> resp = cli.get(reverse('demofilmes.ver',args=(1,)))
+    >>> all(x in resp.content for x in ('Coppola','Brando','Duvall','Sheen'))
     True
+    >>> resp.context['object']
+    <Filme: Apocalypse Now (1979)>
+    >>> creditos = list(resp.context['object'].creditos())
+    >>> len(creditos)
+    5
+    >>> for c in creditos: print '%8s %s' % (c['papel'], c['nome'])
+     diretor Francis Coppola
+    produtor Francis Coppola
+        ator Marlon Brando
+        ator Robert Duvall
+        ator Martin Sheen
+
+-------------------------------------------------------
+Cadastro básico de um filme, view 'demofilmes.simples'
+-------------------------------------------------------
+
+Colocamos os dados na view do cadastro simples, verificamos o redirect 
+e inspecionamos os dados direto no banco::
+
+    >>> valores = dict(titulo='Das Boot', ano='1981')
+    >>> resp = cli.post(reverse('demofilmes.simples'), valores, follow=True)
+    >>> resp.redirect_chain
+    [('http://.../ver/3/', 302)]
+    >>> Filme.objects.get(**valores)
+    <Filme: Das Boot (1981)>
+
+---------------------------------------------------------
+Cadastro básico de um filme, view 'demofilmes.cadastrar'
+---------------------------------------------------------
+
+Mesmo esquema do teste acima: post, redirect e consulta para confirmar. 
+Aqui o post é mais complicado por causa do uso de formsets, que usam 
+alguns campos hidden::
+
+    >>> valores = dict(titulo='2001, A Space Odyssey', ano='1968')
+    >>> dados = {'form-TOTAL_FORMS':'3', 'form-INITIAL_FORMS':'0'}
+    >>> dados.update(valores)
+    >>> resp = cli.post(reverse('demofilmes.cadastrar'), dados, follow=True)
+    >>> resp.redirect_chain
+    [('http://.../ver/4/', 302)]
+    >>> filme = Filme.objects.get(**valores)
+    >>> filme
+    <Filme: 2001, A Space Odyssey (1968)>
+    >>> list(filme.creditos())
+    
+-----------------------------------------------------------
+Cadastro completo de um filme, view 'demofilmes.cadastrar'
+-----------------------------------------------------------
+
+Mesmo esquema do teste acima: post, redirect e consulta para confirmar. 
+Aqui o post é mais complicado por causa do uso de formsets, que usam 
+alguns campos hidden::
+
+    >>> v_filme = dict(titulo='Brazil', ano='1985')
+    >>> v_creds = {'form-0-nome':'Terry Gilliam','form-0-papel':'diretor'}
+    >>> v_creds.update({'form-1-nome':'Jonathan Pryce', 'form-1-papel':'ator'})
+    >>> v_creds.update({'form-2-nome':'Robert De Niro', 'form-2-papel':'ator'})
+    >>> dados = {'form-TOTAL_FORMS':'3', 'form-INITIAL_FORMS':'0'}
+    >>> dados.update(v_filme.items()+v_creds.items())
+    >>> resp = cli.post(reverse('demofilmes.cadastrar'), dados, follow=True)
+    >>> resp.redirect_chain
+    [('http://.../ver/5/', 302)]
+    >>> Filme.objects.get(**v_filme)
+    <Filme: Brazil (1985)>
+    
     
 Nota: O cliente de HTTP do Django é mais limitado que o do zope.testbrowser.
-Por exemplo, ele não facilita explorar os elementos da página (no 
-zope.testbrowser tem métodos como `getForm`, `getLink`, `getControls`...).
+O zope.testbrowser tem métodos como `getForm`, `getLink`, `getControls` etc,
+que facilitam muito explorar as páginas geradas. Realmente ele serve para 
+verificar as funções de view, mas não o HTML gerado, como diz na documentação.
     
 """
 
