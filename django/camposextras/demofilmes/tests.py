@@ -24,16 +24,16 @@ Uso de `reverse` para evitar caminhos fixos
 --------------------------------------------
 
 Acessamos as views sempre pelo nome, evitando o uso de caminhos fixos, para
-que mudanças na configuração do `urls.py` da instância do Django (acima da 
+que mudanças na configuração do `urls.py` da instância do Django (acima da
 aplicação) não alterem o funcionamento dos testes. Para isso usamos afunção
-`reverse`, que transforma assinaturas de views (nomes e argumentos) em 
+`reverse`, que transforma assinaturas de views (nomes e argumentos) em
 caminhos::
 
     >>> from django.core.urlresolvers import reverse
     >>> reverse('demofilmes.indice')[0]
     '/'
-    
-Nota: O máximo que a gente consegue testar sem depender da configuração do 
+
+Nota: O máximo que a gente consegue testar sem depender da configuração do
 ROOT_URLCONF é que o caminho retornado começa com '/', pois isso é sempre
 verdade. Examinar o caminho completo introduzira uma fragilidade no teste.
 
@@ -44,23 +44,23 @@ Acesso à página índice da aplicação `demofilmes`
     >>> from django.test.client import Client
     >>> cli = Client()
     >>> resp = cli.get(reverse('demofilmes.indice'))
-    
+
 Podemos verificar o código HTTP da resposta::
 
     >>> resp.status_code
     200
-    
-Ou a presença de uma string no conteúdo da resposta::    
-    
+
+Ou a presença de uma string no conteúdo da resposta::
+
     >>> 'Apocalypse' in resp.content
     True
-    
-Ou ainda acessar o contexto que foi usado para gerar a resposta::    
-    
+
+Ou ainda acessar o contexto que foi usado para gerar a resposta::
+
     >>> for i in resp.context['object_list']: print i.pk, i
     1 Apocalypse Now (1979)
     2 Não por acaso (2007)
-    
+
 ----------------------------------------------
 Acesso à página de detalhes do primeiro filme
 ----------------------------------------------
@@ -86,7 +86,7 @@ A primeira linha a seguir faz algo como `get('/demo/ver/1/')`::
 Cadastro básico de um filme, view 'demofilmes.simples'
 -------------------------------------------------------
 
-Colocamos os dados na view do cadastro simples, verificamos o redirect 
+Colocamos os dados na view do cadastro simples, verificamos o redirect
 e inspecionamos os dados direto no banco::
 
     >>> valores = dict(titulo='Das Boot', ano='1981')
@@ -100,8 +100,8 @@ e inspecionamos os dados direto no banco::
 Cadastro básico de um filme, view 'demofilmes.cadastrar'
 ---------------------------------------------------------
 
-Mesmo esquema do teste acima: post, redirect e consulta para confirmar. 
-Aqui o post é mais complicado por causa do uso de formsets, que usam 
+Mesmo esquema do teste acima: post, redirect e consulta para confirmar.
+Aqui o post é mais complicado por causa do uso de formsets, que usam
 alguns campos hidden::
 
     >>> valores = dict(titulo='2001, A Space Odyssey', ano='1968')
@@ -113,14 +113,13 @@ alguns campos hidden::
     >>> filme = Filme.objects.get(**valores)
     >>> filme
     <Filme: 2001, A Space Odyssey (1968)>
-    >>> list(filme.creditos())
-    
+
 -----------------------------------------------------------
 Cadastro completo de um filme, view 'demofilmes.cadastrar'
 -----------------------------------------------------------
 
-Mesmo esquema do teste acima: post, redirect e consulta para confirmar. 
-Aqui o post é mais complicado por causa do uso de formsets, que usam 
+Mesmo esquema do teste acima: post, redirect e consulta para confirmar.
+Aqui o post é mais complicado por causa do uso de formsets, que usam
 alguns campos hidden::
 
     >>> v_filme = dict(titulo='Brazil', ano='1985')
@@ -132,15 +131,85 @@ alguns campos hidden::
     >>> resp = cli.post(reverse('demofilmes.cadastrar'), dados, follow=True)
     >>> resp.redirect_chain
     [('http://.../ver/5/', 302)]
-    >>> Filme.objects.get(**v_filme)
+    >>> filme = Filme.objects.get(**v_filme)
+    >>> filme
     <Filme: Brazil (1985)>
-    
-    
+    >>> for c in list(filme.creditos()):
+    ...   print '%8s %s' % (c['papel'], c['nome'])
+     diretor Terry Gilliam
+        ator Jonathan Pryce
+        ator Robert De Niro
+    >>> filme.pk
+    5
+
+-----------------------------------------------------------
+Edição de filme e créditos, view 'demofilmes.editar'
+-----------------------------------------------------------
+
+Verificar se formulário vem preenchido::
+
+    >>> resp = cli.get(reverse('demofilmes.editar', args=(5,)))
+    >>> 'value="Brazil"' in resp.content
+    True
+    >>> 'value="Terry Gilliam"' in resp.content
+    True
+
+Obter dados do contexto para fazer o post::
+
+    >>> v_filme = resp.context['form_filme'].initial
+    >>> v_creds = {}
+    >>> for i, f in enumerate(resp.context['forms_creditos'].forms):
+    ...   if not f.initial: continue
+    ...   for k in f.initial: v_creds['form-%d-%s' % (i, k)] = f.initial[k]
+
+Alterar dados::
+
+    >>> v_filme['ano'] = '1986'
+    >>> v_creds.update({'form-2-nome':'Mr. De Niro', 'form-2-papel':'ator'})
+    >>> v_creds.update({'form-3-nome':'Kim Greist', 'form-3-papel':'ator'})
+    >>> dados = {'form-TOTAL_FORMS':'6', 'form-INITIAL_FORMS':'3'}
+    >>> dados.update(v_filme.items()+v_creds.items())
+    >>> from pprint import pprint
+    >>> pprint(dados)
+    {'ano': '1986',
+     'form-0-id': 12,
+     'form-0-nome': u'Terry Gilliam',
+     'form-0-papel': u'diretor',
+     'form-1-id': 13,
+     'form-1-nome': u'Jonathan Pryce',
+     'form-1-papel': u'ator',
+     'form-2-id': 14,
+     'form-2-nome': 'Mr. De Niro',
+     'form-2-papel': 'ator',
+     'form-3-nome': 'Kim Greist',
+     'form-3-papel': 'ator',
+     'form-INITIAL_FORMS': '3',
+     'form-TOTAL_FORMS': '6',
+     'id': 5,
+     'titulo': u'Brazil'}
+
+    >>> resp = cli.post(reverse('demofilmes.editar', args=(5,)), dados, follow=True)
+    >>> resp.redirect_chain
+    [('http://.../ver/5/', 302)]
+    >>> filme = Filme.objects.get(id=5)
+    >>> filme
+    <Filme: Brazil (1986)>
+    >>> for c in list(filme.creditos()):
+    ...   print '%8s %s' % (c['papel'], c['nome'])
+     diretor Terry Gilliam
+        ator Jonathan Pryce
+        ator Mr. De Niro
+        ator Kim Greist
+    >>> filme.pk
+    5
+
+
 Nota: O cliente de HTTP do Django é mais limitado que o do zope.testbrowser.
 O zope.testbrowser tem métodos como `getForm`, `getLink`, `getControls` etc,
-que facilitam muito explorar as páginas geradas. Realmente ele serve para 
-verificar as funções de view, mas não o HTML gerado, como diz na documentação.
-    
+que facilitam muito explorar as páginas geradas. É como diz na documentação
+do Django: `django.test.client` serve para verificar as funções de view, mas
+não o HTML gerado.
+
 """
 
 from django.test import TestCase
@@ -150,7 +219,7 @@ from models import Filme, Credito
 class CarregaVerifica(TestCase):
     ''' faz o mesmo que o trecho inicial do doctest acima '''
     fixtures = ['dois-filmes.json']
-    
+
     def test_carga(self):
         ''' verifica se a massa de testes foi carregada '''
         self.assertEqual(len(Filme.objects.all()), 2)
