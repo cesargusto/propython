@@ -1,3 +1,4 @@
+##############################################################################
 # Para funcionar, este script de testes depende de três pré-condições:
 #
 #  1) o site tem que estar rodando na URL e porta informada no argumento -u
@@ -13,6 +14,10 @@
 #       - Das Boot (1981)
 #       - 2001, A Space Odyssey (1968)
 #       - Brazil (1985)
+##############################################################################
+
+# Armazenar url da página inicial da aplicação para facilitar a navegação
+setglobal HOME __url__
 
 ##############################################################################
 # Acesso à página índice da aplicação `demofilmes`
@@ -31,11 +36,12 @@ find 'produtor.*\n.*Coppola'
 find 'ator.*\n.*Brando'
 find 'ator.*\n.*Duvall'
 find 'ator.*\n.*Sheen'
+follow 'Voltar para a lista'
+url $HOME
 
 ##############################################################################
 # Cadastro básico de um filme, view 'demofilmes.simples'
 
-follow 'Voltar para a lista'
 follow 'apenas título e ano'
 fv 1 titulo 'Das Boot'
 fv 1 ano '1981'
@@ -84,7 +90,7 @@ find 'ator.*\n.*De Niro'
 ##############################################################################
 # Edição de um filme, view 'demofilmes.editar'
 
-follow 'Voltar para a lista'
+go $HOME
 follow 'Brazil'
 follow 'Editar título/ano e créditos'
 fv 1 titulo 'Brazil, o filme'
@@ -108,9 +114,9 @@ find 'ator.*\n.*Greist'
 
 
 ##############################################################################
-# Apagar um crédito, , view 'demofilmes.editar'
+# Apagar um crédito, view 'demofilmes.editar'
 
-follow 'Voltar para a lista'
+go $HOME
 follow 'Brazil'
 follow 'Editar título/ano e créditos'
 fv 1 credito_set-1-DELETE 'on'
@@ -123,7 +129,7 @@ notfind 'ator.*\n.*Pryce'
 ##############################################################################
 # Apagar os filmes criados neste teste
 
-follow 'Voltar para a lista'
+go $HOME
 follow 'Brazil'
 submit 1
 find 'Confirmar remoção?'
