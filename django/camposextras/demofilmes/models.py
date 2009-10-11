@@ -20,7 +20,7 @@ class Filme(models.Model):
     def creditos(self):
         for papel in PAPEIS:
             for credito in self.credito_set.filter(papel=papel):
-                yield dict(papel=credito.papel, nome=credito.nome)
+                yield dict(pk=credito.pk, papel=credito.papel, nome=credito.nome)
         
     @models.permalink
     def get_absolute_url(self):

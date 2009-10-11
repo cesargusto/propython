@@ -12,14 +12,16 @@
 #     os filmes abaixo, que serão criados nos testes:
 #       - Das Boot (1981)
 #       - 2001, A Space Odyssey (1968)
-#       - Brazil (1981)
+#       - Brazil (1985)
 
+##############################################################################
 # Acesso à página índice da aplicação `demofilmes`
 
 find 'Lista de Filmes'
 find 'Apocalypse Now \(1979\)'
 find 'Não por acaso'
     
+##############################################################################
 # Acesso à página de detalhes do primeiro filme
 
 follow 'Apocalypse Now'
@@ -30,6 +32,7 @@ find 'ator.*\n.*Brando'
 find 'ator.*\n.*Duvall'
 find 'ator.*\n.*Sheen'
 
+##############################################################################
 # Cadastro básico de um filme, view 'demofilmes.simples'
 
 follow 'Voltar para a lista'
@@ -44,6 +47,7 @@ follow 'Voltar para a lista'
 
 find 'Das Boot \(1981\)'
 
+##############################################################################
 # Cadastro básico de um filme, view 'demofilmes.cadastrar'
 
 follow 'título, ano e créditos'
@@ -57,6 +61,7 @@ follow 'Voltar para a lista'
 
 find '2001, A Space Odyssey \(1968\)'
 
+##############################################################################
 # Cadastro completo de um filme, view 'demofilmes.cadastrar'
 
 follow 'título, ano e créditos'
@@ -76,6 +81,46 @@ find 'diretor.*\n.*Gilliam'
 find 'ator.*\n.*Pryce'
 find 'ator.*\n.*De Niro'
 
+##############################################################################
+# Edição de um filme, view 'demofilmes.editar'
+
+follow 'Voltar para a lista'
+follow 'Brazil'
+follow 'Editar título/ano e créditos'
+fv 1 titulo 'Brazil, o filme'
+fv 1 ano 1985
+fv 1 credito_set-0-nome 'Terry Gilliam'
+fv 1 credito_set-0-papel diretor
+fv 1 credito_set-1-nome 'Jonathan Pryce'
+fv 1 credito_set-1-papel ator
+fv 1 credito_set-2-nome 'Mr. De Niro'
+fv 1 credito_set-2-papel ator
+fv 1 credito_set-3-nome 'Kim Greist'
+fv 1 credito_set-3-papel ator
+submit
+
+url '/ver/\d+/'
+find 'Brazil, o filme \(1985\)'
+find 'diretor.*\n.*Gilliam'
+find 'ator.*\n.*Pryce'
+find 'ator.*\n.*Mr\. De Niro'
+find 'ator.*\n.*Greist'
+
+
+##############################################################################
+# Apagar um crédito, , view 'demofilmes.editar'
+
+follow 'Voltar para a lista'
+follow 'Brazil'
+follow 'Editar título/ano e créditos'
+fv 1 credito_set-1-DELETE 'on'
+submit
+
+url '/ver/\d+/'
+find 'Brazil, o filme \(1985\)'
+notfind 'ator.*\n.*Pryce'
+
+##############################################################################
 # Apagar os filmes criados neste teste
 
 follow 'Voltar para a lista'
@@ -99,4 +144,3 @@ find 'Confirmar remoção?'
 submit 1
 find 'Lista de Filmes'
 notfind 'Das Boot'
-
