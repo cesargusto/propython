@@ -1,0 +1,9 @@
+syntax: glob
+
+*.pyc
+*~
+*.sqlite
+*.wpr
+wingdbstub.py
+build/html/*
+build/doctrees/*

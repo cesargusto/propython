@@ -1,0 +1,24 @@
+
+.chartable {text-align: center}
+
+td.glyph { 
+    font-size: 250px;
+    border-style: solid;
+    border-color: lightgray;
+    border-width: 3px;
+    }
+
+td { vertical-align: top; }
+
+.L {color: gray;} /* Letter */
+.M {color: black;}  /* Mark */
+.N {color: green;} /* Number */
+.P {color: red;}   /* Punctuation */
+.S {color: blue;}  /* Symbol */
+.Z {color: black; background: yellow; } /* Separator */
+.C {color: green;} /* Other */
+
+.charcell a {
+    font-size: 18;
+    text-decoration: none;
+    }

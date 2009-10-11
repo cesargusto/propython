@@ -1,0 +1,27 @@
+
+
+from unicodedata import name
+
+total = 0x110000
+
+def named(uchar):
+    try:
+        uname = name(uchar)
+        return True
+    except ValueError:
+        return False
+
+named_ranges = 0
+pages = 0
+for i in range(0, total, 0x100):
+    first_name = ''
+    if any( named(unichr(i+j)) for j in range(0x100) ):
+        named_ranges += 1
+        for k in range(0x100):
+            if named(unichr(i+k)):
+                first_name = name(unichr(i+k))
+                break
+    pages += 1    
+    print '%d %04x %s' % (pages, i, first_name)
+
+print '%.1f%% named' % (named_ranges/(float(total)/0x100) * 100)
