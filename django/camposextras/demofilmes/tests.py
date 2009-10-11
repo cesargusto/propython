@@ -139,10 +139,88 @@ alguns campos hidden::
     >>> filme = Filme.objects.get(**v_filme)
     >>> filme
     <Filme: Brazil (1985)>
-    >>> for c in filme.creditos(): print '%8s %s' % (c['papel'], c['nome'])
-     diretor Terry Gilliam
-        ator Jonathan Pryce
-        ator Robert De Niro
+    >>> for c in filme.creditos(): print '%d %8s %s' % (c['pk'], c['papel'], c['nome'])
+    12 diretor Terry Gilliam
+    13    ator Jonathan Pryce
+    14    ator Robert De Niro
+
+        
+---------------------------------------------
+Edição de um filme, view 'demofilmes.editar'
+---------------------------------------------
+
+    >>> v_filme = dict(titulo='Brazil, o filme', ano='1985')
+    >>> v_creds = {'credito_set-0-nome':'Terry Gilliam',
+    ...   'credito_set-0-papel':'diretor'}
+    >>> v_creds.update({'credito_set-0-id':'12', 'credito_set-0-filme':'5'})
+    >>> v_creds.update({'credito_set-1-nome':'Jonathan Pryce', 
+    ...   'credito_set-1-papel':'ator'})
+    >>> v_creds.update({'credito_set-1-id':'13', 'credito_set-1-filme':'5'})
+    >>> v_creds.update({'credito_set-2-nome':'Mr. De Niro', 
+    ...   'credito_set-2-papel':'ator'})
+    >>> v_creds.update({'credito_set-2-id':'14', 'credito_set-2-filme':'5'})
+    >>> v_creds.update({'credito_set-3-nome':'Kim Greist', 
+    ...   'credito_set-3-papel':'ator'})
+    >>> from pprint import pprint
+    >>> pprint(v_creds)
+    {'credito_set-0-filme': '5',
+     'credito_set-0-id': '12',
+     'credito_set-0-nome': 'Terry Gilliam',
+     'credito_set-0-papel': 'diretor',
+     'credito_set-1-filme': '5',
+     'credito_set-1-id': '13',
+     'credito_set-1-nome': 'Jonathan Pryce',
+     'credito_set-1-papel': 'ator',
+     'credito_set-2-filme': '5',
+     'credito_set-2-id': '14',
+     'credito_set-2-nome': 'Mr. De Niro',
+     'credito_set-2-papel': 'ator',
+     'credito_set-3-nome': 'Kim Greist',
+     'credito_set-3-papel': 'ator'}
+
+    >>> dados = {'credito_set-TOTAL_FORMS':'6', 'credito_set-INITIAL_FORMS':'3'}
+    >>> dados.update(v_filme.items()+v_creds.items())
+    >>> resp = cli.post(reverse('demofilmes.editar', args=(5,)), dados, follow=True)
+    >>> resp.redirect_chain
+    [('http://.../ver/5/', 302)]
+    >>> 'Brazil, o filme' in resp.content
+    True
+    >>> 'Mr. De Niro' in resp.content
+    True
+    >>> 'Kim Greist' in resp.content
+    True
+    >>> 'Jonathan Pryce' in resp.content
+    True
+
+     
+----------------------------------------------
+Apagar um crédito, , view 'demofilmes.editar'
+----------------------------------------------
+
+    >>> v_filme = dict(titulo='Brazil, o filme', ano='1985')
+    >>> v_creds = {'credito_set-0-nome':'Terry Gilliam',
+    ...   'credito_set-0-papel':'diretor'}
+    >>> v_creds.update({'credito_set-0-id':'12', 'credito_set-0-filme':'5'})
+    >>> v_creds.update({'credito_set-1-nome':'Jonathan Pryce', 
+    ...   'credito_set-1-papel':'ator', 'credito_set-1-DELETE':'on'})
+    >>> v_creds.update({'credito_set-1-id':'13', 'credito_set-1-filme':'5'})
+    >>> v_creds.update({'credito_set-2-nome':'Mr. De Niro', 
+    ...   'credito_set-2-papel':'ator'})
+    >>> v_creds.update({'credito_set-2-id':'14', 'credito_set-2-filme':'5'})
+    >>> v_creds.update({'credito_set-3-nome':'Kim Greist', 
+    ...   'credito_set-3-papel':'ator'})
+    >>> v_creds.update({'credito_set-3-id':'15', 'credito_set-3-filme':'5'})
+    >>> dados = {'credito_set-TOTAL_FORMS':'7', 'credito_set-INITIAL_FORMS':'4'}
+    >>> dados.update(v_filme.items()+v_creds.items())
+    >>> resp = cli.post(reverse('demofilmes.editar', args=(5,)), dados, follow=True)
+    >>> resp.redirect_chain
+    [('http://.../ver/5/', 302)]
+    >>> 'Brazil, o filme' in resp.content
+    True
+    >>> 'Kim Greist' in resp.content
+    True
+    >>> 'Jonathan Pryce' in resp.content
+    False
 
 -------------------------------------
 Apagar os filmes criados neste teste
@@ -152,7 +230,7 @@ Para apagar o último, filme, simulamos todo o processo, passando pela página
 de confirmação::
 
     >>> resp = cli.get(reverse('demofilmes.remover', args=(5,)))
-    >>> 'Remover filme: Brazil (1985)' in resp.content
+    >>> 'Remover filme: Brazil' in resp.content
     True
     >>> resp = cli.post(reverse('demofilmes.remover', args=(5,)), follow=True)
     >>> resp.redirect_chain
