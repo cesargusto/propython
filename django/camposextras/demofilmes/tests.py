@@ -143,6 +143,36 @@ alguns campos hidden::
      diretor Terry Gilliam
         ator Jonathan Pryce
         ator Robert De Niro
+
+-------------------------------------
+Apagar os filmes criados neste teste
+-------------------------------------
+
+Para apagar o último, filme, simulamos todo o processo, passando pela página
+de confirmação::
+
+    >>> resp = cli.get(reverse('demofilmes.remover', args=(5,)))
+    >>> 'Remover filme: Brazil (1985)' in resp.content
+    True
+    >>> resp = cli.post(reverse('demofilmes.remover', args=(5,)), follow=True)
+    >>> resp.redirect_chain
+    [('http://.../', 302)]
+    >>> 'Lista de Filmes' in resp.content
+    True
+    >>> 'Brazil' in resp.content
+    False
+
+Apagamos os demais fazendo post direto na página de confirmação::
+
+    >>> resp = cli.post(reverse('demofilmes.remover', args=(4,)), follow=True)
+    >>> resp = cli.post(reverse('demofilmes.remover', args=(3,)), follow=True)
+    >>> 'Lista de Filmes' in resp.content
+    True
+    >>> '2001' in resp.content
+    False
+    >>> 'Das Boot' in resp.content
+    False
+
     
     
 Nota: O cliente de HTTP do Django é mais limitado que o do zope.testbrowser.
