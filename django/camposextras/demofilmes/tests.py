@@ -105,7 +105,7 @@ Aqui o post é mais complicado por causa do uso de formsets, que usam
 alguns campos hidden::
 
     >>> valores = dict(titulo='2001, A Space Odyssey', ano='1968')
-    >>> dados = {'form-TOTAL_FORMS':'3', 'form-INITIAL_FORMS':'0'}
+    >>> dados = {'credito_set-TOTAL_FORMS':'3', 'credito_set-INITIAL_FORMS':'0'}
     >>> dados.update(valores)
     >>> resp = cli.post(reverse('demofilmes.cadastrar'), dados, follow=True)
     >>> resp.redirect_chain
@@ -114,6 +114,7 @@ alguns campos hidden::
     >>> filme
     <Filme: 2001, A Space Odyssey (1968)>
     >>> list(filme.creditos())
+    []
     
 -----------------------------------------------------------
 Cadastro completo de um filme, view 'demofilmes.cadastrar'
@@ -124,16 +125,24 @@ Aqui o post é mais complicado por causa do uso de formsets, que usam
 alguns campos hidden::
 
     >>> v_filme = dict(titulo='Brazil', ano='1985')
-    >>> v_creds = {'form-0-nome':'Terry Gilliam','form-0-papel':'diretor'}
-    >>> v_creds.update({'form-1-nome':'Jonathan Pryce', 'form-1-papel':'ator'})
-    >>> v_creds.update({'form-2-nome':'Robert De Niro', 'form-2-papel':'ator'})
-    >>> dados = {'form-TOTAL_FORMS':'3', 'form-INITIAL_FORMS':'0'}
+    >>> v_creds = {'credito_set-0-nome':'Terry Gilliam',
+    ...   'credito_set-0-papel':'diretor'}
+    >>> v_creds.update({'credito_set-1-nome':'Jonathan Pryce', 
+    ...   'credito_set-1-papel':'ator'})
+    >>> v_creds.update({'credito_set-2-nome':'Robert De Niro', 
+    ...   'credito_set-2-papel':'ator'})
+    >>> dados = {'credito_set-TOTAL_FORMS':'3', 'credito_set-INITIAL_FORMS':'0'}
     >>> dados.update(v_filme.items()+v_creds.items())
     >>> resp = cli.post(reverse('demofilmes.cadastrar'), dados, follow=True)
     >>> resp.redirect_chain
     [('http://.../ver/5/', 302)]
-    >>> Filme.objects.get(**v_filme)
+    >>> filme = Filme.objects.get(**v_filme)
+    >>> filme
     <Filme: Brazil (1985)>
+    >>> for c in filme.creditos(): print '%8s %s' % (c['papel'], c['nome'])
+     diretor Terry Gilliam
+        ator Jonathan Pryce
+        ator Robert De Niro
     
     
 Nota: O cliente de HTTP do Django é mais limitado que o do zope.testbrowser.

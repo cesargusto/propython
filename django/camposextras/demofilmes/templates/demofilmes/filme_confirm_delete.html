@@ -6,7 +6,7 @@
 <body>
     <h1>{{ object }}</h1>
 
-    <form action="{% url demofilmes.del object.id %}" method="POST">
+    <form action="{% url demofilmes.remover object.id %}" method="POST">
         Confirmar remoção deste filme? <input type="submit" value="Sim, remover">
     </form>    
     <hr>

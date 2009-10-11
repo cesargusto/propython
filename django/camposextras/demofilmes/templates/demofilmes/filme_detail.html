@@ -20,7 +20,7 @@
     <p>
         <a href="{% url demofilmes.editar object.id %}">Editar título/ano e créditos</a>       
     </p>
-    <form action="{% url demofilmes.del object.id %}">
+    <form action="{% url demofilmes.remover object.id %}">
         <input type="submit" value="Remover este filme">
     </form>    
     <hr>
