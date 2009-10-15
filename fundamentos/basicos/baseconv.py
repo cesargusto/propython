@@ -25,14 +25,20 @@ def anybaseconv(number,fromdigits=string.digits,todigits=CLEAR_DIGITS):
 def baseconv(number,todigits=CLEAR_DIGITS):
     x=int(number)
     if x == 0:
-        res = todigits[0]
-    else:
-        res=''
-        while x > 0:
-            digit = x % len(todigits)
-            res = todigits[digit] + res
-            x = int(x / len(todigits))
+        return todigits[0]
+    res=''
+    while x > 0:
+        digit = x % len(todigits)
+        res = todigits[digit] + res
+        x = int(x / len(todigits))
     return res
+
+def split_join_left(s, sep='-', siz=4):
+    res = []
+    while s:
+        res.append(s[:siz])
+        s = s[siz:]
+    return sep.join(res)    
 
 def split_join(s, sep='.', siz=3):
     res = []
@@ -40,6 +46,7 @@ def split_join(s, sep='.', siz=3):
         res.insert(0, s[-siz:])
         s = s[:-siz]
     return sep.join(res)    
+
 
 def show_sample():
     import sys
@@ -49,14 +56,14 @@ def show_sample():
         n = len(CLEAR_DIGITS)**i
         for j in range(-1,2):
             ns = split_join(str(n+j))
-            print '%35s %s' % (ns, split_join(baseconv(n+j), '-'))
+            print '%35s %s' % (ns, split_join_left(baseconv(n+j), '-'))
     for i in range(1,16):
         b = ''
         while len(b) < i:
             b += random.choice(CLEAR_DIGITS)
         n = int(anybaseconv(b, CLEAR_DIGITS, string.digits))
         ns = split_join(str(n))
-        b = split_join(b, '-')
+        b = split_join_left(b, '-')
         print '%35s %s' % (ns, b)
             
 if __name__=='__main__':
