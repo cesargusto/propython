@@ -2,6 +2,15 @@
 # -*- coding: utf-8 -*-
 
 '''
+========================================================================
+Funções para conversão de entre bases numéricas com dígitos arbitrários
+========================================================================
+
+Estas funções permitem especificar qualquer sequência de caracteres como
+"dígitos". Uma aplicação útil é gerar identificadores alfanuméricos que usam
+todos os dígitos e letras ASCII, exceto "1", "l", "0" e "O", evitando
+confusões na transcrição.
+
 -----------------------------------------------------------------
 `calcbase`: conversão de inteiro para uma base numérica qualquer
 -----------------------------------------------------------------
@@ -35,6 +44,8 @@ Para gerar identificadores curtos, a base 36 é uma ótima opção::
 
     >>> from string import digits, ascii_lowercase
     >>> base36 = digits+ascii_lowercase
+    >>> calcbase('xyz', base36)
+    44027
     >>> calcbase('abcd', base36)
     481261
     >>> calcbase('kf12oi', base36)
@@ -43,16 +54,16 @@ Para gerar identificadores curtos, a base 36 é uma ótima opção::
     8140250869386925000618385174L
     
 ------------------------------------------------------------------------
-`reprbase`: representação de inteiro em para uma base numérica qualquer
+`reprbase`: representação de inteiro em uma base numérica qualquer
 ------------------------------------------------------------------------
 
-    >>> reprbase(10,'01')
+    >>> reprbase(10, '01')
     '1010'
-    >>> reprbase(42,'ACGT')
+    >>> reprbase(42, 'ACGT')
     'GGG'
-    >>> reprbase(481261,base36)
+    >>> reprbase(481261, base36)
     'abcd'
-    >>> reprbase(1234567890,base36)
+    >>> reprbase(1234567890, base36)
     'kf12oi'
 
 ------------------------------------------------------------------------------
