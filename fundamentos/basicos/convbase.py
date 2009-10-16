@@ -7,9 +7,9 @@ Funções para conversão de entre bases numéricas com dígitos arbitrários
 ========================================================================
 
 Estas funções permitem especificar qualquer sequência de caracteres como
-"dígitos". Uma aplicação útil é gerar identificadores alfanuméricos que usam
-todos os dígitos e letras ASCII, exceto "1", "l", "0" e "O", evitando
-confusões na transcrição.
+"dígitos". Uma aplicação útil é gerar identificadores alfanuméricos que 
+usam todos os dígitos e letras ASCII, exceto "1", "l", "0" e "O", evitando
+confusões na transcrição (veja os exemplos que usam os dígitos BASE32).
 
 -----------------------------------------------------------------
 `calcbase`: conversão de inteiro para uma base numérica qualquer
@@ -40,18 +40,50 @@ DNA em números::
     >>> calcbase('GATTACA', bases_dna)
     9156
     
-Para gerar identificadores curtos, a base 36 é uma ótima opção::
+Para gerar identificadores curtos, use base 36 ou base 32::
 
-    >>> from string import digits, ascii_lowercase
-    >>> base36 = digits+ascii_lowercase
-    >>> calcbase('xyz', base36)
+    >>> calcbase('xyz', BASE36)
     44027
-    >>> calcbase('abcd', base36)
+    >>> calcbase('abcd', BASE36)
     481261
-    >>> calcbase('kf12oi', base36)
+    >>> calcbase('kf12oi', BASE36)
     1234567890
-    >>> calcbase('setecastronomy1992', base36)
+    >>> calcbase('setecastronomy1992', BASE36)
     8140250869386925000618385174L
+
+Para evitar confusão, esta definição de base 32 não usa os dígitos '1', 'l',
+'0' ou 'o'. Assim, o dígito que vale zero é '2', e o que vale um é '3'::
+
+    >>> BASE32
+    '23456789abcdefghijkmnpqrstuvwxyz'
+    >>> calcbase('2', BASE32)
+    0
+    >>> calcbase('3', BASE32)
+    1
+    >>> calcbase('32', BASE32)
+    32
+    >>> calcbase('39', BASE32)
+    39
+    >>> calcbase('3a', BASE32)
+    40
+    >>> calcbase('3z', BASE32)
+    63
+    >>> calcbase('zz', BASE32)
+    1023
+    >>> calcbase('322', BASE32)
+    1024
+    >>> calcbase('xyz', BASE32)
+    30687
+    >>> calcbase('zzz', BASE32)
+    32767
+    >>> calcbase('abcd', BASE32)
+    271691
+    >>> calcbase('36te2qk', BASE32)
+    1234567890
+    >>> calcbase('abc123', BASE32) #doctest: +ELLIPSIS
+    Traceback (most recent call last):
+      ...
+    ValueError: digito invalido: "1" nao ocorre em "23456789...kmnpqrstuvwxyz"
     
 ------------------------------------------------------------------------
 `reprbase`: representação de inteiro em uma base numérica qualquer
@@ -61,21 +93,42 @@ Para gerar identificadores curtos, a base 36 é uma ótima opção::
     '1010'
     >>> reprbase(42, 'ACGT')
     'GGG'
-    >>> reprbase(481261, base36)
+    >>> reprbase(0, 'ACGT')
+    'A'
+    >>> reprbase(0, HEXA)
+    '0'
+    >>> reprbase(481261, BASE36)
     'abcd'
-    >>> reprbase(1234567890, base36)
-    'kf12oi'
-
+    >>> reprbase(1234567890, BASE32)
+    '36te2qk'
+    >>> reprbase(0, BASE32) # BASE32 não tem '0', '1', 'l' ou 'o'
+    '2'
+    >>> reprbase(32, BASE32)
+    '32'
+    >>> reprbase(64, BASE32)
+    '42'
+    >>> reprbase(1000, BASE32)
+    'za'
+    >>> reprbase(1024, BASE32)
+    '322'
+    >>> reprbase(2**32, BASE32)
+    '6222222'
+    >>> reprbase(2**64, BASE32)
+    'i222222222222'
+    
 ------------------------------------------------------------------------------
 `convbase`: conversão entre bases numéricas quaisquer, com dígitos arbitrários
 ------------------------------------------------------------------------------
 
+    >>> import string
     >>> convbase('GGG', 'ACGT', '01')
     '101010'
-    >>> convbase('101010', '01', digits)
+    >>> convbase('101010', '01', string.digits)
     '42'
-    >>> convbase('64202', digits, HEXA)
+    >>> convbase('64202', string.digits, HEXA)
     'faca'
+    >>> convbase(convbase('abc123', BASE36, BASE32), BASE32, BASE36)
+    'abc123'
 
 --------------------
 Tratamento de erros
@@ -88,15 +141,14 @@ ao usar estas funções é não existir um dígito na base numérica especificad
     Traceback (most recent call last):
       ...
     ValueError: digito invalido: "2" nao ocorre em "01"
-    
+
 '''
 
 import string
 
-DECIMAL = string.digits
 HEXA = string.hexdigits[:16] # remover digitos maiusculos
 BASE36 = string.digits+string.ascii_lowercase
-BASE2 = '01'
+BASE32 = ''.join(d for d in BASE36 if d not in '1l0o')
 
 def calcbase(s, digitos):
     ''' devolve o valor de `s` na base numérica representada por `digitos`
@@ -127,7 +179,7 @@ def reprbase(n, digitos):
     while n:
         n, d = divmod(n, base)
         s = digitos[d] + s
-    return s if s else '0'
+    return s if s else digitos[0]
     
 def convbase(s, digitos_de, digitos_para):
     ''' converte entre bases numéricas quaisquer, com dígitos arbitrários '''
