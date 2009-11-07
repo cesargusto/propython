@@ -10,8 +10,20 @@
         -x**5 + 2*x**3 - 5*x**2 - 7
         >>> p.grau()
         5
+        
+    Um polinômio pode ser invocado como uma função com a variável passada como
+    argumento::
+        
         >>> p(3)
         -241
+        
+    É permitido criar um Polinomio nulo:
+    
+        >>> p0 = Polinomio()
+        >>> p0.grau()
+        0
+        >>> p0(3)
+        0
         
     Testes com polinomios densos::
     
@@ -49,7 +61,7 @@
     expoente)::
     
         >>> p[0]    
-        (100, 1.0)
+        Termo(exp=100, coef=1.0)
         
     E com um termo, pode-se montar um monômio::
     
@@ -62,11 +74,11 @@
         >>> errado = Polinomio( (-1, 2), (2, 3) )
         Traceback (most recent call last):
           ...
-        ValueError: Os expoentes tem que ser inteiros nao-negativos (exp = -1)
+        ValueError: O expoente tem que ser um inteiro nao-negativo (exp = -1)
         >>> errado = Polinomio( (2, 3), (1.5, 2) )
         Traceback (most recent call last):
           ...
-        ValueError: Os expoentes tem que ser inteiros nao-negativos (exp = 1.5)
+        ValueError: O expoente tem que ser um inteiro nao-negativo (exp = 1.5)
         
 '''
 
@@ -79,42 +91,16 @@ def fmt_num(n):
 class Polinomio(object):
     
     def __init__(self, *termos):
-        self.termos = []
-        for exp, coef in termos:
-            try:
-                exp_i = int(exp) # ValueError pode ser levantado aqui também
-                if exp_i != exp or exp_i < 0:
-                    raise ValueError()
-            except ValueError:
-                msg = 'Os expoentes tem que ser inteiros nao-negativos '
-                raise ValueError(msg + '(exp = %r)' % exp)
-            if coef: # se o coeficiente é zero, ignorar termo
-                self.termos.append( (exp_i, coef) )    
+        # `if coef` é para ignorar termos de coeficiente zero
+        self.termos = [Termo(exp, coef) for exp, coef in termos if coef]
         self.termos.sort(reverse=True)
         
     def __str__(self):
-        p = []
-        for exp, coef in self.termos:
-            if not exp:
-                t = '1'
-            else:
-                t = 'x**' + fmt_num(exp)
-            if abs(int(coef)) != 1:
-                fmt_coef = '%d' if isinstance(coef, (int, long)) else '%f'
-                t = fmt_num(coef) + '*' + t if exp else fmt_num(coef)
-            elif int(coef) == -1:
-                t = '-' + t
-            p.append(' %s '%t)    
-        s = '+'.join(p)
-        s = s.replace('+ -', '- ')
-        return s.strip()
+        s = ' + '.join(str(t) for t in self.termos)
+        return s.strip().replace('+ -', '- ')
         
     def grau(self):
-        if len(self.termos) == 0:
-            return 0
-        else:    
-            exp, coef = self.termos[0]
-            return exp
+        return self.termos[0].exp if self.termos else 0
 
     def __call__(self, x):
         return sum(coef*x**exp for exp, coef in self.termos)
@@ -122,8 +108,38 @@ class Polinomio(object):
     def __getitem__(self, i):
         return self.termos[i]
         
-       
+class Termo(object):
     
+    def __init__(self, exp, coef):
+        try:
+            exp_i = int(exp) # ValueError pode ser levantado aqui também
+            if exp_i != exp or exp_i < 0:
+                raise ValueError()
+        except ValueError:
+            msg = 'O expoente tem que ser um inteiro nao-negativo '
+            raise ValueError(msg + '(exp = %r)' % exp)
+        self.exp = exp_i
+        self.coef = coerce(coef, 1)[0]
+              
+    def __getitem__(self, i):
+        return (self.exp, self.coef)[i]
+        
+    def __cmp__(self, t):
+        return cmp(tuple(self), tuple(t))
+        
+    def __repr__(self):
+        return 'Termo(exp=%s, coef=%s)' % (self.exp, self.coef)   
+           
+    def __str__(self):
+        if self.exp == 0:
+            s = '1'
+        else:
+            s = 'x**' + fmt_num(self.exp)
+        if abs(int(self.coef)) != 1:
+            s = fmt_num(self.coef) + '*' + s if self.exp else fmt_num(self.coef)
+        elif int(self.coef) == -1:
+            s = '-' + s
+        return s
     
 if __name__=='__main__':
     import doctest
