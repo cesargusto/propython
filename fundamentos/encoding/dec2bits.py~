@@ -1,0 +1,14 @@
+
+def dec2bin(d):
+    if d == 0:
+        return '0'
+    else:
+        bit = '1' if d % 2 else '0'
+        return dec2bin(d/2).lstrip('0')+bit
+        
+def test():
+    dec2bin(2**70)    
+    print 'OK'
+
+if __name__=='__main__':
+    test()        

@@ -1,0 +1,15 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+    <title>Remover filme: {{ object }}</title>
+</head>
+<body>
+    <h1>{{ object }}</h1>
+
+    <form action="{% url demofilmes.remover object.id %}" method="POST">
+        Confirmar remoção deste filme? <input type="submit" value="Sim, remover">
+    </form>    
+    <hr>
+    <a href="{% url demofilmes.ver object.id %}">Não remover e voltar para a página do filme.</a>       
+</body>
+</html>
