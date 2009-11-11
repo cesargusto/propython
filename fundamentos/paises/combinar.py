@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+idiomas = ['pt-br', 'es', 'en']
 paises = {}
 
 for lin in open('list-en1-semic-3.txt'):
@@ -11,7 +12,7 @@ for lin in open('list-en1-semic-3.txt'):
     if cc.isalpha():
         paises[cc] = {'ISO':descr.decode('iso-8859-15')}
 
-for idioma in ['pt', 'es', 'en']:
+for idioma in idiomas:
     for lin in open('%s.txt' % idioma):
         lin = lin.decode('utf-8')
         lin = lin.replace(u'--',u'')
@@ -28,13 +29,9 @@ saida.write('array(\n')
 linhas = []
 for cc in sorted(paises):
     miolo = []
-    for idioma in ['pt', 'es', 'en']:
+    for idioma in idiomas:
         descr = paises[cc].get(idioma, paises[cc]['ISO'])
         descr = descr.encode('utf-8')
-        #except UnicodeDecodeError:
-        #    print repr(paises[cc].get(idioma, paises[cc]['ISO']))
-        #    raise SystemExit()
-           
         miolo.append('"%s"=>"%s"' % (idioma, descr))
     linhas.append('    "%s"=>array(%s)' % (cc, ','.join(miolo)))
 saida.write(',\n'.join(linhas))    
