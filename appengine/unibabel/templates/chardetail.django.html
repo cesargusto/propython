@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>Unibabel: {{ char.name|lower }}</title>
+    <link href="/static/main.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <h1>U+{{ char.hex }}</h1>
+    <h2>{{ range }}</h2>
+    
+     
+    <table class="chardetail">
+      <tr>
+        <td class="glyph">{{ char.entity }}</td>
+        <td>
+          <dl>
+            <dt>name</dt>
+              <dd>{{ char.name }}</dd>
+            <dt>category</dt>
+              <dd>{{ char.category_name }}</dd>
+            <dt>Unicode entity</dt>
+              <dd>{{ char.entity|escape }}</dd>
+            <dt>html entity</dt>
+              <dd>{{ char.html_entity|escape }}</dd>
+            <dt>codepoint hex</dt>
+              <dd>U+{{ char.hex }}</dd>
+            <dt>codepoint decimal</dt>
+              <dd>{{ char.dec }}</dd>
+          </dl>
+          <div>
+          {% if char.decompose %}
+            <h3>Character composition</h3>
+
+            <table class="chartable">
+              <tr>
+                {% for char in char.decompose %}
+                  {% if char.name %}
+                  <td class="charcell {{ char.klass }}">{{ char.hex }}<br><a 
+                    class="{{ char.klass }}"
+                    href = "/char/{{ char.hex }}/"
+                    id="{{ char.hex }}" title="{{ char.name }} ({{ char.dec}})"
+                    >{{ char.entity }}</a></td>
+                  {% else %}
+                  <td bgcolor="lightgray">&nbsp;</td>
+                  {% endif %}
+                {% endfor %}  
+              </tr>
+            </table>
+            
+          {% endif %}
+          </div>
+        </td>
+      </tr>
+    </table>
+
+  </body>
+</html>

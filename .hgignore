@@ -1,0 +1,10 @@
+syntax: glob
+
+*.pyc
+*~
+*.sqlite
+*.wpr
+wingdbstub.py
+.twill-history
+build/html/*
+build/doctrees/*
