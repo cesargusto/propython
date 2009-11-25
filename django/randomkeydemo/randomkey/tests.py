@@ -1,10 +1,10 @@
-"""
-This file demonstrates two different styles of tests (one doctest and one
-unittest). These will both pass when you run "manage.py test".
+'''
 
-Replace these with more appropriate tests for your application.
-"""
-
+    >>> from models import Reserva
+    >>> r = Reserva(nome='Fulano', data_viagem='2009-10-23')
+    >>> r.save()
+    >>> 
+'''
 from django.test import TestCase
 
 class SimpleTest(TestCase):
