@@ -8,3 +8,5 @@ wingdbstub.py
 .twill-history
 build/html/*
 build/doctrees/*
+web.py-*
+www/webpy/web
