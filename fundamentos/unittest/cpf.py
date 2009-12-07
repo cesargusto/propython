@@ -1,3 +1,5 @@
+# coding: utf-8
+
 import string
 
 # cpf.py versao 2.1 20/12/2000
