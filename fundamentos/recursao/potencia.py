@@ -1,16 +1,22 @@
 #!/usr/bin/env python
 
 '''
-    >>> pot(10, 2) == 10**2
-    True
+    >>> pot(10, 0)
+    1
+    >>> pot(10, 5)
+    100000
     >>> pot(2, 100) == 2**100
     True
+    >>> pot(1729, 1)
+    1729
     >>> pot(1729, 7) == 1729**7
     True
     >>> from math import pi
-    >>> round(pot(pi, 3),6) == round(pi**3, 6)
+    >>> round(pot(pi, 3), 6) == round(pi**3, 6)
     True
-
+    >>> pot(2, 1729) == 2**1729
+    True
+    
 '''
 
 def pot(x, y):
