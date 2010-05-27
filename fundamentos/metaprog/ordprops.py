@@ -45,9 +45,8 @@ class OrderedProperty(object):
     def __init__(self):
         self.order = self.__class__._count
         self.__class__._count += 1
-        self.value = None
     def __get__(self, instance, cls):
-        return self.value
+        return getattr(self, 'value', None)
     def __set__(self, instance, value):
         self.value = value
     def __repr__(self):
