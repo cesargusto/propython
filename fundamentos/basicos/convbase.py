@@ -149,6 +149,8 @@ import string
 HEXA = string.hexdigits[:16] # remover digitos maiusculos
 BASE36 = string.digits+string.ascii_lowercase
 BASE32 = ''.join(d for d in BASE36 if d not in '1l0o')
+# sem vogais, para nao formar palavras em portugues
+BASE28 = ''.join(d for d in BASE36 if d not in '1l0aeiou') 
 
 def calcbase(s, digitos):
     ''' devolve o valor de `s` na base numérica representada por `digitos`
