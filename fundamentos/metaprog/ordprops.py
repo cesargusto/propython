@@ -1,35 +1,45 @@
 #!/usr/bin/env python
+# coding: utf-8
 
 """
+Em Python os atributos de uma classe são armazenados em um dict, portanto
+sua ordem não é preservada (normalmente a ordem não é mesmo importante).
+
+    >>> def nao_metodos(obj):
+    ...     ''' devolve lista de atributos que nao sao metodos '''
+    ...     return [atr for atr in dir(obj) if not atr.startswith('__')
+    ...             and not hasattr(getattr(obj, atr),'__call__')]
+    >>> class Livro(object):
+    ...     titulo = u''
+    ...     isbn = u''
+    ...     autores = u''
     >>> l = Livro()
-    >>> l.atributos()
+    >>> nao_metodos(l)
     ['autores', 'isbn', 'titulo']
+    
+Note no exemplo acima que a lista devolvida por nao_metodos não preserva
+a ordem em que foram declarados os atributos na classe Livro.
+
+Usando um descritores e uma metaclasse, é possível preservar a ordem dos
+atributos::
+
+    >>> class Livro2(OrderedModel):
+    ...     titulo = OrderedProperty()
+    ...     isbn = OrderedProperty()
+    ...     autores = OrderedProperty()
     >>> l2 = Livro2()
     >>> l2.titulo = 'O Alienista'
     >>> l2.titulo
     'O Alienista'
-    >>> l2.atributos()
+    >>> nao_metodos(l2)
     ['autores', 'isbn', 'titulo']
-    >>> l2.atributos_ordenados()
+    >>> l2.ordered_props()
     ['titulo', 'isbn', 'autores']
 
 """
 
 from operator import attrgetter
-    
-def nao_metodos(obj):
-    ''' devolve lista de atributos que nao sao metodos '''
-    return [atr for atr in dir(obj) if not atr.startswith('__')
-        and not hasattr(getattr(obj, atr),'__call__')]
-
-class Livro(object):
-    titulo = u''
-    isbn = u''
-    autores = u''
-    
-    def atributos(self):
-        return nao_metodos(self)
-    
+        
 class OrderedProperty(object):
     _count = 0
     def __init__(self):
@@ -45,12 +55,12 @@ class OrderedProperty(object):
 
 class OrderedMeta(type):
     def __new__(cls, name, bases, dict):
-        cls._ordered_props = []
+        props = []
         for key, value in dict.items():
             if isinstance(value, OrderedProperty):
                 value.name = '_' + key
-                cls._ordered_props.append(value)
-        cls._ordered_props.sort(key=attrgetter('order'))
+                props.append(value)
+        cls._ordered_props = sorted(props, key=attrgetter('order'))
         return type.__new__(cls, name, bases, dict)
 
 class OrderedModel(object):
@@ -58,22 +68,7 @@ class OrderedModel(object):
 
     def ordered_props(self):
         return [prop.name[1:] for prop in self.__class__._ordered_props]
-    
-class Livro2(OrderedModel):
-    titulo = OrderedProperty()
-    isbn = OrderedProperty()
-    autores = OrderedProperty()
-
-    def __init__(self, titulo=None):
-        self.titulo = titulo
-
-    def atributos(self):
-        return nao_metodos(self)
-
-    def atributos_ordenados(self):
-        ''' devolve lista de atributos ordenados '''
-        return self.ordered_props()
-    
+        
 if __name__=='__main__':
     import doctest
     doctest.testmod()
