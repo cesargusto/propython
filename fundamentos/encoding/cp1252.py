@@ -1,9 +1,9 @@
-# coding: cp1252
+# coding: latin-1
 
 from unicodedata import normalize, name
 
 def unicode2ascii(u):
-    return normalize('NFKD', u).encode('ASCII','ignore')
+    return normalize('NFKD', unicode(u)).encode('ASCII','ignore')
 
 for i in range(128,256):
     c = chr(i)
@@ -14,5 +14,10 @@ for i in range(128,256):
         descr = 'UnicodeDecodeError'
     else:
         descr = name(u)
-    a = unicode2ascii(c) 
-    print '%3d\t%r\t%s\t%s' % (i, c, a, descr)
+    #a = unicode2ascii(c) 
+    a = ''
+    print '%3d\t%r\t%s\t%s\t%s' % (i, c, u, a, descr)
+s = 'maçã'
+print len(s)
+print s
+
