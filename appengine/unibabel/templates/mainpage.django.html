@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link href="/static/main.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+  
+    <h1>Unibabel</h1>
+
+    <table>
+      <tr>
+        <td>
+          <h2>Unicode character tables</h2>
+          <ul>
+          {% for page in block_pages %}
+            <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+          {% endfor %}
+          </ul>
+        </td>
+        <td>
+          <h2>Legacy character tables</h2>
+          <ul>
+          {% for page in legacy_pages %}
+            <li><a href="{{ page.url }}">{{ page.title }} ({{ page.aliases }})</a></li>
+          {% endfor %}
+          </ul>
+        </td>
+      </tr>
+    </table>  
+  </body>
+</html>

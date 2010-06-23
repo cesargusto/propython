@@ -1,0 +1,59 @@
+Metodologia para criação de Infograficos
+1. Definição Geral do Escopo do Infográfico
+	1.1. Objetivos
+	1.2. Breve descrição
+	1.3. Público-alvo
+	1.4. Indicação de especialistas / instituições 
+2. Definição Detalhada do Escopo do Infográfico
+	2.1. Esquema gráfico
+		Possibilidades de desenho
+		Uso de diagramas existentes
+		Combinar diagramas
+	2.2. Referencia bibliográfica associada ao esquema
+	2.3. Pontos de interação (spots clicáveis) do esquema
+	2.4. Definição do comportamento do ponto de interação (Origem da Cascata)
+		Outro Infográfico?
+		Layer adicional interativo?
+		Layer adicional estático?
+		Conteúdo multimídia
+			Foto
+			Video
+			Audio
+		Link externo/interno
+			Pubmed; LILACS
+			Revisões TropIKA.net
+		Bibliografia relacionada
+	2.5. Desenvolvimento de Wirefames Story board
+3. Conteúdo Associado
+	3.1. BIREME Team
+		Definir estratégias de busca p/ geração de bibliografia relacionada
+		Criar repositório de documentos específicos do IG
+		Apoio ao especialista quando necessário
+	3.2. Especialistas
+		Textos específicos pertinentes ao esquema do IG
+		Conteúdos associados ao IG (geral, ponto de interação, seqüência lógica)
+	3.3. Instituições da Área
+		Min.Saúde
+		Org. Internacionais
+		ONG's
+4. Atribuições PHDs+produtora+BIREME+Parceiro
+	4.1. Atribuições
+		PHD's
+		Produtora
+		BIREME
+		Parceiro
+	4.2. Marcos de controle
+		Aprovação do Escopo do IG
+		Socialização c/ envolvidos na produção do IG
+		Aprovação do conteúdo - item3
+		Aprovação do layout do IG - item5
+			Sketches
+			Mockups
+			Produto final
+		Aprovação do escopo detalhado - Item2
+5. Produção
+6. Manutenção e atualização
+	Dados estáticos x Dinâmicos
+7. Processos de trabalho
+	Reuniões
+	Ferramentas
