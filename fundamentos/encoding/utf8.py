@@ -26,7 +26,7 @@ def unicode2utf8bits(s):
         bits = '0'*(21-len(bits))+bits
         return '11110 ' + bits[:3] + ' 10 ' + bits[3:9] + ' 10 ' + bits[9:15] + ' 10 ' + bits[15:] 
 
-amostra = list(u'1AaÃãÇÉ')
+amostra = list(u'1Aaª¿ÁáÃãÇÉÿ')
 
 amostra.append(u'\u06bf') # ARABIC LETTER TCHEH WITH DOT ABOVE
 amostra.append(u'\u0d0b') # MALAYALAM LETTER VOCALIC R
@@ -34,12 +34,16 @@ amostra.append(u'\u2620') # SKULL AND CROSSBONES
 amostra.append(u'\u4df1') # HEXAGRAM FOR THE CAULDRON
 amostra.append(u'\u6c23') # CJK UNIFIED IDEOGRAPH-6C23
 
+saida = open('utf8.txt','wb')
 for c in amostra:
     nibbles = dec2bin(ord(c),sep=' ', word_len=4)
     bits = dec2bin(ord(c))
     utf8bits = unicode2utf8bits(c)
-    utf8 = ' '.join(repr(b)[3:5] for b in c.encode('utf-8'))
-    print '%04x %2d %18s | %-29s %s %s %s' % (ord(c), len(bits), nibbles, utf8bits, utf8, c, name(c))
+    utf8 = ' '.join('%x' % ord(b) for b in c.encode('utf-8'))
+    #print '%04x %2d %18s | %-29s %s %s %s' % (ord(c), len(bits), nibbles, utf8bits, utf8, c, name(c))
+    saida.write((u'%04x\t%2d\t%s\t%s\t%s\t%s\t%s\n' % 
+                (ord(c), len(bits), nibbles, utf8bits, utf8, c, name(c))).encode('utf-8'))
+saida.close()                
     
            
         
