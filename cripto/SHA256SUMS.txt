@@ -1,0 +1,10 @@
+18d38fede3cf82f765bf6ae02ba52c8db691ba266a400c437a4fe9b3f7581ac5 *ubuntu-9.10-alternate-amd64.iso
+0547d90cf3586a6a7b810fd4d574645fe078451427abe520145dcad05fe3ee4d *ubuntu-9.10-alternate-i386.iso
+a3f9c534e005729fbed3856239b1ec3341fef8d0d20c1d92aab2bcf844985eee *ubuntu-9.10-desktop-amd64.iso
+5f71417a2446b6273b07295cee17f78d708f98064f964582727548fc974c82bd *ubuntu-9.10-desktop-armel+dove.img
+20e0d25801d9e466c8b7606666137e5be156fa467bfb40780e0cd0366f7facf9 *ubuntu-9.10-desktop-armel+imx51.img
+d36a4c3d9eb296471d21c0c07cd1bbe467c9f5de62dd19cbd6ac762bfa19bfaf *ubuntu-9.10-desktop-i386.iso
+b56f09f1a2ddcf64cb03bab12492504ce93334a47aadc73ab76f12ebdb06dadf *ubuntu-9.10-netbook-remix-i386.iso
+9a0c681bbf31c4e9f9cd1d2541c9cb80bffc3ed3816755b79d5167a7296f9a7f *ubuntu-9.10-server-amd64.iso
+23c5422bbbf691111257bdaf01a373b1114174102bf3b2c3aa26e3737eb4e76b *ubuntu-9.10-server-i386.iso
+168070ed84aebb7cf2b99de12ac8ad648ede9588416e168bff6f30e8fb48948f *wubi.exe
