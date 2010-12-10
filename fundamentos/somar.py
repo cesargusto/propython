@@ -1,14 +1,13 @@
 import sys
 
 total = 0
-while True:
-    lin = sys.stdin.readline().strip()
-    if len(lin) == 0:
-        break
-    try:    
-        total += float(lin)
+for arg in sys.argv[1:]:
+    try:
+        total += float(arg)
     except ValueError:
-        print 'ignorado: %r' % lin
+        print 'ignorado: %r' % arg
+    else:
+        print arg
 print '-' * 20
 print total
 
