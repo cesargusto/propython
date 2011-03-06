@@ -49,22 +49,31 @@ cardinais = {
     10**18: 'um quintilhão'
 }
 
+def logi10(n):
+    ''' logaritmo inteiro de n na base 10 '''
+    return int(log(n, 10))
+
 def cardinal(n):
     if n in cardinais:
         return cardinais[n]
     else:
-        pot10 = 10 ** int(log(n, 10)) 
+        pot10 = 10**logi10(n)
         cabeca = n/pot10
         redondo = cabeca*pot10
         if redondo == 100:
             prefixo = 'cento'
         else:
             prefixo = cardinal(redondo)
-        return prefixo + ' e ' + cardinal(n%pot10)
+        if logi10(n) == 3 and logi10(n%pot10) == 2 and (n%(pot10/10)):
+            # se milhar e centena quebrada
+            conectivo = ' '
+        else:
+            conectivo = ' e '
+        return prefixo + conectivo + cardinal(n%pot10)
 
 def teste(n, esperado):
     assert cardinal(n) == esperado, 'ESPERADO: %r RESPOSTA: %r' % (esperado, cardinal(n))
-        
+
 def testes():
     # primeira iteração rev. 178a5c0d55d5
     teste(1, 'um')
@@ -73,14 +82,27 @@ def testes():
     teste(23, 'vinte e três')
     teste(42, 'quarenta e dois')
     teste(597, 'quinhentos e noventa e sete')
-    # segunda iteração, "cem, cento..."
+    # segunda iteração, "cem, cento..." rev. f13befa3b1c2
     teste(100, 'cem')
     teste(101, 'cento e um')
     teste(150, 'cento e cinquenta')
     teste(198, 'cento e noventa e oito')
+    # terceira iteração
+    teste(1000, 'mil')
+    teste(1001, 'mil e um')
+    teste(1035, 'mil e trinta e cinco')
+    teste(1100, 'mil e cem')
+    teste(1110, 'mil cento e dez')
+    teste(1189, 'mil cento e oitenta e nove')
+    teste(1200, 'mil e duzentos')
+    teste(1209, 'mil duzentos e nove')
+    teste(1235, 'mil duzentos e trinta e cinco')
+    # teste(2000, 'dois mil e um') ERROR: maximum recursion depth exceeded
+    teste(1000000, 'um milhão')
+    teste(1000722, 'um milhão e setecentos e vinte e dois')
     print 'OK'
-    
+
 if __name__=='__main__':
-    testes()    
-           
-        
+    testes()
+
+
