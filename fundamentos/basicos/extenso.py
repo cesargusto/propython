@@ -44,12 +44,12 @@ cardinais = {
 }
 
 cardinais_pot1000 = {
-    1: 'mil',
-    2: 'milhão',
-    3: 'bilhão',
-    4: 'trilhão',
-    5: 'quadrilhão',
-    6: 'quintilhão'
+    10**3: 'mil',
+    10**6: 'milhão',
+    10**9: 'bilhão',
+    10**12: 'trilhão',
+    10**15: 'quadrilhão',
+    10**18: 'quintilhão'
 }
 
 def cardinal999(n):
@@ -57,10 +57,10 @@ def cardinal999(n):
     if n in cardinais:
         return cardinais[n]
     else:
-        casas = int(log(n, 10))
-        cabeca = n/(10**casas)
-        corpo = n%(10**casas)
-        redondo = cabeca*(10**casas)
+        pot10 = 10**int(log(n, 10))
+        cabeca = n/pot10
+        corpo = n%pot10
+        redondo = cabeca*pot10
         if redondo == 100:
             prefixo = 'cento'
         else:
@@ -69,16 +69,16 @@ def cardinal999(n):
 
 def cardinal(n):
     assert 0<=n<10**14 # 999999999999999 exceeds max recursion. why?
-    miles = int(log(n,1000))
-    if miles == 0:
+    if n < 1000:
         return cardinal999(n)
     else:
-        cabeca = n/(1000**miles)
-        corpo =  n%(1000**miles)
-        if miles == 1 and cabeca == 1:
+        pot1000 = 1000**int(log(n,1000))
+        cabeca = n/pot1000
+        corpo =  n%pot1000
+        if pot1000 == 1000 and cabeca == 1:
             prefixo = 'mil'
         else:
-            prefixo = cardinal999(cabeca) + ' ' + cardinais_pot1000[miles]
+            prefixo = cardinal999(cabeca) + ' ' + cardinais_pot1000[pot1000]
             if cabeca != 1:
                 prefixo = prefixo.replace('ilhão', 'ilhões')
         if corpo:
@@ -99,6 +99,7 @@ def teste(n, esperado):
 
 def testes():
     # primeira iteração rev. 178a5c0d55d5
+    teste(0, 'zero')
     teste(1, 'um')
     teste(10, 'dez')
     teste(12, 'doze')
@@ -137,19 +138,29 @@ def testes():
                           'novecentos e noventa e nove milhões, '
                           'novecentos e noventa e nove mil, '
                           'novecentos e noventa e nove')
-    #teste(999999999999999,'novecentos e noventa e nove trilhões, ...')
+    # teste(999999999999999,'novecentos e noventa e nove trilhões, ...')
     '''
+    Traceback (most recent call last):
+      File "./extenso.py", line 157, in <module>
+        testes()
+      File "./extenso.py", line 142, in testes
+        teste(999999999999999,'novecentos e noventa e nove trilhões, ...')
+      File "./extenso.py", line 95, in teste
+        if cardinal(n) == esperado:
       File "./extenso.py", line 90, in cardinal
         return prefixo + ', ' + cardinal(corpo)
       File "./extenso.py", line 90, in cardinal
         return prefixo + ', ' + cardinal(corpo)
+      File "./extenso.py", line 90, in cardinal
+      ... milhares de repeticoes depois ...
       File "./extenso.py", line 90, in cardinal
         return prefixo + ', ' + cardinal(corpo)
       File "./extenso.py", line 81, in cardinal
-        prefixo = cardinal999(cabeca) + ' ' + cardinais_pot1000[miles]
+        prefixo = cardinal999(cabeca) + ' ' + cardinais_pot1000[pot1000]
       File "./extenso.py", line 56, in cardinal999
         assert 0<=n<1000
     RuntimeError: maximum recursion depth exceeded in cmp
+
     '''
 if __name__=='__main__':
     testes()
