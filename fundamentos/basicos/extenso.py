@@ -55,17 +55,29 @@ def cardinal(n):
     else:
         pot10 = 10 ** int(log(n, 10)) 
         cabeca = n/pot10
-        return cardinal(cabeca*pot10) + ' e ' + cardinal(n%pot10)
+        redondo = cabeca*pot10
+        if redondo == 100:
+            prefixo = 'cento'
+        else:
+            prefixo = cardinal(redondo)
+        return prefixo + ' e ' + cardinal(n%pot10)
 
 def teste(n, esperado):
     assert cardinal(n) == esperado, 'ESPERADO: %r RESPOSTA: %r' % (esperado, cardinal(n))
         
 def testes():
+    # primeira iteração rev. 178a5c0d55d5
     teste(1, 'um')
     teste(10, 'dez')
     teste(12, 'doze')
     teste(23, 'vinte e três')
+    teste(42, 'quarenta e dois')
     teste(597, 'quinhentos e noventa e sete')
+    # segunda iteração, "cem, cento..."
+    teste(100, 'cem')
+    teste(101, 'cento e um')
+    teste(150, 'cento e cinquenta')
+    teste(198, 'cento e noventa e oito')
     print 'OK'
     
 if __name__=='__main__':
