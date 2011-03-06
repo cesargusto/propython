@@ -17,14 +17,20 @@
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import util
 
+from extenso import cardinal
 
 class MainHandler(webapp.RequestHandler):
     def get(self):
         self.response.out.write('Hello world!')
 
+class Extenso(webapp.RequestHandler):
+    def get(self):
+        n = long(self.request.get('n', 0))
+        self.response.out.write(cardinal(n))
 
 def main():
-    application = webapp.WSGIApplication([('/', MainHandler)],
+    application = webapp.WSGIApplication([('/', MainHandler),
+                                          ('/extenso', Extenso) ],
                                          debug=True)
     util.run_wsgi_app(application)
 
