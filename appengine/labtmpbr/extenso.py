@@ -4,7 +4,7 @@
 from math import log
 
 cardinais = {
-    0: 'zero', 
+    0: 'zero',
     1: 'um',
     2: 'dois',
     3: 'três',
@@ -49,8 +49,24 @@ cardinais_pot1000 = {
     10**9: 'bilhão',
     10**12: 'trilhão',
     10**15: 'quadrilhão',
-    10**18: 'quintilhão'
+    10**18: 'quintilhão',
+    10**21: 'sextilhão',
+    10**24: 'setilhão',
+    10**27: 'octilhão',
+    10**30: 'nonilhão',
+    10**33: 'decilhão',
+    10**36: 'undecilhão',
+    10**39: 'dodecilhão',
+    10**42: 'tredecilhão',
+    10**45: 'quatuordecilhão',
+    10**48: 'quindecilhão',
+    10**51: 'sedecilhão',
+    10**54: 'septendecilhão',
+    10**57: 'octodecilhão',
+    10**60: 'nonidecilhão',
 }
+
+limite = max(cardinais_pot1000)
 
 def cardinal999(n):
     assert 0<=n<1000
@@ -66,28 +82,34 @@ def cardinal999(n):
         else:
             prefixo = cardinais[redondo]
         return prefixo + ' e ' + cardinal(corpo)
+
 def cardinal(n):
     if n < 1000:
         return cardinal999(n)
     else:
         # int(log(n,1000)) não tem precisão suficiente a partir de 10**14,
         # por isso a operação com len, str (dica do Leandro Lameiro)
-        pot1000 = 1000**((len(str(n))-1)/3) 
+        pot1000 = 1000**((len(str(n))-1)/3)
         cabeca = n/pot1000
         corpo =  n%pot1000
         if pot1000 == 1000 and cabeca == 1:
             prefixo = 'mil'
         else:
-            prefixo = cardinal999(cabeca) + ' ' + cardinais_pot1000[pot1000]
+            try:
+                prefixo = (cardinal999(cabeca) + ' ' +
+                           cardinais_pot1000[pot1000])
+            except KeyError:
+                raise OverflowError('limite %s ultrapassado' % limite)
             if cabeca != 1:
                 prefixo = prefixo.replace('ilhão', 'ilhões')
         if corpo:
             if (0<corpo<100) or (corpo < 1000 and (corpo%100)==0):
-                return prefixo + ' e ' + cardinal(corpo)
+                conector = ' e '
             elif prefixo == 'mil':
-                return prefixo + ' ' + cardinal(corpo)
+                conector = ' '
             else:
-                return prefixo + ', ' + cardinal(corpo)
+                conector = ', '
+            return prefixo + conector + cardinal(corpo)
         else:
             return prefixo
 
@@ -144,13 +166,13 @@ def testes():
                           'novecentos e noventa e nove milhões, '
                           'novecentos e noventa e nove mil, '
                           'novecentos e noventa e nove')
-    teste(999999999999999999999,'novecentos e noventa e nove quintilhões, '
-                                'novecentos e noventa e nove quadrilhões, '
-                                'novecentos e noventa e nove trilhões, '
-                                'novecentos e noventa e nove bilhões, '
-                                'novecentos e noventa e nove milhões, '
-                                'novecentos e noventa e nove mil, '
-                                'novecentos e noventa e nove')
+    teste(10**21-1, 'novecentos e noventa e nove quintilhões, '
+                    'novecentos e noventa e nove quadrilhões, '
+                    'novecentos e noventa e nove trilhões, '
+                    'novecentos e noventa e nove bilhões, '
+                    'novecentos e noventa e nove milhões, '
+                    'novecentos e noventa e nove mil, '
+                    'novecentos e noventa e nove')
     # "Debt to the Penny": dívida pública dos EUA em 03/03/2011, fonte oficial:
     # http://www.treasurydirect.gov/NP/BPDLogin?application=np
     teste(14182086199057, 'quatorze trilhões, cento e oitenta e dois '
@@ -162,7 +184,7 @@ def testes():
                              'seis trilhões, setecentos e setenta e quatro '
                              'bilhões, oitocentos e oitenta milhões, trezentos '
                              'e sessenta e um mil, trezentos e sessenta')
-
+    teste(999*10**60,'novecentos e noventa e nove nonidecilhões')
 if __name__=='__main__':
     testes()
 
