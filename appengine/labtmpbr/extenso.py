@@ -4,7 +4,7 @@
 from math import log
 
 cardinais = {
-    0: 'zero',
+    0: 'zero', 
     1: 'um',
     2: 'dois',
     3: 'três',
@@ -66,13 +66,13 @@ def cardinal999(n):
         else:
             prefixo = cardinais[redondo]
         return prefixo + ' e ' + cardinal(corpo)
-
 def cardinal(n):
-    assert 0<=n<10**14 # 999999999999999 exceeds max recursion. why?
     if n < 1000:
         return cardinal999(n)
     else:
-        pot1000 = 1000**int(log(n,1000))
+        # int(log(n,1000)) não tem precisão suficiente a partir de 10**14,
+        # por isso a operação com len, str (dica do Leandro Lameiro)
+        pot1000 = 1000**((len(str(n))-1)/3) 
         cabeca = n/pot1000
         corpo =  n%pot1000
         if pot1000 == 1000 and cabeca == 1:
@@ -138,30 +138,31 @@ def testes():
                           'novecentos e noventa e nove milhões, '
                           'novecentos e noventa e nove mil, '
                           'novecentos e noventa e nove')
-    # teste(999999999999999,'novecentos e noventa e nove trilhões, ...')
-    '''
-    Traceback (most recent call last):
-      File "./extenso.py", line 157, in <module>
-        testes()
-      File "./extenso.py", line 142, in testes
-        teste(999999999999999,'novecentos e noventa e nove trilhões, ...')
-      File "./extenso.py", line 95, in teste
-        if cardinal(n) == esperado:
-      File "./extenso.py", line 90, in cardinal
-        return prefixo + ', ' + cardinal(corpo)
-      File "./extenso.py", line 90, in cardinal
-        return prefixo + ', ' + cardinal(corpo)
-      File "./extenso.py", line 90, in cardinal
-      ... milhares de repeticoes depois ...
-      File "./extenso.py", line 90, in cardinal
-        return prefixo + ', ' + cardinal(corpo)
-      File "./extenso.py", line 81, in cardinal
-        prefixo = cardinal999(cabeca) + ' ' + cardinais_pot1000[pot1000]
-      File "./extenso.py", line 56, in cardinal999
-        assert 0<=n<1000
-    RuntimeError: maximum recursion depth exceeded in cmp
+    # quinta iteração: superando o bug da imprecisão do log, valeu Lameiro!
+    teste(999999999999999,'novecentos e noventa e nove trilhões, '
+                          'novecentos e noventa e nove bilhões, '
+                          'novecentos e noventa e nove milhões, '
+                          'novecentos e noventa e nove mil, '
+                          'novecentos e noventa e nove')
+    teste(999999999999999999999,'novecentos e noventa e nove quintilhões, '
+                                'novecentos e noventa e nove quadrilhões, '
+                                'novecentos e noventa e nove trilhões, '
+                                'novecentos e noventa e nove bilhões, '
+                                'novecentos e noventa e nove milhões, '
+                                'novecentos e noventa e nove mil, '
+                                'novecentos e noventa e nove')
+    # "Debt to the Penny": dívida pública dos EUA em 03/03/2011, fonte oficial:
+    # http://www.treasurydirect.gov/NP/BPDLogin?application=np
+    teste(14182086199057, 'quatorze trilhões, cento e oitenta e dois '
+                          'bilhões, oitenta e seis milhões, cento e noventa '
+                          'e nove mil e cinquenta e sete')
+    # um parsec = 30856774880361360 metros, fonte:
+    # http://en.wikipedia.org/wiki/Parsec
+    teste(30856774880361360, 'trinta quadrilhões, oitocentos e cinquenta e '
+                             'seis trilhões, setecentos e setenta e quatro '
+                             'bilhões, oitocentos e oitenta milhões, trezentos '
+                             'e sessenta e um mil, trezentos e sessenta')
 
-    '''
 if __name__=='__main__':
     testes()
 
