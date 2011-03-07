@@ -25,12 +25,22 @@ class MainHandler(webapp.RequestHandler):
 
 class Extenso(webapp.RequestHandler):
     def get(self):
-        n = long(self.request.get('n', 0))
-        self.response.out.write(cardinal(n))
+        parts = self.request.path.split('/')
+        try:
+            n = long(parts[-1])
+        except ValueError:
+            n = 0
+        try:
+            self.response.out.write(cardinal(n))
+        except OverflowError, e:
+            self.response.set_status(400)
+            self.response.out.write(str(e))
+        self.response.headers.add_header('Content-Type',
+                            'text/plain; charset=utf-8')
 
 def main():
     application = webapp.WSGIApplication([('/', MainHandler),
-                                          ('/extenso', Extenso) ],
+                                          ('/extenso/.*', Extenso) ],
                                          debug=True)
     util.run_wsgi_app(application)
 
