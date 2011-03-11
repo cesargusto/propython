@@ -66,7 +66,7 @@ cardinais_pot1000 = {
     10**60: 'nonidecilhão',
 }
 
-limite = max(cardinais_pot1000)
+limite = max(cardinais_pot1000)*1000-1
 
 def cardinal999(n):
     assert 0<=n<1000
@@ -75,20 +75,20 @@ def cardinal999(n):
     else:
         pot10 = 10**int(log(n, 10))
         cabeca = n/pot10
-        corpo = n%pot10
+        corpo =  n%pot10
         redondo = cabeca*pot10
         if redondo == 100:
             prefixo = 'cento'
         else:
             prefixo = cardinais[redondo]
-        return prefixo + ' e ' + cardinal(corpo)
+        return prefixo + ' e ' + cardinal999(corpo)
 
 def cardinal(n):
     if n < 1000:
         return cardinal999(n)
     else:
         # int(log(n,1000)) não tem precisão suficiente a partir de 10**14,
-        # por isso a operação com len, str (dica do Leandro Lameiro)
+        # por isso a operação com str e len (dica do Leandro Lameiro)
         pot1000 = 1000**((len(str(n))-1)/3)
         cabeca = n/pot1000
         corpo =  n%pot1000
@@ -185,6 +185,13 @@ def testes():
                              'bilhões, oitocentos e oitenta milhões, trezentos '
                              'e sessenta e um mil, trezentos e sessenta')
     teste(999*10**60,'novecentos e noventa e nove nonidecilhões')
+    try:
+        cardinal(limite+1)
+    except OverflowError:
+        pass
+    else:
+        raise Exception('this test should raise OverflowError')
+        
 if __name__=='__main__':
     testes()
 
