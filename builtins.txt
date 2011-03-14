@@ -1,0 +1,13 @@
+
+numéricos: bool, complex, float, int, long
+
+cadeias de caracteres: str, unicode
+
+coleções básicas: list, tuple, dict, set, frozenset
+
+montes de bytes: buffer, bytearray, bytes, file
+
+object
+property
+basestring
+collections
