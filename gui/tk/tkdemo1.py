@@ -1,19 +1,19 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-import Tkinter
-import time
+from Tkinter import *
 
-relogio = Tkinter.Label()
-relogio['font'] = 'Helvetica 96 bold'
-relogio.pack()
+class Janela(Frame):
+    def __init__(self, master):
+        Frame.__init__(self, master)
+        self.pack()
+        self.bt = Button(self)
+        self.bt['text'] = 'Clique-me'
+        self.bt['font'] = 'Helvetica 48 bold'
+        self.bt['command'] = self.quit
+        self.bt.pack()
 
-def tictac():
-    agora = time.strftime('%H:%M:%S')
-    if agora != relogio['text']:
-        relogio['text'] = agora
-    relogio.after(200, tictac)
-
-tictac()
-relogio.mainloop()
-
+raiz = Tk()      # a janela raiz é construída
+j = Janela(raiz) # o nosso frame é constuída sobre a janela raiz
+j.mainloop()     # o laço de eventos é iniciado
+raiz.destroy()   # o laço de eventos não está mais rodando, mas a janela continua

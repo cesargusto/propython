@@ -1,21 +1,19 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-from Tkinter import *
+import Tkinter
+import time
 
-class Janela(Frame):
-    def __init__(self, master):
-        Frame.__init__(self, master)
-        self.pack()
-        bt_sair = Button(self)
-        bt_sair['text'] = 'Clique-me'
-        bt_sair['font'] = 'Helvetica 48 bold'
-        bt_sair['command'] = self.quit
-        bt_sair.pack()
- 
-raiz = Tk()
-j = Janela(raiz)
-j.mainloop()
-raiz.destroy()
- 
+relogio = Tkinter.Label()
+relogio.pack()
+relogio['text'] = time.strftime('%H:%M:%S')
+relogio['font'] = 'Helvetica 96 bold'
 
+def tictac():
+    agora = time.strftime('%H:%M:%S')
+    if agora != relogio['text']:
+        relogio['text'] = agora
+    relogio.after(200, tictac)
+
+tictac()
+relogio.mainloop()
