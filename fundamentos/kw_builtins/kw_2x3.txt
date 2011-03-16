@@ -1,0 +1,35 @@
+False (≥3)
+None (≥3)
+True (≥3)
+and
+as
+assert
+break
+class
+continue
+def
+del
+elif
+else
+except
+exec (≤2)
+finally
+for
+from
+global
+if
+import
+in
+is
+lambda
+nonlocal (≥3)
+not
+or
+pass
+print (≤2)
+raise
+return
+try
+while
+with
+yield
