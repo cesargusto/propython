@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# coding: utf-8
 
 '''
 Read events from a Microsoft SideWinder USB joystick, classic model with

@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-from Tkinter import *
+try:
+    from Tkinter import *
+except ImportError:
+    from tkinter import * # Python 3
 import os
 import struct
 
@@ -24,12 +27,12 @@ class Janela(Frame):
         self.y_line = self.canvas.create_line(0, CANVAS_SIZE/2,
                                               CANVAS_SIZE, CANVAS_SIZE/2,
                                               fill="red")
-        self.current_x = CANVAS_SIZE/2
-        self.current_y = CANVAS_SIZE/2
+        self.previous_x = CANVAS_SIZE/2
+        self.previous_y = CANVAS_SIZE/2
         self.bt1_down = False
 
     def atualiza(self, joystick, mask):
-        char = joystick.read(1)
+        char = joystick.read(1) # Python3: UnicodeDecodeError
         self.stick_evt += char
         if len(self.stick_evt) == 8:
             timestamp, position, group, control = struct.unpack('ihBB',self.stick_evt)
@@ -37,29 +40,36 @@ class Janela(Frame):
                 descr = 'button %s %s' % (control+1,
                                           'press' if position else 'release')
                 self.bt1_down = bool(position)
+                if self.bt1_down:
+                    self.canvas.create_oval(self.previous_x-MARK_SIZE/2,
+                                                 self.previous_y-MARK_SIZE/2,
+                                                 self.previous_x+MARK_SIZE/2,
+                                                 self.previous_y+MARK_SIZE/2,
+                                                 fill="green")
             elif group == 2:
                 axis = 'XYZ'[control]
                 descr = '%s axis %d' % (axis, position)
+                x = self.previous_x
+                y = self.previous_y
                 if axis == 'X':
                     x = self.stick2canvas(position)
                     self.canvas.coords(self.x_line, x, 0, x, CANVAS_SIZE)
-                    self.current_x = x
                 elif axis == 'Y':
                     y = self.stick2canvas(position)
                     self.canvas.coords(self.y_line, 0, y, CANVAS_SIZE, y)
-                    self.current_y = y
+                if self.previous_x != x or self.previous_y != y:
+                    self.canvas.create_line(
+                                        self.previous_x, self.previous_y,
+                                        x, y, fill="blue")
+
+                self.previous_x = x
+                self.previous_y = y
             elif group == 0x81:
                 descr = 'button %s present' % (control+1)
             elif group == 0x82:
                 descr = 'axis %s present; position %d' % ('XYZ'[control], position)
             else:
                 descr = '?'
-            if self.bt1_down:
-                self.canvas.create_oval(self.current_x-MARK_SIZE/2,
-                                             self.current_y-MARK_SIZE/2,
-                                             self.current_x+MARK_SIZE/2,
-                                             self.current_y+MARK_SIZE/2,
-                                             fill="blue")
             self.label['text'] = descr
             self.stick_evt = ''
 
@@ -71,6 +81,5 @@ joystick = open('/dev/input/js0','r')
 j = Janela(raiz)
 # a proxima linha faz disparar o método j.atualiza sempre
 # que o joystick # tem dados prontos para leitura
-# que o joystick # tem dados prontos para leitura
-raiz.createfilehandler(joystick, tkinter.READABLE, j.atualiza)
+raiz.createfilehandler(joystick, READABLE, j.atualiza)
 j.mainloop()

@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# coding: utf-8
+
 from struct import unpack
 pipe = open('/dev/input/js0','r')
 action = []
@@ -18,12 +21,12 @@ while 1:
                                           'press' if action[4] else 'release')
             elif action[6] == 2:
                 n = unpack('h', chr(action[4]) + chr(action[5]))[0]
-                descr = 'axis %s %s %d' % ('XYZ'[action[7]], 
+                descr = 'axis %s %s %d' % ('XYZ'[action[7]],
                                            '%02x.%02x' % (action[4], action[5]),
                                            n)
             else:
-                descr = '?'                   
-            
+                descr = '?'
+
             print '%6d  :  %s --> %s' % (line, ' '.join(action_strs), descr)
             if not line % 2:
                 print
