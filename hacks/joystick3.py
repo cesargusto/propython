@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 '''
-Read events from a Microsoft SideWinder USB joystick, classic model with 
+Read events from a Microsoft SideWinder USB joystick, classic model with
 8 buttons and a throttle (Z axis in this driver)
 '''
 
@@ -15,8 +15,8 @@ while 1:
     for character in pipe.read(1):
         action += character
         if len(action) == 8:
-            b0, b1, b2, b3, position, group, control = unpack('4BhBB',action) 
-            
+            timestamp, position, group, control = unpack('ihBB',action)
+
             if prev_group_control != (group, control):
                 print
                 prev_group_control = (group, control)
@@ -34,9 +34,9 @@ while 1:
             elif group == 0x82:
                 descr = 'axis %s present; position %d' % ('XYZ'[control], position)
             else:
-                descr = '?'                   
-            
-            print '%6d  :  %s --> %s' % (line, ' '.join(action_strs), descr)
+                descr = '?'
+
+            print '%6d  %8d : %s --> %s' % (line, timestamp, ' '.join(action_strs), descr)
             line += 1
             action = ''
 
