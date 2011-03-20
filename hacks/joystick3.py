@@ -28,12 +28,11 @@ while 1:
                 descr = 'button %s %s' % (control+1,
                                           'press' if position else 'release')
             elif group == 2:
-                n = position
-                descr = '%s axis %d' % ('XYZ'[control], n)
+                descr = '%s axis %d' % ('XYZ'[control], position)
             elif group == 0x81:
                 descr = 'button %s present' % (control+1)
             elif group == 0x82:
-                descr = 'axis %s present' % ('XYZ'[control])
+                descr = 'axis %s present; position %d' % ('XYZ'[control], position)
             else:
                 descr = '?'                   
             
