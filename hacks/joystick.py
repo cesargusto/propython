@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import sys
 pipe = open('/dev/input/js0','r')
 while 1:
