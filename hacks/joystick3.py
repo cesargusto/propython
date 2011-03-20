@@ -1,3 +1,10 @@
+#!/usr/bin/env python
+
+'''
+Read events from a Microsoft SideWinder USB joystick, classic model with 
+8 buttons and a throttle (Z axis in this driver)
+'''
+
 from struct import unpack
 pipe = open('/dev/input/js0','r')
 action = ''
@@ -9,28 +16,28 @@ while 1:
         action += character
         if len(action) == 8:
             b0, b1, b2, b3, position, group, control = unpack('4BhBB',action) 
-
+            
             if prev_group_control != (group, control):
                 print
                 prev_group_control = (group, control)
 
-            if line % 2:
-                prev_action = action[:]
-                action_strs = ['%02x' % ord(c) for i, c in enumerate(action)]
-            else:
-                action_strs = ['%02x' % ord(c) if c != prev_action[i]
+            action_strs = ['%02x' % ord(c) if c != prev_action[i]
                                else '  ' for i, c in enumerate(action)]
+            prev_action = action[:]
             if group == 1:
                 descr = 'button %s %s' % (control+1,
                                           'press' if position else 'release')
             elif group == 2:
                 n = position
                 descr = '%s axis %d' % ('XYZ'[control], n)
+            elif group == 0x81:
+                descr = 'button %s present' % (control+1)
+            elif group == 0x82:
+                descr = 'axis %s present' % ('XYZ'[control])
             else:
                 descr = '?'                   
             
             print '%6d  :  %s --> %s' % (line, ' '.join(action_strs), descr)
             line += 1
-            #sys.stdout.flush()
             action = ''
 
