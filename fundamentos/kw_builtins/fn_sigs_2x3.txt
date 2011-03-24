@@ -1,0 +1,58 @@
+abs(number) -> number
+all(iterable) -> bool
+any(iterable) -> bool
+apply(object[, args[, kwargs]]) -> ≤2: value
+ascii(object) -> ≥3: string
+bin(number) -> string
+callable(object) -> ≤2: bool
+chr(i) -> ≤2: character ≥3: Unicode character
+cmp(x, y) -> ≤2: integer
+coerce(x, y) -> ≤2: (x1, y1)
+compile(source, filename, mode[, flags[, dont_inherit]]) -> code object
+delattr(object, name)
+dir([object]) -> list of strings
+divmod(x, y) -> (div, mod)
+eval(source[, globals[, locals]]) -> value
+exec(object[, globals[, locals]]) ≥3
+execfile(filename[, globals[, locals]]) ≤2
+filter(function or None, sequence) -> ≤2: list, tuple, or string; ≥3: filter object
+format(value[, format_spec]) -> string
+getattr(object, name[, default]) -> value
+globals() -> dictionary
+hasattr(object, name) -> bool
+hash(object) -> integer
+hex(number) -> string
+id(object) -> integer
+input([prompt]) -> ≤2: value; ≥3: string
+intern(string) -> ≤2: string
+isinstance(object, class-or-type-or-tuple) -> bool
+issubclass(C, B) -> bool
+iter(iterable) -> iterator
+len(object) -> integer
+locals() -> dictionary
+map(function, *iterables) -> ≤2: list ≥3: map object
+max(iterable[, key=func]) -> value
+min(iterable[, key=func]) -> value
+next(iterator[, default])
+oct(number) -> string
+open(name[, mode[, buffering]]) -> file object
+ord(c) -> integer
+pow(x, y[, z]) -> number
+print(value, ..., sep=' ', end='\n', file=sys.stdout)  ≥3
+range([start,] stop[, step]) -> ≤2: list of integers  ≥3: range object
+raw_input([prompt]) -> string
+reduce(function, sequence[, initial]) -> ≤2: value
+reload(module) -> module
+repr(object) -> string
+reversed(sequence) -> reverse iterator
+round(number[, ndigits]) -> floating point number
+setattr(object, name, value)
+sorted(iterable, cmp=None [≤2], key=None, reverse=False) --> new sorted list
+sum(iterable[, start]) -> value
+type(object) -> the object's type
+type(name, bases, dict) -> a new type
+unichr(i) -> Unicode character
+vars([object]) -> dictionary
+xrange([start,] stop[, step]) -> ≤2: xrange object
+zip(*iterables) -> ≤2: [(seq1[0], seq2[0] ...), (...)] ≥3: zip object
+__import__(name, globals={}, locals={}, fromlist=[], level=-1) -> module
