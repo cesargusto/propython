@@ -28,12 +28,18 @@ class Janela(Frame):
         self.previous_y = CANVAS_SIZE/2
         self.bt1_down = False
         self.bolinhas = []
+        self.after(50, self.gravidade)
 
     def gravidade(self):
-        for b in self.bolinhas:
-            import pdb;
-            pdb.set_trace()
-            self.canvas.coords(b, b.x, b.y, x, )
+        for l in self.bolinhas:
+            b, x, y = l
+            y2 = y + 2
+            self.canvas.coords(b, x-MARK_SIZE/2,
+                                  y2-MARK_SIZE/2,
+                                  x+MARK_SIZE/2,
+                                  y2+MARK_SIZE/2)
+            l[2] = y2
+        self.after(50, self.gravidade)
 
     def atualiza(self, joystick, mask):
         char = joystick.read(1) # Python3: UnicodeDecodeError
@@ -45,11 +51,13 @@ class Janela(Frame):
                                           'press' if position else 'release')
                 self.bt1_down = bool(position)
                 if self.bt1_down:
-                    self.canvas.create_oval(self.previous_x-MARK_SIZE/2,
+                    self.bolinhas.append([self.canvas.create_oval(self.previous_x-MARK_SIZE/2,
                                                  self.previous_y-MARK_SIZE/2,
                                                  self.previous_x+MARK_SIZE/2,
                                                  self.previous_y+MARK_SIZE/2,
-                                                 fill="green")
+                                                 fill="green"),
+                                                 self.previous_x,
+                                                 self.previous_y])
             elif group == 2:
                 axis = 'XYZ'[control]
                 descr = '%s axis %d' % (axis, position)
