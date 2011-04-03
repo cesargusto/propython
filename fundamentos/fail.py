@@ -4,11 +4,12 @@
 Watt, David - Programming Language Design Concepts
 Section 16.3 Case study: Python (p. 425)
 
-"""The compiler will not reject code that might fail with a type error,
+"""
+The compiler will not reject code that might fail with a type error,
 nor even code that will certainly fail, such as:
 
 def fail(x):
-  print x+1, x[0]
+    print x+1, x[0]
 """
 
 That is wrong, as demonstrated by this test:
@@ -26,7 +27,6 @@ That is wrong, as demonstrated by this test:
     ...     print x+1, x[0]
     >>> fail(ident)
     id0004 i
-
 
 '''
 
