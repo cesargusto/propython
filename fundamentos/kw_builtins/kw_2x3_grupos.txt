@@ -1,0 +1,56 @@
+
+Operadores
+-----------
+
+… and …
+… or …
+not …
+… in …
+… not in …
+… is …
+… is not …
+… if … else …
+
+Controle de fluxo
+------------------
+
+assert …
+raise …
+while … break … continue … else
+if … elif … else
+try … except … as … else … finally
+for … break … continue … else
+return …
+… yield …
+with … as
+
+
+Controle do namespace
+------------------------------------
+
+import … as
+from … import … as
+del …
+global
+nonlocal (≥3)
+
+Definição de objetos
+---------------------
+
+class …
+def …
+lambda …
+
+Miscelânea
+-----------
+
+exec … (≤2)
+pass
+print … (≤2)
+
+Valores especiais
+------------------
+
+False (≥3)
+None (≥3)
+True (≥3)
