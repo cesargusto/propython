@@ -12,7 +12,7 @@ print "Connected to server"
 
 def console():
     while True:
-        line = raw_input('> ')
+        line = raw_input('?> ')
         if not line.strip():
             resp = raw_input('quit? [y]/n ')
             if resp.strip() in 'Yy':
@@ -23,5 +23,5 @@ def console():
 for line in console():
     sock.sendall(line+'\n')
     response = sock.recv(8192)
-    print "Received:", response
+    print "R:", response
 sock.close()
