@@ -1,4 +1,5 @@
 # coding: utf-8
+# Módulo testado em Python 2 e Python 3
 
 '''
 Um ``Treco`` pode ser inicializado com quaisquer argumentos, e os argumentos
@@ -8,12 +9,12 @@ se tornam seus atributos::
     >>> t
     Treco(a=1, b=2)
 
-Note que a representação do ``Treco`` é uma string igual ao código que
+Note que a representação do ``Treco`` é uma string com o código que
 inicializaria uma instância igual de ``Treco``.
 
-O dunder-setater (é assim que se fala __setattr__) é programado para (1)
-incluir ou sobrecrever o atributo no __dict__ da instância, e também fazer
-um print para mostrar o que foi feito::
+O dunder-setater (é assim que se fala __setattr__) é programado para
+(1) criar ou sobrecrever o atributo no __dict__ da instância, e 
+(2) fazer um ``print`` para mostrar o que foi feito::
 
     >>> x = Treco()
     >>> x.a = 10
@@ -25,7 +26,7 @@ um print para mostrar o que foi feito::
     >>> x
     Treco(a=10, b=20)
 
-Agora o teste da atribuição em cascada::
+Agora o teste da atribuição em cascata::
 
     >>> x.a = x.b = x.c = 3
     self.__setattr__('a', 3)
@@ -35,7 +36,7 @@ Agora o teste da atribuição em cascada::
 Note que as atribuições acontecem da esquerda para a direita, muito embora
 a gente saiba que o valor a ser atribuído (3 neste caso) é avaliado primeiro.
 
-Eis uma pequena prova disso:
+Eis uma pequena prova disso::
 
     >>> def nove():
     ...     print('nove!')
@@ -45,8 +46,6 @@ Eis uma pequena prova disso:
     self.__setattr__('a', 9)
     self.__setattr__('b', 9)
     self.__setattr__('c', 9)
-
-
 
 '''
 
