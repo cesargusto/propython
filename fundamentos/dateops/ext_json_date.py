@@ -1,6 +1,6 @@
-#!/usr/bin/env/python
+#!/usr/bin/env python
 """
-Convert an ISO-8601 date string to the miliseconds from the epoch 
+Convert an ISO-8601 date string to the miliseconds from the epoch
 integer required by the Extended JSON format used by MongoDB [1]
 
 [1] http://www.mongodb.org/display/DOCS/Mongo+Extended+JSON
