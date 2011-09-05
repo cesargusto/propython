@@ -25,26 +25,18 @@ Usage::
 from datetime import datetime, timedelta
 
 # ISO-8601 format extended to include fractions of seconds
-# used by OpenLibrary JSON dumps
-ISO_8601 = '%Y-%m-%dT%H:%M:%S'
-ISO_8601_EXTENDED = ISO_8601 + '.%f'
+# as seen in OpenLibrary JSON dumps
+ISO_8601 = '%Y-%m-%dT%H:%M:%S.%f'
 
+# use of timedelta.total_seconds suggested by Allison Vollmann
 if hasattr(timedelta, 'total_seconds'): # for Python >= 2.7
-    # use of timedelta.total_seconds suggested by Allison Vollmann
     def datestr2milis(dt_str):
-        dt = datetime.strptime(dt_str, ISO_8601_EXTENDED)
-        return int((dt - datetime(1970, 1, 1)).total_seconds() * 1000)
-        
+        dt = datetime.strptime(dt_str, ISO_8601)
+        return int((delta).total_seconds() * 1000)
 else: # for Python < 2.7
-    import calendar
-
     def datestr2milis(dt_str):
-        dt_obj = datetime.strptime(dt_str, ISO_8601_EXTENDED)
-        # make an UTC time tuple, losing fractional part of seconds,
-        # then convert the time tuple to integer seconds from the epoch
-        dt_secs = calendar.timegm(dt_obj.utctimetuple())
-        # divide microseconds by 1000 and add to miliseconds from the epoch
-        return int(float(dt_obj.microsecond)/1000 + dt_secs * 1000)
+        td = datetime.strptime(dt_str, ISO_8601) - datetime(1970, 1, 1)
+        return int((td.microseconds + (td.seconds + td.days * 24 * 3600) * 10**6) / 1000)
 
 if __name__=='__main__':
     import doctest

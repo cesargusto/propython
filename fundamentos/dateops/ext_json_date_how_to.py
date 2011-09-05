@@ -6,22 +6,23 @@ integer required by the Extended JSON format used by MongoDB [1]
 [1] http://www.mongodb.org/display/DOCS/Mongo+Extended+JSON
 """
 
+############################################
+# THE VERY LONG WAY
 import calendar
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # ISO-8601 format extended to include fractions of seconds
 # used by OpenLibrary JSON dumps
-ISO_8601 = '%Y-%m-%dT%H:%M:%S'
-ISO_8601_EXTENDED = ISO_8601 + '.%f'
+ISO_8601 = '%Y-%m-%dT%H:%M:%S.%f'
 
 # (0) start with a an extended date string
 dt_str = '2008-04-01T03:28:50.625999'
 print 'dt_str   ', dt_str
 
 # (1) parse it to build a datetime instance
-dt_obj = datetime.strptime(dt_str, ISO_8601_EXTENDED)
+dt_obj = datetime.strptime(dt_str, ISO_8601)
 print 'dt_obj   ', repr(dt_obj)
-assert dt_str == dt_obj.strftime(ISO_8601_EXTENDED)
+assert dt_str == dt_obj.strftime(ISO_8601)
 
 # (2) make an UTC time tuple, losing fractional part of seconds
 dt_tuple = dt_obj.utctimetuple()
@@ -47,3 +48,16 @@ print 'dt_milis ', dt_milis
 #     also appear in the original datetime string
 uni_str, mili_str = dt_str.split('.')
 assert str(dt_milis).endswith(uni_str[-1]+mili_str[:3])
+
+############################################
+# THE SHORT WAY
+if hasattr(timedelta, 'total_seconds'): # for Python >= 2.7
+    def datestr2milis(dt_str):
+        dt = datetime.strptime(dt_str, ISO_8601)
+        return int((delta).total_seconds() * 1000)
+else: # for Python < 2.7
+    def datestr2milis(dt_str):
+        td = datetime.strptime(dt_str, ISO_8601) - datetime(1970, 1, 1)
+        return int((td.microseconds + (td.seconds + td.days * 24 * 3600) * 10**6) / 1000)
+
+print 'dt_milis ', datestr2milis(dt_str)
