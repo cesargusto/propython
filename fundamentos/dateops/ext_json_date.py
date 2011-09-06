@@ -31,9 +31,9 @@ ISO_8601 = '%Y-%m-%dT%H:%M:%S.%f'
 # use of timedelta.total_seconds suggested by Allison Vollmann
 if hasattr(timedelta, 'total_seconds'): # for Python >= 2.7
     def datestr2milis(dt_str):
-        dt = datetime.strptime(dt_str, ISO_8601)
-        return int((delta).total_seconds() * 1000)
-else: # for Python < 2.7
+        td = datetime.strptime(dt_str, ISO_8601) - datetime(1970, 1, 1)
+        return int(td.total_seconds() * 1000)
+else: # for Python 2.6
     def datestr2milis(dt_str):
         td = datetime.strptime(dt_str, ISO_8601) - datetime(1970, 1, 1)
         return int((td.microseconds + (td.seconds + td.days * 24 * 3600) * 10**6) / 1000)
