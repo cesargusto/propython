@@ -1,0 +1,18 @@
+Ensinando OO com Python, Django e Pygame
+
+Nível: Iniciante
+
+Resumo:
+
+O principal motivo que levou o MIT a escolher Python como linguagem em sua
+disciplina de introdução à computação foi a riqueza das bibliotecas
+disponíveis para todo tipo de aplicação. Ao mesmo tempo, o ensino introdutório
+de Orientação a Objetos muitas vezes se limita a exemplos simplórios de
+"animais", "veículos" etc. implementados da modo abstrato e sem qualquer
+interatividade.
+
+Nesta palestra será apresentada uma abordagem para o ensino da teoria de OO
+apoiada em exemplos usando o framework Django e a biblioteca Pygame,
+permitindo a construção de exemplos simples, porém muito mais ricos do que os
+usuais, apresentando aos estudantes na prática os benefícios da orientação a
+objetos.

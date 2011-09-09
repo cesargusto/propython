@@ -1,0 +1,16 @@
+Atributos, propriedades e descritores: encapsulamento e metaprogramação
+
+Nivel: Avançado
+
+Resumo:
+Python tem um excelente suporte a encapsulamento e metaprogramação envolvendo atributos através da facilidade de alto-nível das propriedades e de outros mecanismos de nível mais baixo, como os métodos especiais de controle de acesso e os descritores. Esses conceitos são tão poderosos que estão sendo adotados gradualmente em JavaScript.
+
+Tópicos a serem abordados:
+
+* revisão de conceitos sobre atributos em Python
+* métodos especiais para metaprogramação
+* o celebrado method_missing de Ruby, e porque ele não faz falta em Python
+* definição de propriedades com property
+* para que servem os descritores: exemplos em Django
+* como criar um descritor
+* como criar uma metaclasse para gerenciar descritores de suas classes de modelo

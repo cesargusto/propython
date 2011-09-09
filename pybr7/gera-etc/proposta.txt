@@ -1,0 +1,16 @@
+Geradores etc: poupe esforço com iteráveis preguiçosos
+
+Nível: Intermediário
+
+Resumo:
+
+Geradores são um recurso relativamente novo e ainda sub-utilizado da linguagem
+Python. Porém o seu uso correto pode produzir programas mais enxutos,
+flexíveis e escaláveis.
+
+Nesta palestra faremos uma revisão dos conceitos fundamentais de sequências,
+iteráveis, iteradores e geradores, mostrando o rico suporte das funções
+embutidas e da biblioteca padrão de Python a estes conceitos poderosos.
+
+Também serão mostrados exemplos práicos de sua aplicação, resultando em
+economia de código e de memória e aumento da escalabilidade.
