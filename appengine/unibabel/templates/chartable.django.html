@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link href="/static/main.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+    <h2>{{ range }}</h2>
+    
+    <p>Coloque o cursor sobre o caractere para ler o nome Unicode e o código decimal.</p>    
+    <p>Clique no caractere para vê-lo ampliado e mais detalhes.</p>    
+    
+    <table class="chartable">
+      <tr>{% for head in col_heads %}<th>{{ head }}</th>{% endfor %}</tr>
+    {% for col in columns %}
+      <tr>
+        {% for char in col %}
+          {% if char.name %}
+          <td class="charcell {{ char.klass }}">{{ char.hex }}<br><a class="{{ char.klass }}"
+            href = "/char/{{ char.hex }}/"
+            id="{{ char.hex }}" title="{{ char.name }} ({{ char.dec}})">{{ char.entity }}</a></td>
+          {% else %}
+          <td bgcolor="lightgray">&nbsp;</td>
+          {% endif %}
+        {% endfor %}  
+      </tr>
+    {% endfor %}
+    </table>
+
+  </body>
+</html>

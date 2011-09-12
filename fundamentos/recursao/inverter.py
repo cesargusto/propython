@@ -1,0 +1,9 @@
+#!/usr/bin/env python
+
+def ler_e_mostrar(s, n):
+    if s:
+        ler_e_mostrar(raw_input('%d > ' % (n + 1)), n + 1)
+        print '%d < %s' % (n, s)
+        
+ler_e_mostrar(raw_input('0 > '), 0)
+

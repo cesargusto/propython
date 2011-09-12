@@ -1,0 +1,9 @@
+Os exemplos destes sub-diretórios estão abandonados.
+
+Eles agora estão sendo trabalhados no projeto das Oficinas Ramgarlic:
+
+http://code.google.com/p/ramgarlic
+
+Por exemplo:
+
+http://code.google.com/p/ramgarlic/source/browse/django/exemplos/pgtest.py
