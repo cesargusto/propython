@@ -5,6 +5,7 @@ syntax: glob
 *.sqlite
 *.wpr
 wingdbstub.py
+.DS_Store
 .twill-history
 build/html/*
 build/doctrees/*
