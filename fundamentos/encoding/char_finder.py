@@ -9,7 +9,7 @@ for i in range(20, sys.maxunicode):
     descr = name(car, 'no-name')
     low_descr = descr.lower()
     if all(word in low_descr for word in words):
-        print u'{0:5d} {0:04x} {1:^5} {2}'.format(i, car, descr)
+        print u'{i:5d} {i:04x} {car:^5} {descr}'.format(**locals())
         count += 1
 
 print '{0} character(s) found'.format(count)
