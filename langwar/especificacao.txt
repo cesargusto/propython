@@ -1,0 +1,24 @@
+
+Imagine um arquivo texto contendo centenas de linhas como estas:
+
+-rwxr-x---  1 accudemo clients     17373 Jun  3  1997 atlantic.gif
+-rwxr-x---  1 accudemo clients    282517 Jun  6  2000 atlantic.pdf
+-rwxr-x---  1 accudemo clients    336579 Jun  6  2000 bahamas.pdf
+-rwxr-x---  1 accudemo clients   1259236 Jun  6  2000 southeast.pdf
+-rwxr-x---  1 accudemo clients       655 Jul  5  1999 storm_facts.txt
+-rwxr-x---  1 accudemo clients      2936 Jul  5  1999 stage1.gif
+-rwxr-x---  1 accudemo clients      3544 May 30  2000 stage1.png
+-rwxr-x---  1 accudemo clients      3274 Jul  5  1999 stage2.gif
+-rwxr-x---  1 accudemo clients       298 Jul  5  1999 where.txt
+
+Escreva na linguagem de sua escolha um programa que leia o arquivo e produza
+um relatório indicando quantos arquivos existem para cada
+tipo de extensão. O relatório deve ser ordenado pela quantidade em
+ordem decrescente.
+
+Por exemplo, para a massa de dados acima, o relatório seria:
+
+ 3 pdf
+ 3 gif
+ 2 txt
+ 1 png
