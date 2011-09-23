@@ -1,3 +1,21 @@
+----------------------
+Locale setting
+----------------------
+
+The 'n' type of the formating specification depends on the current locale setting to determine the decimal and thousands numeric separators. To enable a locale that uses '.' as thousands separator and ',' as decimal separator, install the "de_DE" (German) locale. On Ubuntu GNU Linux 11.04, the command is::
+
+  $ sudo /usr/share/locales/install-language-pack de_DE
+  
+To test the locale setting when formatting, use this:
+
+  >>> import locale
+  >>> locale.setlocale(locale.LC_NUMERIC, 'de_DE.UTF-8')
+  'de_DE.UTF-8'
+  >>> format(12345678.9876,'18.10n')
+  '     12.345.678,99'
+  >>> 
+
+
 -----------------------------
 Python 2.7 Library Reference
 -----------------------------
