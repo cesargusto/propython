@@ -3,6 +3,14 @@ set all_graphs {
     line 
       '{
       {optx tcampot} 
+      {optx ! tconversaot}
+      {optx : tformatot}
+      '}
+  }
+  marcacao2 {
+    line 
+      '{
+      {optx tcampot} 
       {optx ! {or /s /r }}
       {optx : tformatot}
       '}
