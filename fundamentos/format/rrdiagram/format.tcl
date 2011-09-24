@@ -2,7 +2,7 @@ set all_graphs {
   marcacao {
     line 
       '{
-      {optx tcampot} 
+      {optx targumentot} 
       {optx ! tconversaot}
       {optx : tformatot}
       '}
@@ -10,12 +10,12 @@ set all_graphs {
   marcacao2 {
     line 
       '{
-      {optx tcampot} 
+      {optx targumentot} 
       {optx ! {or /s /r }}
       {optx : tformatot}
       '}
   }
-  campo {
+  argumento {
     line {or tposicaot tnomet}
     {optx
       {loop
