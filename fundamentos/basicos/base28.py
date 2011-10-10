@@ -11,14 +11,11 @@ BASE28 = ''.join(d for d in BASE36 if d not in '1l0aeiou')
 def reprbase(n, digitos=BASE28):
     ''' devolve a representação do valor `n` usando `digitos` '''
     base = len(digitos)
-    s = []
+    s = ''
     while n:
         n, d = divmod(n, base)
-        s.insert(0, digitos[d])
-    if s:    
-        return ''.join(s)
-    else:
-        return digitos[0]
+        s = digitos[d] + s
+    return s if s else digitos[0]
     
 def calcbase(s, digitos=BASE28):
     ''' devolve o valor numérico de `s` na base representada pelos dígitos '''

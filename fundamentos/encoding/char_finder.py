@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from unicodedata import name
 import sys
 
