@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+    <title>Lista de Filmes</title>
+</head>
+<body>
+    <h1>Lista de Filmes</h1>
+    
+    <ol>
+        {% for filme in object_list %}
+            <li><a href="{{ filme.get_absolute_url }}"
+                >{{ filme.titulo }} ({{ filme.ano }})</a></li>
+        {% endfor %}
+    </ol>
+    <hr>
+    <strong>Cadastrar novo filme</strong>
+    <ul>
+        <li><a href="{% url demofilmes.simples %}">apenas título e ano</a></li>
+        <li><a href="{% url demofilmes.cadastrar %}">título, ano e créditos</a></li>
+    </ul>
+</body>
+</html>

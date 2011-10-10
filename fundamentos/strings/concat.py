@@ -1,0 +1,40 @@
+#/usr/bin/env python
+# coding: utf-8
+
+''' teste do "benchmark" publicado em:
+    http://www.phpavancado.net/node/409
+'''
+
+import timeit
+
+def cronometrar(codigo):
+    vezes = 100
+    t = timeit.Timer(stmt=codigo)
+    print "%.2f usec/pass" % ((10**6) * t.timeit(number=vezes)/vezes)
+
+
+codigo = """\
+s = ''
+e = 0.0
+f = 1.0
+for i in range(1,100001):
+    s += 'teste'
+    e += 1.0/f
+    f *= i
+"""       
+
+cronometrar(codigo)
+
+codigo = """\
+s = []
+e = 0.0
+f = 1.0
+for i in range(1,100001):
+    s.append('teste')
+    e += 1.0/f
+    f *= i
+s = ''.join(s)    
+"""       
+
+cronometrar(codigo)
+
