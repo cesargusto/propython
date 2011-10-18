@@ -22,7 +22,6 @@
     C
 '''
 
-
 def busca_letra(ultima='C'):
     cod = ord('A')
     while chr(cod) <= ultima:
@@ -34,5 +33,3 @@ def busca_letra(ultima='C'):
 if __name__=='__main__':
     import doctest
     doctest.testmod()
-    
-
