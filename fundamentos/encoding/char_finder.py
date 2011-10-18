@@ -2,9 +2,12 @@
 from unicodedata import name
 import sys
 
-words = [s.lower() for s in sys.argv[1:]]
+if len(sys.argv) > 1:
+    words = sys.argv[1:]
+else:
+    words = raw_input('search words: ').split()
 
-#word = sys.argv[1].lower()
+words = [s.lower() for s in words]
 
 count = 0
 for i in range(20, sys.maxunicode):
@@ -12,7 +15,6 @@ for i in range(20, sys.maxunicode):
     descr = name(car, 'no-name')
     low_descr = descr.lower()
     if all(word in low_descr for word in words):
-    #if word in low_descr:  
         print u'{i:5d} {i:04x} {car:^5} {descr}'.format(**locals())
         count += 1
 
