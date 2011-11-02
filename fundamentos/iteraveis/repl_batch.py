@@ -34,3 +34,4 @@ if __name__=='__main__':
         line_reader = file_reader(sys.argv[1])
         echo = False
     repl(line_reader, echo)
+

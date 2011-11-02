@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #reports how many seconds you are off the atomic clock.
 #Positive mean you are ahead, negative means you are behind.
 import urllib,re,time
@@ -15,7 +15,7 @@ elif diferenca < 0:
 	erro = 'atrasada'
 	diferenca = -diferenca
 else:
-	erro = None
+	erro = False
 if erro: 
 	print 'Hora local %s em %ss' % (erro, diferenca)
 else:
