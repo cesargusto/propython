@@ -23,11 +23,11 @@ def utf8(code):
         bytes = []
         prefix = prefix_mask = 128
         for b in range(needed-1):
-            bytes.insert(0, (work_code&63)+128)
-            prefix_mask = prefix_mask >> 1
+            bytes.insert(0, (work_code&63)|128)
+            prefix_mask >>= 1
             prefix += prefix_mask
             work_code /= 64
-        res = [prefix+work_code] + bytes
+        res = [prefix|work_code] + bytes
     assert unichr(code).encode('utf-8') == ''.join([chr(b) for b in res])
     return res
 
