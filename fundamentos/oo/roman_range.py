@@ -106,10 +106,21 @@ class RomanRange(collections.Sequence):
             self.start = a
             self.stop = b
         self.step = step
-        if not 0 <= self.start <= 5000:
-            raise ValueError('start number out of range (must be 0..4999)')
-        if not 0 <= self.stop <= 5000:
-            raise ValueError('stop number out of range (must be 1..5000)')
+        min_start, max_start = 0, 4999
+        if step > 0:
+            min_stop, max_stop = 1, 5000
+            step_sign = 'positive'
+        elif step < 0:
+            min_stop, max_stop = 0, 4999
+            step_sign = 'negative'
+        else:
+            raise ValueError('step argument must not be zero')
+        if not min_start <= self.start <= max_start:
+            msg = 'start argument out of range (must be %s..%s)'
+            raise ValueError(msg % (min_start, max_start))
+        if not min_stop <= self.stop <= max_stop:
+            msg = 'stop argument out of range (must be %s..%s for %s step)'
+            raise ValueError(msg % (min_stop, max_stop, step_sign))
         if any(not isinstance(n, int) for n in (self.start, self.stop, self.step)):
             raise TypeError('all arguments must be integers')
 
