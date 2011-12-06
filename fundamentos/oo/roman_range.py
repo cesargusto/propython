@@ -100,12 +100,15 @@ class RomanRange(collections.Sequence):
     """A xrange clone which produces sequences of Roman numerals"""
     def __init__(self, a, b=None, step=1):
         if b is None:
-            self.start = 0
-            self.stop = a
+            self.start, self.stop = 0, a
         else:
-            self.start = a
-            self.stop = b
+            self.start, self.stop = a, b
         self.step = step
+        self.__check_args(self.start, self.stop, self.step)
+
+    def __check_args(self, start, stop, step):
+        if any(not isinstance(n, int) for n in (start, stop, step)):
+            raise TypeError('all arguments must be integers')
         min_start, max_start = 0, 4999
         if step > 0:
             min_stop, max_stop = 1, 5000
@@ -115,14 +118,12 @@ class RomanRange(collections.Sequence):
             step_sign = 'negative'
         else:
             raise ValueError('step argument must not be zero')
-        if not min_start <= self.start <= max_start:
+        if not min_start <= start <= max_start:
             msg = 'start argument out of range (must be %s..%s)'
             raise ValueError(msg % (min_start, max_start))
-        if not min_stop <= self.stop <= max_stop:
+        if not min_stop <= stop <= max_stop:
             msg = 'stop argument out of range (must be %s..%s for %s step)'
             raise ValueError(msg % (min_stop, max_stop, step_sign))
-        if any(not isinstance(n, int) for n in (self.start, self.stop, self.step)):
-            raise TypeError('all arguments must be integers')
 
     def __getitem__(self, index):
         length = len(self)
