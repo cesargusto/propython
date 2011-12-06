@@ -58,14 +58,27 @@ Negative steps generate decrementing sequences::
     >>> list(RomanRange(5, 0, -3))
     ['V', 'II']
 
-Slices are unsupported (they are not supported in xranges either)::
+Because ``RomanRange`` is a subclass of ``Sequence`` we must implement the
+``__getitem__`` and ``__len__`` methods, but in return we inherit five mixin
+methods::
 
-    >>> r4 = RomanRange(1, 10)
-    >>> r4[1:4]
-    Traceback (most recent call last):
-      ...
-    TypeError: sequence index must be integer, not 'slice'
+    >>> r4 = RomanRange(1, 7)
+    >>> 'III' in r4, 'X' in r4          # mixin 1: __contains__
+    (True, False)
+    >>> ' '.join(r4)                    # mixin 2: __iter__
+    'I II III IV V VI'
+    >>> ' '.join(reversed(r4))          # mixin 3: __reversed__
+    'VI V IV III II I'
+    >>> r4.index('III')                 # mixin 4: index
+    2
+    >>> r4.count('I'), r4.count('L')    # mixin 5: count
+    (1, 0)
 
+Roman numerals from I to M can only represent up to 4999:
+
+    >>> r5 = RomanRange(5000)
+    >>> r5[-1]   # 4999
+    'MMMMCMXCIX'
 """
 
 import collections
@@ -93,9 +106,11 @@ class RomanRange(collections.Sequence):
             self.start = a
             self.stop = b
         self.step = step
-        if self.start < 0 or self.stop > 4999:
-            raise ValueError('number out of range (must be 1..4999)')
-        if any(int(n) != n for n in (self.start, self.stop, self.step)):
+        if not 0 <= self.start <= 5000:
+            raise ValueError('start number out of range (must be 0..4999)')
+        if not 0 <= self.stop <= 5000:
+            raise ValueError('stop number out of range (must be 1..5000)')
+        if any(not isinstance(n, int) for n in (self.start, self.stop, self.step)):
             raise TypeError('all arguments must be integers')
 
     def __getitem__(self, index):
