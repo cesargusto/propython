@@ -1,0 +1,239 @@
+ZA	África do Sul	
+AT	Áustria	
+IN	Índia	
+AF	Afeganistão	
+AL	Albânia	
+DE	Alemanha	
+AD	Andorra	
+AO	Angola	
+AI	Anguila	--
+AQ	Antártida	--
+AG	Antígua e Barbuda	
+AN	Antilhas Neerlandesas	--
+SA	Arábia Saudita	
+DZ	Argélia	
+AR	Argentina	
+AM	Armênia	
+AW	Aruba	--
+AU	Austrália	
+AZ	Azerbaijão	
+BE	Bélgica	
+BA	Bósnia e Herzegovina	
+BS	Bahamas	
+BD	Bangladesh	
+BH	Bahrein	
+BB	Barbados	
+BZ	Belize	
+BJ	Benim	
+BM	Bermudas	--
+BY	Bielorrússia	
+MM	Birmânia	
+BO	Bolívia	
+BW	Botsuana	
+BR	Brasil	
+BN	Brunei	
+BG	Bulgária	
+BI	Burúndi	
+BF	Burquina Faso	
+BT	Butão	
+CV	Cabo Verde	
+CM	Camarões	
+KH	Camboja	
+CA	Canadá	
+QA	Catar	
+KZ	Cazaquistão	
+TD	Chade	
+CL	Chile	
+CN	China	
+CY	Chipre	
+CO	Colômbia	
+KM	Comores	
+CG	Congo-Brazzaville	
+CD	Congo-Kinshasa	
+KP	Coreia do Norte	
+KR	Coreia do Sul	
+CR	Costa Rica	
+CI	Costa do Marfim	
+HR	Croácia	
+CU	Cuba	
+DK	Dinamarca	
+DM	Domínica	
+EG	Egito	
+AE	Emirados Árabes Unidos	
+EC	Equador	
+ER	Eritreia	
+SK	Eslováquia	
+SI	Eslovênia	
+ES	Espanha	
+EE	Estônia	
+US	Estados Unidos	
+ET	Etiópia	
+FO	Faroé	--
+FJ	Fiji	
+PH	Filipinas	
+FI	Finlândia	
+FR	França	
+GM	Gâmbia	
+GA	Gabão	
+GH	Gana	
+GE	Geórgia	
+GS	Geórgia do Sul e Sandwich do Sul	--
+GI	Gibraltar	--
+GR	Grécia	
+GD	Granada	
+GL	Groenlândia	--
+GP	Guadalupe	--
+GU	Guame	--
+GT	Guatemala	
+GY	Guiana	
+GF	Guiana Francesa	--
+GN	Guiné	
+GQ	Guiné Equatorial	
+GW	Guiné-Bissau	
+HT	Haiti	
+HN	Honduras	
+HK	Hong Kong	--
+HU	Hungria	
+YE	Iêmen	
+BV	Ilha Bouvet	--
+NF	Ilha Norfolk	--
+CX	Ilha do Natal	--
+KY	Ilhas Caimão	--
+CK	Ilhas Cook	--
+FK	Ilhas Falkland	--
+HM	Ilhas Heard e McDonald	--
+MH	Ilhas Marshall	
+UM	Ilhas Menores Distantes dos Estados Unidos	--
+SB	Ilhas Salomão	
+TC	Ilhas Turcas e Caicos	--
+VI	Ilhas Virgens Americanas	--
+VG	Ilhas Virgens Britânicas	--
+CC	Ilhas dos Cocos	--
+ID	Indonésia	
+IR	Iran	
+IQ	Iraque	
+IE	Irlanda	
+IS	Islândia	
+IL	Israel	
+IT	Itália	
+JM	Jamaica	
+JP	Japão	
+DJ	Jibuti	
+JO	Jordânia	
+YU	Yugoslávia	
+KW	Kuwait	
+LB	Líbano	
+LY	Líbia	
+LA	Laos	
+LS	Lesoto	
+LV	Letónia	
+LR	Libéria	
+LI	Liechtenstein	
+LT	Lituânia	
+LU	Luxemburgo	
+MX	México	
+MC	Mônaco	
+MO	Macau	--
+MK	Macedônia	
+MG	Madagascar	
+MY	Malásia	
+MW	Malawi	
+MV	Maldivas	
+ML	Mali	
+MT	Malta	
+MP	Marianas do Norte	--
+MA	Marrocos	
+MQ	Martinica	--
+MU	Maurícia	
+MR	Mauritânia	
+YT	Mayotte	--
+FM	Micronésia	
+MZ	Moçambique	
+MD	Moldávia	
+MN	Mongólia	
+MS	Monserrate	--
+NE	Níger	
+NA	Namíbia	
+NR	Nauru	
+NP	Nepal	
+NI	Nicarágua	
+NG	Nigéria	
+NU	Niue	--
+NO	Noruega	
+NC	Nova Caledônia	--
+NZ	Nova Zelândia	
+OM	Omã	
+NL	Países Baixos	
+PW	Palau	
+PA	Panamá	
+PG	Papua-Nova Guiné	
+PK	Paquistão	
+PY	Paraguai	
+PE	Peru	
+PN	Pitcairn	--
+PL	Polônia	
+PF	Polinésia Francesa	--
+PR	Porto Rico	--
+PT	Portugal	
+KE	Quênia	
+KG	Quirguizistão	
+KI	Quiribáti	
+RU	Rússia	
+GB	Reino Unido	
+CF	República Centro-Africana	
+CZ	República Checa	
+DO	República Dominicana	
+RE	Reunião	--
+RO	Romênia	
+RW	Ruanda	
+KN	São Cristóvão e Neves	
+SM	São Marinho	
+PM	São Pedro e Miquelon	--
+ST	São Tomé e Príncipe	
+VC	São Vicente e Granadinas	
+SY	Síria	
+SV	El Salvador	
+WS	Samoa	
+AS	Samoa Americana	--
+SH	Santa Helena	--
+LC	Santa Lúcia	
+EH	Sahara Ocidental	
+SC	Seicheles	
+SN	Senegal	
+SL	Serra Leoa	
+SG	Singapura	
+SO	Somália	
+LK	Sri Lanka	
+SE	Suécia	
+CH	Suíça	
+SZ	Suazilândia	
+SD	Sudão	
+SR	Suriname	
+SJ	Svalbard e Jan Mayen	--
+TH	Tailândia	
+TW	Taiwan	
+TJ	Tajiquistão	
+TZ	Tanzânia	
+IO	Território Britânico do Oceano Índico	--
+TF	Territórios Austrais Franceses	--
+TL	Timor Leste	--
+TG	Togo	
+TK	Tokelau	--
+TO	Tonga	
+TT	Trindade e Tobago	
+TN	Tunísia	
+TM	Turcomenistão	
+TR	Turquia	
+TV	Tuvalu	
+UA	Ucrânia	
+UG	Uganda	
+UY	Uruguai	
+UZ	Usbequistão	
+VU	Vanuatu	
+VA	Vaticano	
+VE	Venezuela	
+VN	Vietname	
+WF	Wallis e Futuna	--
+ZM	Zâmbia	
+ZW	Zimbabwe
+

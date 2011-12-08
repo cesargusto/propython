@@ -1,0 +1,14 @@
+syntax: glob
+
+*.pyc
+*.class
+*~
+*.sqlite
+*.wpr
+wingdbstub.py
+.DS_Store
+.twill-history
+build/html/*
+build/doctrees/*
+web.py-*
+www/webpy/web

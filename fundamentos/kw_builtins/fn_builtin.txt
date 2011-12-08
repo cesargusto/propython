@@ -1,0 +1,56 @@
+__import__
+abs
+all
+any
+apply (≤2)
+ascii (≥3)
+bin
+callable (≤2)
+chr
+cmp (≤2)
+coerce (≤2)
+compile
+delattr
+dir
+divmod
+eval
+exec (≥3)
+execfile (≤2)
+filter (≤2: function, ≥3: class)
+format
+getattr
+globals
+hasattr
+hash
+hex
+id
+input (2≠3)
+intern (≤2)
+isinstance
+issubclass
+iter
+len
+locals
+map (≤2: function, ≥3: class)
+max
+min
+next
+oct
+open
+ord
+pow
+print (≥3)
+range (≤2: function, ≥3: class)
+raw_input (≤2)
+reduce (≤2)
+reload (≤2)
+repr
+reversed
+round
+setattr
+sorted
+sum
+unichr (≤2)
+vars
+xrange
+zip (≤2: function, ≥3: class)

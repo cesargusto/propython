@@ -1,0 +1,88 @@
+
+Operações com iteráveis ou sequências
+--------------------------------------
+
+all(iterable) -> bool
+any(iterable) -> bool
+filter(function or None, sequence) -> ≤2: list, tuple, or string; ≥3: filter object
+iter(iterable) -> iterator
+len(object) -> integer
+map(function, *iterables) -> ≤2: list ≥3: map object
+max(iterable[, key=func]) -> value
+min(iterable[, key=func]) -> value
+next(iterator[, default])
+range([start,] stop[, step]) -> ≤2: list of integers  ≥3: range object
+reduce(function, sequence[, initial]) -> ≤2: value
+reversed(sequence) -> reverse iterator
+sorted(iterable, cmp=None [≤2], key=None, reverse=False) --> new sorted list
+sum(iterable[, start]) -> value
+xrange([start,] stop[, step]) -> ≤2: xrange object
+zip(*iterables) -> ≤2: [(seq1[0], seq2[0] ...), (...)] ≥3: zip object
+
+
+Operações com números
+----------------------
+
+abs(number) -> number
+bin(number) -> string
+chr(i) -> ≤2: character ≥3: Unicode character
+divmod(x, y) -> (div, mod)
+hex(number) -> string
+oct(number) -> string
+pow(x, y[, z]) -> number
+round(number[, ndigits]) -> floating point number
+unichr(i) -> Unicode character
+
+Entrada e saída
+----------------
+
+input([prompt]) -> ≤2: value; ≥3: string
+open(name[, mode[, buffering]]) -> file object
+print(value, ..., sep=' ', end='\n', file=sys.stdout)  ≥3
+raw_input([prompt]) -> string
+
+Gerar representações
+---------------------
+
+ascii(object) -> ≥3: string
+format(value[, format_spec]) -> string
+repr(object) -> string
+str(object) -> string (este é o construtor do tipo str)
+ord(c) -> integer
+
+Metaprogramação
+--------------------
+
+apply(object[, args[, kwargs]]) -> ≤2: value
+delattr(object, name)
+getattr(object, name[, default]) -> value
+hasattr(object, name) -> bool
+setattr(object, name, value)
+type(name, bases, dict) -> a new type
+
+Introspecção
+-------------
+
+callable(object) -> ≤2: bool
+dir([object]) -> list of strings
+globals() -> dictionary
+isinstance(object, class-or-type-or-tuple) -> bool
+issubclass(C, B) -> bool
+locals() -> dictionary
+type(object) -> the object's type
+vars([object]) -> dictionary
+
+Miscelânea
+-----------
+
+cmp(x, y) -> ≤2: integer
+coerce(x, y) -> ≤2: (x1, y1)
+compile(source, filename, mode[, flags[, dont_inherit]]) -> code object
+eval(source[, globals[, locals]]) -> value
+exec(object[, globals[, locals]]) ≥3
+execfile(filename[, globals[, locals]]) ≤2
+hash(object) -> integer
+id(object) -> integer
+intern(string) -> ≤2: string
+reload(module) -> ≤2: module
+__import__(name, globals={}, locals={}, fromlist=[], level=-1) -> module
