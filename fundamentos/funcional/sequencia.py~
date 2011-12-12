@@ -1,8 +1,0 @@
-import sys
-def exibir(s): 
-    sys.stdout.write(s)
-
-(lambda y: exibir('bo')) (exibir('lo'))
-print
-
-
