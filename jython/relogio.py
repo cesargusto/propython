@@ -24,7 +24,7 @@ if __name__=='__main__':
     rel.start()
 
 DEMO = '''
-from relogio import Relogio
+from jrelogio import Relogio
 rel = Relogio()
 rel.start()
 
