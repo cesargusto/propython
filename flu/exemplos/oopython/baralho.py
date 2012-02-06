@@ -73,8 +73,8 @@ class Baralho(object):
     def __getitem__(self, pos):
         return self.cartas[pos]
         
-    def __setitem__(self, pos, item):
-        self.cartas[pos] = item
+    #def __setitem__(self, pos, item):
+    #    self.cartas[pos] = item
         
 if __name__ == '__main__':
     from doctest import testmod
