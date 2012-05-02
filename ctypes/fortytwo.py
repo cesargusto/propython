@@ -1,3 +1,14 @@
+# coding: utf-8
+
+'''
+Copiado de:
+"Deixando o interpretador Python maluco por diversão e lucro, ou 
+ Como se livrar de um colega de trabalho desenvolvedor Python"
+
+http://lameiro.wordpress.com/2010/07/18/deixando-o-interpretador-python-maluco/
+
+'''
+
 import ctypes
 
 if hasattr(ctypes.pythonapi, 'Py_InitModule4'):
@@ -23,3 +34,4 @@ forty_two_object = PyIntObject.from_address(id(42))
 forty_two_object.ob_ival = 0
 
 print 42 == 0
+
