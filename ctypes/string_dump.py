@@ -47,8 +47,6 @@ print 'sizeof(PyIntObject) = %s bytes' % ctypes.sizeof(PyIntObject)
 #define PyObject_VAR_HEAD               \
     PyObject_HEAD                       \
     Py_ssize_t ob_size; /* Number of items in variable part */
-#define Py_INVALID_SIZE (Py_ssize_t)-1
-
 '''
 
 '''
@@ -83,7 +81,7 @@ def show_attrs(obj):
     for name in dir(obj):
         if name.startswith('ob_'):
             val = getattr(obj, name)
-            print name, '=', repr(val)
+            print '{0:10} = {1!r}'.format(name,val)
 
 print '*' * 20, 'n = 42'
 n = 42
@@ -100,9 +98,5 @@ s1 = 'ABC'
 obj_s1 = PyStringObject.from_address(id(s1))
 show_attrs(obj_s1)
 
-pprint(dir(obj_s1.ob_sval))
-
 print obj_s1.ob_sval.contents
-
-
 
