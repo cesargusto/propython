@@ -119,26 +119,33 @@ obj_s1 = customPyStringObject(len(s1)).from_address(id(s1))
 print obj_s1.ob_sval
 show_attrs(obj_s1)
 
+def dumpbytes(uniobj):
+    #show_attrs(uniobj)
+    import sys
+    if sys.maxunicode >= 2**16:
+        tam_char = 4
+    else:
+        tam_char = 2
+    print ' '.join('%02x%02x' % (ord(uniobj.ob_str[i]),ord(uniobj.ob_str[i+1])) 
+            for i in range(0, uniobj.ob_length*tam_char, tam_char))
+
+
 u1 = u'A'
 print '*' * 20, "u1 = %r" % u1
 obj_u1 = PyUnicodeObject.from_address(id(u1))
-print ['%02x' % ord(obj_u1.ob_str[i]) for i in range(obj_u1.ob_length*2)]
-show_attrs(obj_u1)
+dumpbytes(obj_u1)
 
 u1 = u'BA'
 print '*' * 20, "u1 = %r" % u1
 obj_u1 = PyUnicodeObject.from_address(id(u1))
-print ['%02x' % ord(obj_u1.ob_str[i]) for i in range(obj_u1.ob_length*2)]
-show_attrs(obj_u1)
+dumpbytes(obj_u1)
 
 u1 = u'ABZ'
 print '*' * 20, "u1 = %r" % u1
 obj_u1 = PyUnicodeObject.from_address(id(u1))
-print ['%02x' % ord(obj_u1.ob_str[i]) for i in range(obj_u1.ob_length*2)]
-show_attrs(obj_u1)
+dumpbytes(obj_u1)
 
 u1 = u'ABYZCD'
 print '*' * 20, "u1 = %r" % u1
 obj_u1 = PyUnicodeObject.from_address(id(u1))
-print ['%02x' % ord(obj_u1.ob_str[i]) for i in range(obj_u1.ob_length*2)]
-show_attrs(obj_u1)
+dumpbytes(obj_u1)
