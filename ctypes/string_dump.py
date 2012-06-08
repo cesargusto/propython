@@ -126,7 +126,7 @@ def dumpbytes(uniobj):
         tam_char = 4
     else:
         tam_char = 2
-    print ' '.join('%02x%02x' % (ord(uniobj.ob_str[i]),ord(uniobj.ob_str[i+1])) 
+    print ' '.join(''.join(['%02x' % ord(uniobj.ob_str[i+j]) for j in range(tam_char)]) 
             for i in range(0, uniobj.ob_length*tam_char, tam_char))
 
 
