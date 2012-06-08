@@ -52,7 +52,7 @@ def shou(unistr):
     obj_uni = PyUnicodeObject.from_address(id(unistr))
     dumpbytes(obj_uni)
 
-for unistr in (u'A', u'AB', u'ABZ', u'氣'):
+for unistr in (u'A', u'AB', u'ABÇ', u'氣'):
     shou(unistr)
 
 if tam_char > 2:
