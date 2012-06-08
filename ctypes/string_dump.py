@@ -91,7 +91,8 @@ typedef struct {
 
 class PyUnicodeObject(PyObject):
     _fields_ = [('ob_length', Py_ssize_t),
-                ('ob_str', ctypes.c_wchar_p),
+                #('ob_str', ctypes.c_wchar_p),
+                ('ob_str', ctypes.POINTER(ctypes.c_char)),
                 ('ob_shash', ctypes.c_long),
                ]
 
@@ -121,23 +122,23 @@ show_attrs(obj_s1)
 u1 = u'A'
 print '*' * 20, "u1 = %r" % u1
 obj_u1 = PyUnicodeObject.from_address(id(u1))
-print obj_u1.ob_str
+print ['%02x' % ord(obj_u1.ob_str[i]) for i in range(obj_u1.ob_length*2)]
 show_attrs(obj_u1)
 
 u1 = u'BA'
 print '*' * 20, "u1 = %r" % u1
 obj_u1 = PyUnicodeObject.from_address(id(u1))
-print obj_u1.ob_str
+print ['%02x' % ord(obj_u1.ob_str[i]) for i in range(obj_u1.ob_length*2)]
 show_attrs(obj_u1)
 
 u1 = u'ABZ'
 print '*' * 20, "u1 = %r" % u1
 obj_u1 = PyUnicodeObject.from_address(id(u1))
-print obj_u1.ob_str
+print ['%02x' % ord(obj_u1.ob_str[i]) for i in range(obj_u1.ob_length*2)]
 show_attrs(obj_u1)
 
 u1 = u'ABYZCD'
 print '*' * 20, "u1 = %r" % u1
 obj_u1 = PyUnicodeObject.from_address(id(u1))
-print obj_u1.ob_str
+print ['%02x' % ord(obj_u1.ob_str[i]) for i in range(obj_u1.ob_length*2)]
 show_attrs(obj_u1)
