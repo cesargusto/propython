@@ -1,3 +1,4 @@
+# coding: utf-8
 import ctypes
 from pprint import pprint
 import sys
@@ -149,3 +150,10 @@ u1 = u'ABYZCD'
 print '*' * 20, "u1 = %r" % u1
 obj_u1 = PyUnicodeObject.from_address(id(u1))
 dumpbytes(obj_u1)
+
+u1 = u'氣'
+print '*' * 20, "u1 = %r" % u1
+obj_u1 = PyUnicodeObject.from_address(id(u1))
+dumpbytes(obj_u1)
+
+
