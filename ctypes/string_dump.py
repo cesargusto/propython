@@ -10,6 +10,12 @@ elif hasattr(ctypes.pythonapi, 'Py_InitModule4_64'):
 else:
     raise TypeError("Cannot determine type of Py_ssize_t")
 
+if sys.maxunicode >= 2**16:
+    tam_char = 4
+else:
+    tam_char = 2
+
+
 
 '''
 /* from cpython/Include/object.h */
@@ -122,11 +128,6 @@ show_attrs(obj_s1)
 
 def dumpbytes(uniobj):
     #show_attrs(uniobj)
-    import sys
-    if sys.maxunicode >= 2**16:
-        tam_char = 4
-    else:
-        tam_char = 2
     print ' '.join(''.join(['%02x' % ord(uniobj.ob_str[i+j]) for j in range(tam_char)]) 
             for i in range(0, uniobj.ob_length*tam_char, tam_char))
 
@@ -156,4 +157,9 @@ print '*' * 20, "u1 = %r" % u1
 obj_u1 = PyUnicodeObject.from_address(id(u1))
 dumpbytes(obj_u1)
 
+if tam_char > 2:
+    u1 = unichr(0x1F004)
+    print '*' * 20, "u1 = %r" % u1
+    obj_u1 = PyUnicodeObject.from_address(id(u1))
+    dumpbytes(obj_u1)
 
