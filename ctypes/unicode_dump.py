@@ -1,4 +1,3 @@
-# coding: utf-8
 import ctypes
 import sys
 
@@ -46,13 +45,12 @@ def dumpbytes(uniobj):
             for i in range(0, uniobj.ob_length*tam_char, tam_char))
 
 def shou(unistr):
-    print '*' * 20
-    print unistr
-    print repr(unistr)
+    print unistr, u'\u2192', repr(unistr)
     obj_uni = PyUnicodeObject.from_address(id(unistr))
+    print ' ', 
     dumpbytes(obj_uni)
 
-for unistr in (u'A', u'AB', u'ABÇ', u'氣'):
+for unistr in (u'A', u'AB', u'AB\xc7', u'\u6c23'):
     shou(unistr)
 
 if tam_char > 2:
