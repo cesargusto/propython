@@ -31,7 +31,8 @@ class Janela(Frame):
         self.canvas.bind('<Double-Button-1>', lambda e: sys.exit())
         self.bind_all('<Left>', lambda e: self.desenhar_tabela(-1))
         self.bind_all('<Right>', lambda e: self.desenhar_tabela(1))
-        self.id_page = 0 # ASCII
+        self.id_pg = 0 # ASCII
+        raiz.geometry('+1800+300')
 
     def mudar_legenda(self, texto):
         if hasattr(self, 'legenda'):
@@ -39,21 +40,21 @@ class Janela(Frame):
         self.legenda = self.canvas.create_text(17.5*CEL, 1.5*CEL, text=texto, **ESTILO_LEGENDA)
 
     def desenhar_tabela(self, muda_cod):
-        self.id_page += muda_cod
-        if self.id_page < 0:
-            self.id_page = len(CODEPAGES)-1
-        elif self.id_page == len(CODEPAGES):
-            self.id_page = 0
-        encoding = CODEPAGES[self.id_page]
+        self.id_pg_anterior = self.id_pg
+        self.id_pg += muda_cod
+        if self.id_pg < 0:
+            self.id_pg = len(CODEPAGES)-1
+        elif self.id_pg == len(CODEPAGES):
+            self.id_pg = 0
+        encoding = CODEPAGES[self.id_pg]
         self.mudar_legenda(encoding)
-        for i in range(8, 16):
-            for j in range(16):
-                self.canvas.delete(self.cels[i][j])
-                try:
-                    car = chr(i*16+j).decode(encoding)
-                except UnicodeDecodeError:
-                    continue
-                self.cels[i][j] = self.canvas.create_text((j+1.5)*CEL, (i+1.5)*CEL, text=car, **ESTILO_CAR)
+        self.canvas.delete('page%d' % self.id_pg_anterior)
+        if self.id_pg > 0: # alem do ASCII
+            for i in range(8, 16):
+                for j in range(16):
+                    car = chr(i*16+j).decode(encoding, 'ignore')
+                    self.cels[i][j] = self.canvas.create_text((j+1.5)*CEL, (i+1.5)*CEL, 
+                        text=car, tag='page%d' % self.id_pg, **ESTILO_CAR)
 
 
     def desenhar_base(self):
@@ -78,5 +79,5 @@ class Janela(Frame):
 
 
 
-
+raiz = Tk()
 Janela(Tk()).mainloop()
