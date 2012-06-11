@@ -13,13 +13,13 @@ ESTILO_ROTULO = dict(anchor='center', font='courier 24', fill='gray')
 ESTILO_CAR = dict(anchor='center', font='times 32', fill='black')        
 ESTILO_LEGENDA = dict(anchor='w', font='helvetica 32', fill='black')
 
-CODEPAGES = ['ASCII', 'cp437', 'cp850', 
+CODEPAGES = ['ASCII', 'cp437', 'cp850', 'MacRoman',
 'ISO-8859-1', 'ISO-8859-2', 'ISO-8859-3', 'ISO-8859-4', 'ISO-8859-5', 'KOI8-R', 
 'ISO-8859-6', 'ISO-8859-7', 'ISO-8859-8', 'ISO-8859-9', 
 # 'ISO-8859-10', 'ISO-8859-6-E', 'ISO-8859-6-I', 'ISO-8859-8-E', 'ISO-8859-8-I',
 # 'ISO-8859-14', 'ISO-8859-16', 'Shift_JIS', 'Windows-31J'
 'ISO-8859-13', 'ISO-8859-15', 
-'Windows-1252', 'Windows-1251', 'MacRoman']     
+'Windows-1252', 'Windows-1251' ]     
 
 class Janela(Frame):
     def __init__(self, raiz):
