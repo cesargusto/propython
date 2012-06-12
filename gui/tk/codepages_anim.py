@@ -3,8 +3,20 @@
 http://effbot.org/tkinterbook/canvas.htm
 ''' 
 
+from __future__ import unicode_literals
+
 import sys
-from Tkinter import Tk, Frame, Canvas
+try:
+    # python 3
+    import Tkinter as tk
+    def bytecar(cod):
+        return chr(cod)
+except ImportError:
+    # python 2.6
+    import tkinter as tk
+    def bytecar(cod):
+        return bytes([cod])
+
 import math
 
 CEL = 44
@@ -77,10 +89,10 @@ class Glifo(object):
         self.partir(24*CEL, y)
         self.saindo = True
 
-class Janela(Tk):
+class Janela(tk.Tk):
     def __init__(self, raiz):
-        Tk.__init__(self, raiz)
-        self.canvas = Canvas(raiz, width=CEL*17+LATERAL, height=CEL*17)
+        tk.Tk.__init__(self, raiz)
+        self.canvas = tk.Canvas(raiz, width=CEL*17+LATERAL, height=CEL*17)
         self.cels = [[0]*16 for i in range(16)]
         self.id_pg = 0 # ASCII
         self.canvas.pack()
@@ -114,10 +126,10 @@ class Janela(Tk):
         if self.id_pg > 0: # alem do ASCII
             for i in range(8, 16):
                 for j in range(16):
-                    unicar = chr(i*16+j).decode(encoding, 'ignore')
+                    unicar = bytecar(i*16+j).decode(encoding, 'ignore')
                     if not unicar:
                         continue
-                    if i == 8 and j == 5 and unicar == u'\x85':
+                    if i == 8 and j == 5 and unicar == '\x85':
                         continue # ignorar gremlim na forma de Á dentro de um quadrado
                     glifo = Glifo.ativos.get(unicar)
                     if glifo is None:
@@ -133,7 +145,7 @@ class Janela(Tk):
     def atualizar(self):
         # print Glifo.movendo.keys()
         if Glifo.movendo:
-            for unicar, glifo in Glifo.movendo.items():
+            for unicar, glifo in list(Glifo.movendo.items()):
                 glifo.mover()
             self.after(40, self.atualizar)
         else:
@@ -153,13 +165,13 @@ class Janela(Tk):
             c.create_line((i+1)*CEL, CEL, (i+1)*CEL, 17*CEL)
             if i < 16:
                 # rótulo
-                c.create_text((i+1.6)*CEL, CEL/2, text=u'_%X'%i, **ESTILO_ROTULO)
-                c.create_text(CEL/2, (i+1.5)*CEL, text=u'%X0'%i, **ESTILO_ROTULO)
+                c.create_text((i+1.6)*CEL, CEL/2, text='_%X'%i, **ESTILO_ROTULO)
+                c.create_text(CEL/2, (i+1.5)*CEL, text='%X0'%i, **ESTILO_ROTULO)
                 for j in range(16):
                     # tabela ASCII
                     code = i*16 + j
                     if 32 <= code < 128:
-                        self.cels[i][j] = c.create_text((j+1.5)*CEL, (i+1.5)*CEL, text=unichr(code), **ESTILO_CAR)
+                        self.cels[i][j] = c.create_text((j+1.5)*CEL, (i+1.5)*CEL, text=chr(code), **ESTILO_CAR)
                     elif code == 128:
                         break
                     
