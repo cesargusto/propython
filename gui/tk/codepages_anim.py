@@ -5,21 +5,21 @@ http://effbot.org/tkinterbook/canvas.htm
 
 from __future__ import unicode_literals
 
-import sys
 try:
-    # python 3
+    # python 2.6
     import Tkinter as tk
     def bytecar(cod):
         return chr(cod)
 except ImportError:
-    # python 2.6
+    # python 3
     import tkinter as tk
     def bytecar(cod):
         return bytes([cod])
 
+import sys
 import math
 
-CEL = 44
+CEL = 40
 LATERAL = CEL * 6
 DIST_APROX = 2 # distancia considerada suficientemente proxima para ser igual
 
