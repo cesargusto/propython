@@ -22,7 +22,7 @@ def montar_painel(janela):
     visor = Label(janela)
     visor['text'] = ns.tempo
     visor.pack()
-    for segundos in [60, 30, 10]:
+    for segundos in range(0, 100, 10):
         def ajustar(incr=segundos):
             print incr
             ns.tempo = ns.tempo + incr
