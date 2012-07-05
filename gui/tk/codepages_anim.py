@@ -34,6 +34,9 @@ CODEPAGES = ['ASCII',
 
 COLORS = ['blue', '#700', '#070', 'orange']
 
+INTERVALO = 40
+FATOR_ACEL = .2
+
 class Glifo(object):
     ativos = {}
     movendo = {}
@@ -57,8 +60,8 @@ class Glifo(object):
         self.direcao = math.atan2(self.y_dest-self.y, self.x_dest-self.x)
         self.vx = math.cos(self.direcao)
         self.vy = math.sin(self.direcao)
-        self.ax = self.vx
-        self.ay = self.vy
+        self.ax = self.vx*FATOR_ACEL
+        self.ay = self.vy*FATOR_ACEL
         self.distancia = math.hypot(self.x-self.x_dest, self.y-self.y_dest)
 
     def mover(self):
@@ -147,7 +150,7 @@ class Janela(tk.Tk):
         if Glifo.movendo:
             for unicar, glifo in list(Glifo.movendo.items()):
                 glifo.mover()
-            self.after(40, self.atualizar)
+            self.after(INTERVALO, self.atualizar)
         else:
             # limpar rastros
             remendo = self.canvas.create_rectangle(CEL*17.1, 0, CEL*17+LATERAL, CEL*17, fill="white", outline='white')

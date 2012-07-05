@@ -6,24 +6,38 @@ SRC = 'http://newgtlds-cloudfront.icann.org/sites/default/files/reveal/strings-1
 
 import csv
 import itertools
+from operator import itemgetter
 
-nome_arq = SRC.split('/')[-1]
+def contar_linhas(arq):
+    qt = 0
+    for lin in arq:
+        qt += 1
+    return qt
 
-pedidos = []
-
-with open(nome_arq, 'U') as arq:
-    linhas, parsear = itertools.tee(arq)
-    parser = csv.DictReader(parsear)
-    cabecalho = linhas.next()
-    for linha in linhas:
-        print linha
-        pedido = parser.next()
-        for chave, valor in pedido.items():
-            pedido[chave] = valor.decode('utf-8')
+def parsear_linhas(arq):
+    pedidos = []
+    parser = csv.DictReader(arq)
+    for pedido in parser:
         pedidos.append(pedido)
+    return pedidos
 
-pedido = pedidos[0]
-print pedido.keys()
+def listar_regioes(arq):
+    pedidos = parsear_linhas(arq)
+    return [ped['Region'] for ped in pedidos]
 
-for pedido in pedidos:
-    print pedido['String']
+def ordenar_por_regiao(arq):
+    pedidos = parsear_linhas(arq)
+    return sorted(pedidos, key=itemgetter('Region'))
+
+def strings_por_regiao(arq):
+    ordenados = ordenar_por_regiao(arq)
+    lotes_regioes = itertools.groupby(ordenados, itemgetter('Region'))
+    return [(chave, len(list(lote))) for chave, lote in lotes_regioes]
+
+def relatorio_regional():
+    import sys
+    for regiao, qtd in strings_por_regiao(open(sys.argv[1], 'U')):
+        print '{0:3}\t{1:4}'.format(regiao, qtd)
+
+if __name__=='__main__':
+    relatorio_regional()
