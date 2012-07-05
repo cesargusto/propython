@@ -1,0 +1,24 @@
+String,Applicant,Website,Location,Region,Primary Contact,Email,IDN?,A-Label,English Meaning,Script Code,Community?,Geographic?,Application ID
+BUY,"PVT Registry, LLC",,US,NA,Joshua Bourne,bourne.ld@fairwindspartners.com,--,--,--,--,--,--,1-1694-75318
+CAM,AC Webconnecting Holding B.V.,http://acwebconnecting.com/,NL,EUR,Mike Rodenbaugh,instraTLD1@rodenbaugh.com,--,--,--,--,--,--,1-882-71415
+CARTIER,Richemont DNS Inc.,http://www.richemont.com,CH,EUR,Ms. Lorna Gradden,lorna.gradden.ri@valideus.com,--,--,--,--,--,--,1-1253-32739
+CLOUD,ARUBA S.p.A.,http://www.aruba.it/,IT,EUR,Mr. Stefano Cecconi,cecconi.stefano@staff.aruba.it,--,--,--,--,--,--,1-1669-75338
+CORP,Dot Registry LLC,,US,NA,Ms. Tess Pattison-Wade,tpw5029@hotmail.com,--,--,--,--,Yes,--,1-880-39342
+DELMONTE,Del Monte International GmbH,,MC,EUR,Phillip Marc Brazlavsky,pbrazlavsky@freshdelmonte.com,--,--,--,--,--,--,1-929-51262
+EXTRASPACE,Extra Space Storage LLC,http://www.extraspace.com,US,NA,Mr. James Louis Overturf,joverturf5@msn.com,--,--,--,--,--,--,1-1688-1352
+FORUM,dot Forum Limited,,GI,EUR,Mr. Geir Rasmussen,icanntas28@famousfourmedia.com,--,--,--,--,--,--,1-1212-56127
+FUTBOL,"Atomic Falls, LLC",,US,NA,Daniel Schindler,atomicfalls@donuts.co,--,--,--,--,--,--,1-1469-89174
+HUGHES,Hughes Satellite Systems Corporation,http://www.hughes.com,US,NA,Gretchen Olive,echostarnewgtlds@cscinfo.com,--,--,--,--,--,--,1-1997-46911
+IRA,Fidelity Brokerage Services LLC,https://www.fidelity.com/,US,NA,Tanya Sharko Courcey,tcourcey@fmr.com,--,--,--,--,--,--,1-1845-3627
+LOTTE,"Lotte Holdings Co., Ltd.",http://www.lotte.co.jp,JP,AP,Mr. Nobuo Gendo,gendou@lotte.co.jp,--,--,--,--,--,--,1-1863-52010
+MONTBLANC,Richemont DNS Inc.,http://www.richemont.com,CH,EUR,Ms. Lorna Gradden,lorna.gradden.ri@valideus.com,--,--,--,--,--,--,1-1253-99008
+NEWS,Amazon EU S.à r.l.,http://www.amazon.com/,LU,EUR,Ms. Lorna Jean Gradden,lorna.gradden.am1@valideus.com,--,--,--,--,--,--,1-1316-26110
+OTT,Dish DBS Corporation,http://www.dish.com,US,NA,Gretchen Olive,cscngtlds33@cscinfo.com,--,--,--,--,--,--,1-2006-79052
+OVERHEIDNL,ministery of the Interior and Kingdom Relations,,NL,EUR,Mr. Olaf Andersen,olaf.andersen@minbzk.nl,--,--,--,--,--,--,1-2124-3690
+PICTET,Pictet Europe S.A.,http://www.pictet.com,LU,EUR,Mr. Riccardo BONFERRONI,dotbrand@agencevirtuelle.com,--,--,--,--,--,--,1-1314-50545
+REISE,dotreise GmbH,http://www.dotreise.de,DE,EUR,Mr. Axel Schwiersch,info@dotreise.de,--,--,--,--,--,--,1-892-71956
+SKOLKOVO,Fund for Development of the Center for Elaboration and Commercialization of New Technologies,http://www.sk.ru,RU,EUR,Ms. Maria Kolesnikova,masha@cctld.ru,--,--,--,--,--,--,1-1166-4783
+SOCCER,dot Soccer Limited,,GI,EUR,Mr. Geir Andreas Rasmussen,icanntas14@famousfourmedia.com,--,--,--,--,--,--,1-1196-35744
+TEAM,"Uniregistry, Corp.",http://www.uniregistry.com,KY,EUR,Bret Alan Samuel Fausett,bret@internet.pro,--,--,--,--,--,--,1-855-72897
+TICKETS,"Atomic McCook, LLC",,US,NA,Daniel Schindler,atomicmccook@donuts.co,--,--,--,--,--,--,1-1638-77826
+TRADING,"Little Manor, LLC",,US,NA,Daniel Schindler,littlemanor@donuts.co,--,--,--,--,--,--,1-1654-94203
