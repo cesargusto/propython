@@ -1,0 +1,169 @@
+1	Norway	4.9
+2	Australia	21.5
+3	New Zealand	4.3
+4	United States	317.6
+5	Ireland	4.6
+6	Liechtenstein	0.0
+7	Netherlands	16.7
+8	Canada	33.9
+9	Sweden	9.3
+10	Germany	82.1
+11	Japan	127.0
+12	Korea (Republic of)	48.5
+13	Switzerland	7.6
+14	France	62.6
+15	Israel	7.3
+16	Finland	5.3
+17	Iceland	0.3
+18	Belgium	10.7
+19	Denmark	5.5
+20	Spain	45.3
+21	Hong Kong, China (SAR)	7.1
+22	Greece	11.2
+23	Italy	60.1
+24	Luxembourg	0.5
+25	Austria	8.4
+26	United Kingdom	61.9
+27	Singapore	4.8
+28	Czech Republic	10.4
+29	Slovenia	2.0
+30	Andorra	0.1
+31	Slovakia	5.4
+32	United Arab Emirates	4.7
+33	Malta	0.4
+34	Estonia	1.3
+35	Cyprus	0.9
+36	Hungary	10.0
+37	Brunei Darussalam	0.4
+38	Qatar	1.5
+39	Bahrain	0.8
+40	Portugal	10.7
+41	Poland	38.0
+42	Barbados	0.3
+43	Bahamas	0.3
+44	Lithuania	3.3
+45	Chile	17.1
+46	Argentina	40.7
+47	Kuwait	3.1
+48	Latvia	2.2
+49	Montenegro	0.6
+50	Romania	21.2
+51	Croatia	4.4
+52	Uruguay	3.4
+53	Libyan Arab Jamahiriya	6.5
+54	Panama	3.5
+55	Saudi Arabia	26.2
+56	Mexico	110.6
+57	Malaysia	27.9
+58	Bulgaria	7.5
+59	Trinidad and Tobago	1.3
+60	Serbia	9.9
+61	Belarus	9.6
+62	Costa Rica	4.6
+63	Peru	29.5
+64	Albania	3.2
+65	Russian Federation	140.4
+66	Kazakhstan	15.8
+67	Azerbaijan	8.9
+68	Bosnia and Herzegovina	3.8
+69	Ukraine	45.4
+70	Iran (Islamic Republic of)	75.1
+71	The former Yugoslav Republic of Macedonia	2.0
+72	Mauritius	1.3
+73	Brazil	195.4
+74	Georgia	4.2
+75	Venezuela (Bolivarian Republic of)	29.0
+76	Armenia	3.1
+77	Ecuador	13.8
+78	Belize	0.3
+79	Colombia	46.3
+80	Jamaica	2.7
+81	Tunisia	10.4
+82	Jordan	6.5
+83	Turkey	75.7
+84	Algeria	35.4
+85	Tonga	0.1
+86	Fiji	0.9
+87	Turkmenistan	5.2
+88	Dominican Republic	10.2
+89	China	1,354.1
+90	El Salvador	6.2
+91	Sri Lanka	20.4
+92	Thailand	68.1
+93	Gabon	1.5
+94	Suriname	0.5
+95	Bolivia (Plurinational State of)	10.0
+96	Paraguay	6.5
+97	Philippines	93.6
+98	Botswana	2.0
+99	Moldova (Republic of)	3.6
+100	Mongolia	2.7
+101	Egypt	84.5
+102	Uzbekistan	27.8
+103	Micronesia (Federated States of)	0.1
+104	Guyana	0.8
+105	Namibia	2.2
+106	Honduras	7.6
+107	Maldives	0.3
+108	Indonesia	232.5
+109	Kyrgyzstan	5.6
+110	South Africa	50.5
+111	Syrian Arab Republic	22.5
+112	Tajikistan	7.1
+113	Viet Nam	89.0
+114	Morocco	32.4
+115	Nicaragua	5.8
+116	Guatemala	14.4
+117	Equatorial Guinea	0.7
+118	Cape Verde	0.5
+119	India	1,214.5
+120	Timor-Leste	1.2
+121	Swaziland	1.2
+122	Lao People's Democratic Republic	6.4
+123	Solomon Islands	0.5
+124	Cambodia	15.1
+125	Pakistan	184.8
+126	Congo	3.8
+127	Sao Tome and Principe	0.2
+128	Kenya	40.9
+129	Bangladesh	164.4
+130	Ghana	24.3
+131	Cameroon	20.0
+132	Myanmar	50.5
+133	Yemen	24.3
+134	Benin	9.2
+135	Madagascar	20.1
+136	Mauritania	3.4
+137	Papua New Guinea	6.9
+138	Nepal	29.9
+139	Togo	6.8
+140	Comoros	0.7
+141	Lesotho	2.1
+142	Nigeria	158.3
+143	Uganda	33.8
+144	Senegal	12.9
+145	Haiti	10.2
+146	Angola	19.0
+147	Djibouti	0.9
+148	Tanzania (United Republic of)	45.0
+149	Côte d'Ivoire	21.6
+150	Zambia	13.3
+151	Gambia	1.8
+152	Rwanda	10.3
+153	Malawi	15.7
+154	Sudan	43.2
+155	Afghanistan	29.1
+156	Guinea	10.3
+157	Ethiopia	85.0
+158	Sierra Leone	5.8
+159	Central African Republic	4.5
+160	Mali	13.3
+161	Burkina Faso	16.3
+162	Liberia	4.1
+163	Chad	11.5
+164	Guinea-Bissau	1.6
+165	Mozambique	23.4
+166	Burundi	8.5
+167	Niger	15.9
+168	Congo (Democratic Republic of the)	67.8
+169	Zimbabwe	12.6
