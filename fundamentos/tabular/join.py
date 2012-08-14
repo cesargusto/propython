@@ -66,7 +66,7 @@ for country in sorted(countries.values(), key=attrgetter('medals'), reverse=True
         if hasattr(hdi_stats[key], atrib):
             value = getattr(hdi_stats[key], atrib)
             setattr(country, atrib, value)
-
+COLUMNS = 12
 def table_html():
     html = ['<table id="main-table" class="tablesorter">',
             '<thead>',
@@ -78,14 +78,18 @@ def table_html():
             html.append('\t<th>medals</th>')
         if atrib == 'population':
             html.append('\t<th>medals/million</th>')
+        if atrib == 'gdp':
+            html.append('\t<th>gdp/c</th>')
     html.append('</tr>')
     html.append('</thead>')
     html.append('<tbody>')
 
     for country in sorted(countries.values(), key=attrgetter('gold'), reverse=True):
         html.append('<tr>')
+        column_count = 0
         for atrib in Country.__slots__:
             try:
+                column_count += 1
                 value = getattr(country, atrib)
                 class_ = ''
                 if atrib == 'name':
@@ -94,13 +98,18 @@ def table_html():
                     value = '<img src="yellow.gif" width="{0}" height="14" align="left">{0}'.format(value)
                 elif atrib == 'bronze':
                     value = '{}</td><td>{}</td>'.format(value, country.medals)
+                    column_count += 1
                 elif atrib == 'population':
                     value = '{:.3f}</td><td>{:.3f}</td>'.format(value, country.medals/value)
+                    column_count += 1
+                elif atrib == 'gdp':
+                    value = '{:.0f}</td><td>{:.0f}</td>'.format(value, value/country.population*1000)
+                    column_count += 1
                 elif atrib == 'hdi':
                     value = format(value, '0<5.3')
             except AttributeError:
                 value = '*'
-                html.append('\t<td class="no-data" colspan="6"><a href="#sources">(no HDR data)</a></td>')
+                html.append('\t<td class="no-data" colspan="%s"><a href="#sources">(no HDR data)</a></td>' % (COLUMNS-(column_count-1)))
                 break
             html.append('\t<td%s>%s</td>' % (class_, value))
 
