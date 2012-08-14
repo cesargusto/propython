@@ -9,7 +9,7 @@
 9	Sweden	0.885	81.3	11.6
 10	Germany	0.885	80.2	12.2
 11	Japan	0.884	83.2	11.5
-12	Korea (Republic of)g	0.877	79.8	11.6
+12	Korea (Republic of)	0.877	79.8	11.6
 13	Switzerland	0.874	82.2	10.3
 14	France	0.872	81.6	10.4
 15	Israel	0.872	81.2	11.9
