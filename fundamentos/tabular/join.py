@@ -100,7 +100,7 @@ def table_html():
                     value = '{}</td><td>{}</td>'.format(value, country.medals)
                     column_count += 1
                 elif atrib == 'population':
-                    value = '{:.3f}</td><td>{:.3f}</td>'.format(value, country.medals/value)
+                    value = '{:.1f}</td><td>{:.3f}</td>'.format(value, country.medals/value)
                     column_count += 1
                 elif atrib == 'gdp':
                     value = '{:.0f}</td><td>{:.0f}</td>'.format(value, value/country.population*1000)
