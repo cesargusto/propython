@@ -151,8 +151,8 @@
 							<real>-1</real>
 							<key>Points</key>
 							<array>
-								<string>{181.14659958467649, 103}</string>
-								<string>{181.14688084192963, 62.5}</string>
+								<string>{181.14660115346311, 103}</string>
+								<string>{181.14689088216392, 62.5}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -233,8 +233,8 @@
 							<real>5.0056381225585938</real>
 							<key>Points</key>
 							<array>
-								<string>{168.21437611529137, 103.25563808193029}</string>
-								<string>{95.003670070561213, 62.244362010182762}</string>
+								<string>{168.21437730789816, 103.25563805943263}</string>
+								<string>{95.003678157917633, 62.244361940567373}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -902,8 +902,8 @@ count}</string>
 							<real>-1</real>
 							<key>Points</key>
 							<array>
-								<string>{181.14660342740254, 103}</string>
-								<string>{181.1469054353762, 62.5}</string>
+								<string>{181.14660496799584, 103}</string>
+								<string>{181.14691529517336, 62.5}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -944,7 +944,7 @@ count}</string>
 							<key>Points</key>
 							<array>
 								<string>{193.09475546834133, 103.24037088156095}</string>
-								<string>{260.14699962266354, 62.499999990027511}</string>
+								<string>{260.14699962266354, 62.49999999002749}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -984,8 +984,8 @@ count}</string>
 							<real>5.0056381225585938</real>
 							<key>Points</key>
 							<array>
-								<string>{168.21437787847083, 103.2556380378889}</string>
-								<string>{95.003682377987261, 62.24436203200802}</string>
+								<string>{168.21437911049193, 103.25563803747733}</string>
+								<string>{95.003690465493349, 62.24436196252266}</string>
 							</array>
 							<key>Style</key>
 							<dict>
@@ -2281,8 +2281,8 @@ count}</string>
 					<integer>50</integer>
 					<key>Points</key>
 					<array>
-						<string>{433.05376559096959, 306.72860733280572}</string>
-						<string>{382.29831072970143, 290.12707397321213}</string>
+						<string>{433.05376682834321, 306.72804835494742}</string>
+						<string>{382.29831359851016, 290.12605741498641}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -2454,8 +2454,8 @@ __iadd__}</string>
 					<real>-1</real>
 					<key>Points</key>
 					<array>
-						<string>{332.99959932438941, 214.5}</string>
-						<string>{332.99991427609223, 174}</string>
+						<string>{332.99959934668777, 214.5}</string>
+						<string>{332.99991441880161, 174}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -2495,8 +2495,8 @@ __iadd__}</string>
 					<real>4.9987277984619141</real>
 					<key>Points</key>
 					<array>
-						<string>{345.47424394917351, 214.7487276291107}</string>
-						<string>{416.00408338418305, 173.75127237088927}</string>
+						<string>{345.47424394880176, 214.7487276291107}</string>
+						<string>{416.00408338170951, 173.7512723708893}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -2536,8 +2536,8 @@ __iadd__}</string>
 					<real>5.0056381225585938</real>
 					<key>Points</key>
 					<array>
-						<string>{320.06737379911903, 214.75563801552198}</string>
-						<string>{246.85669218335752, 173.74436198447793}</string>
+						<string>{320.06737379919406, 214.75563801552204}</string>
+						<string>{246.85669218385684, 173.74436198447796}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -3112,11 +3112,11 @@ count}</string>
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>2</integer>
+		<integer>0</integer>
 		<key>ExpandedCanvases</key>
 		<array/>
 		<key>Frame</key>
-		<string>{{49, 155}, {1138, 762}}</string>
+		<string>{{59, 210}, {1138, 762}}</string>
 		<key>ListView</key>
 		<true/>
 		<key>OutlineWidth</key>

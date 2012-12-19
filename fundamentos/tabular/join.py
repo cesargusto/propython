@@ -61,11 +61,31 @@ for country in sorted(countries.values(), key=attrgetter('medals'), reverse=True
         if key is None:
             assert country.name in no_stats
             continue
-    print country.name
+    #print country.name
     for atrib in Country.__slots__:
         if hasattr(hdi_stats[key], atrib):
             value = getattr(hdi_stats[key], atrib)
             setattr(country, atrib, value)
+
+# export json            
+data = []
+for i, name in enumerate(countries, 1):
+    country = countries[name]
+    c = {'id':i}
+    try:
+        c.update({atr: getattr(country, atr) for atr in Country.__slots__})
+    except AttributeError, e:
+        print name, e.message
+        continue
+    data.append(c)
+    
+import json
+outfile = open('countries.json','w')
+json.dump(data, outfile, indent=2)
+outfile.close()
+
+raise SystemExit()
+            
 COLUMNS = 12
 def table_html():
     html = ['<table id="main-table" class="tablesorter">',
@@ -124,7 +144,7 @@ with open('html/template.html') as template, open('html/index.html','w') as outf
     html = template.read()
     assert INSERT_MARK in html
     table = table_html()
-    print table
+    #print table
     html = html.replace(INSERT_MARK, INSERT_MARK+'\n'+table)
     outfile.write(html)
 
