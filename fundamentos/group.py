@@ -1,10 +1,10 @@
-
 from operator import itemgetter
 
+
 def group(iterable, key):
-    ''' groups a list of tuples according to a key 
-    
-        >>> cities = [('BR','Rio de Janeiro'), ('PT', 'Porto'), 
+    ''' groups a list of tuples according to a key
+
+        >>> cities = [('BR','Rio de Janeiro'), ('PT', 'Porto'),
         ...     ('BR', 'Porto Alegre'),  ('PT', 'Lisboa'), ('MZ', 'Maputo')]
         >>> countries = group(cities, 0)
         >>> for country, cities in countries:
@@ -39,8 +39,7 @@ def group(iterable, key):
         part[-1].sort()
         result.append(tuple(part))
     return result
-    
-if __name__=='__main__':
+
+if __name__ == '__main__':
     import doctest
-    doctest.testmod()        
-        
+    doctest.testmod()
