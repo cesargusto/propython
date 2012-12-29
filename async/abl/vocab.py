@@ -1,0 +1,1 @@
+http://www.academia.org.br/sistema_busca_palavras_portuguesas/volta_voca_org.asp?palavra=abaj

@@ -1,0 +1,31 @@
+>>> l = u'léo' 
+>>> len(l)
+3
+>>> l
+u'l\xe9o'
+>>> list(l)
+[u'l', u'\xe9', u'o']
+>>> l_iso = l.encode('iso-8859-1')
+>>> len(l_iso)
+3
+>>> l_utf8 = l.encode('utf-8')
+>>> len(l_utf8)
+4
+>>> list(l_utf8)
+['l', '\xc3', '\xa9', 'o']
+>>> l_utf16 = l.encode('utf-16-be')
+>>> len(l_utf16)
+6
+>>> list(l_utf16)
+['\x00', 'l', '\x00', '\xe9', '\x00', 'o']
+>>> l_utf16 = l.encode('utf-16-le')
+>>> list(l_utf16)
+['l', '\x00', '\xe9', '\x00', 'o', '\x00']
+>>> list(l_iso)
+['l', '\xe9', 'o']
+>>> for b in l_utf8: print b
+... 
+l
+?
+?
+o

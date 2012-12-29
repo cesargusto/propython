@@ -1,0 +1,20 @@
+Unicode: bytes, strings e encodings
+===================================
+
+
+Demonstrações
+-------------
+
+- print no console x redirect x pipe
+- demo do leo: list(encoded_string)
+
+
+Armadilhas
+----------
+
+- conversão automática implícita
+- unicode.decode e str.encode não deveriam existir
+- encoding default é utf-8 e não ASCII
+- stdin e stdout: encodings pré-estabelecidos, diferença de print no console, redirecionamento e pipe
+- # coding: utf-8 não afeta nada disso
+

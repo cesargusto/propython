@@ -1,0 +1,24 @@
+Aptana
+Eclipse + PyDev
+Emacs e derivados
+Geany
+Gedit
+IDLE
+JEdit
+Kate
+Kdevelop
+Komodo Edit
+Komodo IDE
+Netbeans
+NotePad (acessório incluído no Windows)
+NotePad++ (software livre para Windows)
+NotePad2 (software livre para Windows)
+PyCharm
+Smultron
+Spyder
+Sublime Text
+TextMate
+TextPad
+vim
+Visual Studio
+WingIDE
