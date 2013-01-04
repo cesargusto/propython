@@ -1,0 +1,455 @@
+Timestamp,Editor ou IDE que você usa para programar em Python a maior parte do tempo,Sistema operacional do computador que você usa ao programar aplicações Python,Outros editores ou IDE que você usou por 12 horas ou mais em 2012 (opcional)
+12/27/2012 12:27:24,Eclipse + PyDev,GNU/Linux,"Eclipse + PyDev, Kate e derivados, Kdevelop, Sublime Text, vim"
+12/27/2012 12:28:25,PyCharm,Mac OSX,"Geany, PyCharm, vim"
+12/27/2012 12:28:27,vim,Mac OSX,"Gedit, PyCharm, Sublime Text, TextMate"
+12/27/2012 12:28:41,Sublime Text,GNU/Linux,
+12/27/2012 12:30:55,Emacs e derivados,GNU/Linux,"Sublime Text, vim"
+12/27/2012 12:31:49,Sublime Text,GNU/Linux,"PyCharm, vim"
+12/27/2012 12:32:59,Sublime Text,GNU/Linux,"Aptana, Eclipse + PyDev, PyCharm"
+12/27/2012 12:33:07,Sublime Text,GNU/Linux,Sublime Text
+12/27/2012 12:33:14,Aptana,Windows,IDLE
+12/27/2012 12:33:15,Eclipse + PyDev,Windows,Sublime Text
+12/27/2012 12:33:26,PyCharm,Windows,Eclipse + PyDev
+12/27/2012 12:40:14,Sublime Text,GNU/Linux,"Netbeans, NotePad++ (software livre para Windows), Sublime Text"
+12/27/2012 12:42:53,Gedit,GNU/Linux,
+12/27/2012 12:43:17,Aptana,GNU/Linux,"Aptana, Eclipse + PyDev, NotePad++ (software livre para Windows)"
+12/27/2012 12:43:32,Sublime Text,GNU/Linux,"Aptana, Eclipse + PyDev, Komodo Edit (gratuito)"
+12/27/2012 12:45:07,Sublime Text,Mac OSX,TextMate
+12/27/2012 12:46:48,vim,GNU/Linux,"Gedit, Komodo Edit (gratuito), vim"
+12/27/2012 12:47:18,Sublime Text,GNU/Linux,Eclipse + PyDev
+12/27/2012 12:48:06,vim,GNU/Linux,
+12/27/2012 12:48:51,Sublime Text,GNU/Linux,"Eclipse + PyDev, Gedit, PyCharm, Sublime Text, vim"
+12/27/2012 12:49:26,Sublime Text,Mac OSX,"Geany, PyCharm, TextMate"
+12/27/2012 12:50:42,Aptana,GNU/Linux,"Gedit, vim"
+12/27/2012 12:52:25,PyCharm,Mac OSX,"Eclipse + PyDev, WingIDE"
+12/27/2012 12:52:33,Sublime Text,Mac OSX,"Gedit, vim"
+12/27/2012 12:53:49,vim,Mac OSX,
+12/27/2012 12:55:01,Sublime Text,GNU/Linux,"Aptana, Eclipse + PyDev, Emacs e derivados, Gedit, vim"
+12/27/2012 12:55:47,Sublime Text,GNU/Linux,"Eclipse + PyDev, Gedit, Kate e derivados, Netbeans, NotePad (acessório incluído no Windows), NotePad++ (software livre para Windows), NotePad2 (software livre para Windows), Sublime Text, vim, Visual Studio"
+12/27/2012 18:59:54,Eclipse + PyDev,GNU/Linux,IDLE
+12/27/2012 19:03:56,PyCharm,GNU/Linux,Sublime Text
+12/27/2012 19:08:32,vim,GNU/Linux,
+12/27/2012 19:09:07,vim,Mac OSX,"Gedit, PyCharm"
+12/27/2012 19:09:55,Sublime Text,GNU/Linux,"Aptana, Eclipse + PyDev, Gedit, NotePad++ (software livre para Windows)"
+12/27/2012 19:10:43,Sublime Text,GNU/Linux,Gedit
+12/27/2012 19:13:20,Sublime Text,Windows,Komodo Edit (gratuito)
+12/27/2012 19:13:40,vim,GNU/Linux,"Komodo Edit (gratuito), Sublime Text"
+12/27/2012 19:15:09,vim,GNU/Linux,Eclipse + PyDev
+12/27/2012 19:15:36,vim,GNU/Linux,IDLE
+12/27/2012 19:15:41,PyCharm,Mac OSX,"Komodo Edit (gratuito), Sublime Text"
+12/27/2012 19:18:14,Sublime Text,Mac OSX,"Eclipse + PyDev, vim"
+12/27/2012 19:18:28,vim,GNU/Linux,
+12/27/2012 19:21:24,PyCharm,Mac OSX,"Komodo Edit (gratuito), Sublime Text, TextMate"
+12/27/2012 19:25:24,Sublime Text,GNU/Linux,"Geany, NotePad++ (software livre para Windows), vim"
+12/27/2012 19:29:06,Geany,GNU/Linux,"Gedit, Sublime Text, vim, WingIDE"
+12/27/2012 19:30:19,Eclipse + PyDev,GNU/Linux,vim
+12/27/2012 19:30:19,WingIDE,GNU/Linux,"Aptana, Eclipse + PyDev, Geany, Gedit, Komodo IDE (pago), Netbeans"
+12/27/2012 19:31:02,PyCharm,Mac OSX,
+12/27/2012 19:31:20,Sublime Text,GNU/Linux,Gedit
+12/27/2012 19:39:57,PyCharm,Mac OSX,TextMate
+12/27/2012 19:40:38,PyCharm,Windows,NotePad++ (software livre para Windows)
+12/27/2012 19:41:11,PyCharm,Mac OSX,Emacs e derivados
+12/27/2012 19:45:54,Sublime Text,GNU/Linux,"Gedit, vim"
+12/27/2012 19:46:35,PsPad,GNU/Linux,"PyCharm, Spyder, Sublime Text"
+12/27/2012 19:48:21,Sublime Text,Mac OSX,"Eclipse + PyDev, PyCharm, Sublime Text"
+12/27/2012 20:02:24,Emacs e derivados,GNU/Linux,"Emacs e derivados, NotePad++ (software livre para Windows), Sublime Text"
+12/27/2012 20:04:31,Eclipse + PyDev,Mac OSX,Gedit
+12/27/2012 20:09:09,PyCharm,GNU/Linux,vim
+12/27/2012 20:09:51,PyCharm,Windows,IDLE
+12/27/2012 20:12:21,Sublime Text,Mac OSX,"Gedit, NotePad++ (software livre para Windows), TextMate"
+12/27/2012 20:13:28,PyCharm,GNU/Linux,"IDLE, NotePad++ (software livre para Windows), Visual Studio"
+12/27/2012 20:14:18,NotePad++ (software livre para Windows),Windows,"Gedit, WingIDE"
+12/27/2012 20:14:37,Sublime Text,GNU/Linux,vim
+12/27/2012 20:16:29,Aptana,GNU/Linux,"Aptana, Eclipse + PyDev, Netbeans, Sublime Text"
+12/27/2012 20:17:04,Sublime Text,Mac OSX,Komodo Edit (gratuito)
+12/27/2012 20:25:47,PyCharm,GNU/Linux,NotePad++ (software livre para Windows)
+12/27/2012 20:25:57,PyCharm,GNU/Linux,
+12/27/2012 20:26:15,PyCharm,Mac OSX,Sublime Text
+12/27/2012 20:28:45,PyCharm,GNU/Linux,"Geany, Gedit, Sublime Text, vim"
+12/27/2012 20:30:50,PyCharm,Mac OSX,"NotePad++ (software livre para Windows), PyCharm"
+12/27/2012 20:31:16,PyCharm,Mac OSX,"NotePad++ (software livre para Windows), PyCharm"
+12/27/2012 20:31:29,Aptana,Windows,"Aptana, Gedit"
+12/27/2012 20:42:16,Sublime Text,Mac OSX,vim
+12/27/2012 20:50:21,PyCharm,Windows,"Eclipse + PyDev, PyCharm"
+12/27/2012 21:00:34,Gedit,GNU/Linux,"Eclipse + PyDev, Gedit, Kate e derivados, NotePad++ (software livre para Windows)"
+12/27/2012 21:00:41,Kate e derivados,GNU/Linux,"Gedit, Sublime Text, vim"
+12/27/2012 21:00:53,PyCharm,Mac OSX,vim
+12/27/2012 21:00:59,Sublime Text,GNU/Linux,"Gedit, vim"
+12/27/2012 21:02:45,Gedit,GNU/Linux,"Kate e derivados, vim"
+12/27/2012 21:06:55,PyCharm,GNU/Linux,vim
+12/27/2012 21:09:30,Sublime Text,GNU/Linux,"Gedit, IDLE, Kate e derivados, NotePad++ (software livre para Windows)"
+12/27/2012 21:14:31,vim,GNU/Linux,"Netbeans, PyCharm"
+12/27/2012 21:18:16,vim,Windows,Visual Studio
+12/27/2012 21:23:28,Gedit,GNU/Linux,NotePad++ (software livre para Windows)
+12/27/2012 21:30:06,Gedit,GNU/Linux,NotePad++ (software livre para Windows)
+12/27/2012 21:31:56,vim,GNU/Linux,
+12/27/2012 21:32:12,Eclipse + PyDev,Windows,"Eclipse + PyDev, NotePad++ (software livre para Windows), Sublime Text"
+12/27/2012 21:40:27,Eclipse + PyDev,GNU/Linux,"Gedit, IDLE"
+12/27/2012 21:51:24,Gedit,GNU/Linux,Gedit
+12/27/2012 22:06:53,Sublime Text,GNU/Linux,"Eclipse + PyDev, Emacs e derivados, Geany, Gedit"
+12/27/2012 22:08:08,vim,GNU/Linux,Sublime Text
+12/27/2012 22:08:41,Sublime Text,GNU/Linux,"Gedit, Kate e derivados"
+12/27/2012 22:15:01,vim,Mac OSX,
+12/27/2012 22:16:19,Gedit,GNU/Linux,Eclipse + PyDev
+12/27/2012 22:20:36,vim,GNU/Linux,Gedit
+12/27/2012 22:21:44,NotePad++ (software livre para Windows),Windows,Eclipse + PyDev
+12/27/2012 22:33:11,Sublime Text,Mac OSX,Eclipse + PyDev
+12/27/2012 22:39:34,Sublime Text,Windows,Visual Studio
+12/27/2012 22:44:59,Sublime Text,GNU/Linux,vim
+12/27/2012 22:59:35,vim,Mac OSX,
+12/27/2012 23:00:09,vim,GNU/Linux,"Gedit, Komodo Edit (gratuito), Sublime Text, WingIDE"
+12/27/2012 23:12:38,PyCharm,GNU/Linux,"Eclipse + PyDev, Gedit, Sublime Text"
+12/27/2012 23:19:04,vim,GNU/Linux,"Eclipse + PyDev, Gedit, WingIDE"
+12/27/2012 23:20:11,PyCharm,Windows,NotePad++ (software livre para Windows)
+12/27/2012 23:25:32,Sublime Text,GNU/Linux,"NotePad++ (software livre para Windows), Sublime Text"
+12/27/2012 23:25:42,Komodo Edit (gratuito),*BSD,"Geany, Gedit, vim"
+12/27/2012 23:49:51,Sublime Text,Windows,"Gedit, Kdevelop, Netbeans, NotePad++ (software livre para Windows), vim"
+12/27/2012 23:49:56,Eclipse + PyDev,GNU/Linux,Aptana
+12/28/2012 0:11:57,Sublime Text,GNU/Linux,"PyCharm, vim"
+12/28/2012 0:28:36,Eclipse + PyDev,GNU/Linux,Geany
+12/28/2012 0:32:16,PyCharm,Mac OSX,
+12/28/2012 0:38:07,PyCharm,misto linux/windows,"Aptana, NotePad (acessório incluído no Windows), NotePad++ (software livre para Windows), NotePad2 (software livre para Windows), PyCharm, Sublime Text, vim, Visual Studio"
+12/28/2012 0:41:47,vim,Mac OSX,
+12/28/2012 1:12:22,Gedit,GNU/Linux,"Aptana, NotePad++ (software livre para Windows), TextMate, Visual Studio"
+12/28/2012 1:23:50,Netbeans,GNU/Linux,Kate e derivados
+12/28/2012 2:39:19,vim,GNU/Linux,Gedit
+12/28/2012 3:00:02,Sublime Text,GNU/Linux,"Gedit, IDLE"
+12/28/2012 3:02:39,vim,Mac OSX,Sublime Text
+12/28/2012 3:06:59,Geany,GNU/Linux,"Gedit, Sublime Text, vim, WingIDE"
+12/28/2012 3:10:48,Geany,GNU/Linux,"Gedit, vim"
+12/28/2012 3:44:50,Sublime Text,GNU/Linux,"Eclipse + PyDev, Gedit, IDLE, NotePad (acessório incluído no Windows), NotePad++ (software livre para Windows), Sublime Text"
+12/28/2012 8:04:54,Sublime Text,GNU/Linux,vim
+12/28/2012 8:10:15,Sublime Text,GNU/Linux,vim
+12/28/2012 8:12:22,PyCharm,Windows,PyCharm
+12/28/2012 8:19:01,Sublime Text,GNU/Linux,PyCharm
+12/28/2012 8:22:01,Aptana,GNU/Linux,
+12/28/2012 8:28:22,PyCharm,Mac OSX,TextMate
+12/28/2012 8:30:00,Sublime Text,GNU/Linux,"Aptana, Gedit, vim"
+12/28/2012 8:35:39,vim,GNU/Linux,Eclipse + PyDev
+12/28/2012 8:40:47,Eclipse + PyDev,GNU/Linux,Emacs e derivados
+12/28/2012 8:51:44,Eclipse + PyDev,GNU/Linux,Gedit
+12/28/2012 8:52:13,Spyder,GNU/Linux,Sublime Text
+12/28/2012 8:52:54,Sublime Text,GNU/Linux,"Sublime Text, vim"
+12/28/2012 8:59:10,Sublime Text,Mac OSX,"TextMate, vim"
+12/28/2012 9:02:48,Sublime Text,Windows,
+12/28/2012 9:10:23,Sublime Text,Windows,TextPad
+12/28/2012 9:15:36,PyCharm,GNU/Linux,"Eclipse + PyDev, IDLE"
+12/28/2012 9:16:56,Sublime Text,GNU/Linux,"Aptana, Geany, Gedit, Komodo Edit (gratuito), PyCharm, vim"
+12/28/2012 9:22:14,Aptana,GNU/Linux,"Geany, IDLE"
+12/28/2012 9:29:30,Geany,GNU/Linux,vim
+12/28/2012 9:35:16,PyCharm,GNU/Linux,IDLE
+12/28/2012 9:42:25,SciTE,*BSD,"Geany, vim"
+12/28/2012 9:54:09,Sublime Text,Windows,NotePad++ (software livre para Windows)
+12/28/2012 9:55:53,Eclipse + PyDev,GNU/Linux,"Aptana, vim"
+12/28/2012 9:56:56,Sublime Text,Windows,IDLE
+12/28/2012 9:59:05,Sublime Text,Mac OSX,"Aptana, Eclipse + PyDev, TextMate, vim"
+12/28/2012 10:03:24,PyCharm,GNU/Linux,"Gedit, vim"
+12/28/2012 10:23:35,PyCharm,Windows,NotePad++ (software livre para Windows)
+12/28/2012 10:23:59,Sublime Text,GNU/Linux,"Sublime Text, vim"
+12/28/2012 10:28:39,PyCharm,GNU/Linux,"Gedit, Sublime Text, vim"
+12/28/2012 10:34:08,vim,GNU/Linux,Sublime Text
+12/28/2012 10:36:48,PyCharm,GNU/Linux,Aptana
+12/28/2012 10:39:31,Sublime Text,GNU/Linux,"Eclipse + PyDev, IDLE"
+12/28/2012 11:01:25,Eclipse + PyDev,GNU/Linux,"Aptana, Eclipse + PyDev, Gedit"
+12/28/2012 11:05:56,Komodo Edit (gratuito),*BSD,"Geany, Komodo Edit (gratuito), vim"
+12/28/2012 11:06:28,PyCharm,GNU/Linux,Eclipse + PyDev
+12/28/2012 11:09:13,Sublime Text,Mac OSX,"Gedit, Sublime Text, vim"
+12/28/2012 11:10:14,vim,GNU/Linux,"Aptana, Eclipse + PyDev, Sublime Text"
+12/28/2012 11:20:28,Eclipse + PyDev,GNU/Linux,Geany
+12/28/2012 11:29:14,vim,GNU/Linux,"Netbeans, Sublime Text"
+12/28/2012 11:42:27,Sublime Text,GNU/Linux,"Geany, Gedit, vim"
+12/28/2012 12:04:01,Eclipse + PyDev,GNU/Linux,"Geany, Gedit"
+12/28/2012 12:07:19,Aptana,GNU/Linux,"Eclipse + PyDev, Geany, Gedit"
+12/28/2012 12:10:13,Komodo Edit (gratuito),Windows,"NotePad (acessório incluído no Windows), NotePad++ (software livre para Windows)"
+12/28/2012 12:14:49,Sublime Text,GNU/Linux,vim
+12/28/2012 12:35:44,Sublime Text,GNU/Linux,"vim, WingIDE"
+12/28/2012 12:54:01,Sublime Text,Windows,PyCharm
+12/28/2012 13:06:48,Eclipse + PyDev,GNU/Linux,Gedit
+12/28/2012 13:08:17,IDLE,Windows,"Gedit, IDLE, NotePad (acessório incluído no Windows), NotePad++ (software livre para Windows)"
+12/28/2012 13:21:43,vim,Mac OSX,
+12/28/2012 13:29:36,Sublime Text,GNU/Linux,"Eclipse + PyDev, Spyder"
+12/28/2012 14:18:55,IDLE,GNU/Linux,Eclipse + PyDev
+12/28/2012 14:36:38,vim,GNU/Linux,"PyCharm, vim"
+12/28/2012 14:41:02,Sublime Text,Mac OSX,"Eclipse + PyDev, Sublime Text, vim"
+12/28/2012 14:44:02,Eclipse + PyDev,GNU/Linux,"Eclipse + PyDev, Geany, Gedit, IDLE, Komodo Edit (gratuito), NotePad++ (software livre para Windows)"
+12/28/2012 15:45:11,PyCharm,Mac OSX,"TextMate, vim"
+12/28/2012 16:02:35,PyCharm,Windows,"NotePad++ (software livre para Windows), PyCharm, Visual Studio"
+12/28/2012 16:11:23,Eclipse + PyDev,GNU/Linux,"Gedit, Spyder, vim"
+12/28/2012 16:18:00,Eclipse + PyDev,GNU/Linux,Eclipse + PyDev
+12/28/2012 16:40:24,vim,GNU/Linux,Eclipse + PyDev
+12/28/2012 16:46:22,Kate e derivados,GNU/Linux,"Aptana, Eclipse + PyDev, Kate e derivados, Sublime Text"
+12/28/2012 17:02:13,vim,GNU/Linux,Gedit
+12/28/2012 17:33:33,Eclipse + PyDev,GNU/Linux,"Gedit, NotePad++ (software livre para Windows), vim"
+12/28/2012 18:23:43,Sublime Text,Windows,"PyCharm, Visual Studio"
+12/28/2012 18:45:51,PyCharm,GNU/Linux,"Geany, Kate e derivados, Netbeans, PyCharm, Sublime Text"
+12/28/2012 18:56:19,PyCharm,GNU/Linux,Eclipse + PyDev
+12/28/2012 19:37:48,Netbeans,GNU/Linux,"Eclipse + PyDev, Geany"
+12/28/2012 19:46:12,PyCharm,Mac OSX,"Sublime Text, vim"
+12/28/2012 19:57:14,Sublime Text,GNU/Linux,Eclipse + PyDev
+12/28/2012 20:24:14,Sublime Text,GNU/Linux,"Aptana, Gedit, Spyder"
+12/28/2012 22:47:09,vim,GNU/Linux,Sublime Text
+12/28/2012 22:50:28,Komodo Edit (gratuito),GNU/Linux,"Eclipse + PyDev, Netbeans"
+12/28/2012 22:58:02,Sublime Text,GNU/Linux,"Geany, Gedit, NotePad++ (software livre para Windows), vim"
+12/28/2012 23:41:12,Sublime Text,GNU/Linux,Gedit
+12/29/2012 0:06:26,Sublime Text,Mac OSX,vim
+12/29/2012 8:48:30,vim,GNU/Linux,"Netbeans, vim"
+12/29/2012 9:28:20,Geany,GNU/Linux,"Aptana, Eclipse + PyDev, Gedit, vim"
+12/29/2012 10:22:43,Emacs e derivados,GNU/Linux,
+12/29/2012 11:05:02,vim,GNU/Linux,Gedit
+12/29/2012 11:20:23,Sublime Text,Mac OSX,vim
+12/29/2012 11:29:10,Sublime Text,GNU/Linux,"Kate e derivados, vim"
+12/29/2012 12:45:38,Sublime Text,Mac OSX,NotePad++ (software livre para Windows)
+12/29/2012 13:08:18,vim,Mac OSX,
+12/29/2012 13:37:47,Sublime Text,GNU/Linux,vim
+12/29/2012 14:22:17,Geany,GNU/Linux,vim
+12/29/2012 18:02:41,Sublime Text,GNU/Linux,"Aptana, Eclipse + PyDev, Geany, NotePad++ (software livre para Windows), Spyder, vim"
+12/29/2012 18:51:54,Sublime Text,Mac OSX,"TextMate, vim"
+12/29/2012 21:48:34,vim,Mac OSX,
+12/29/2012 21:49:31,vim,Mac OSX,
+12/30/2012 11:33:42,Kate e derivados,GNU/Linux,"Gedit, IDLE, NotePad++ (software livre para Windows), Sublime Text, vim"
+12/30/2012 20:00:16,vim,GNU/Linux,vim
+12/30/2012 23:52:31,Sublime Text,GNU/Linux,"Eclipse + PyDev, Netbeans"
+12/31/2012 0:58:30,Sublime Text,Windows,PyCharm
+12/31/2012 8:13:15,Spyder,GNU/Linux,vim
+12/31/2012 9:18:24,Eclipse + PyDev,GNU/Linux,"Aptana, Gedit"
+12/31/2012 11:35:18,PsPad,Windows,"IDLE, Spyder"
+12/31/2012 11:38:19,Eclipse + PyDev,GNU/Linux,"Aptana, Gedit, vim"
+12/31/2012 17:35:15,Eclipse + PyDev,GNU/Linux,Sublime Text
+12/31/2012 21:29:10,Sublime Text,Mac OSX,"Sublime Text, TextMate"
+1/1/2013 13:43:59,Eclipse + PyDev,Windows,NotePad++ (software livre para Windows)
+1/1/2013 21:07:25,vim,Mac OSX,Sublime Text
+1/1/2013 21:09:09,Eclipse + PyDev,GNU/Linux,Eclipse + PyDev
+1/1/2013 21:11:32,vim,GNU/Linux,"Gedit, Netbeans, PyCharm"
+1/1/2013 21:12:34,Komodo Edit (gratuito),GNU/Linux,Eclipse + PyDev
+1/1/2013 21:14:40,Eclipse + PyDev,Mac OSX,"Sublime Text, TextMate"
+1/1/2013 21:15:16,vim,GNU/Linux,Gedit
+1/1/2013 21:16:39,Sublime Text,Windows,"Gedit, NotePad++ (software livre para Windows), Sublime Text"
+1/1/2013 21:20:53,Sublime Text,Mac OSX,
+1/1/2013 21:21:35,PyCharm,GNU/Linux,"Komodo Edit (gratuito), Sublime Text"
+1/1/2013 21:26:06,Gedit,GNU/Linux,"Aptana, Eclipse + PyDev, Emacs e derivados, Geany, Gedit, Netbeans, vim"
+1/1/2013 21:35:38,vim,Mac OSX,
+1/1/2013 21:57:29,Kate e derivados,GNU/Linux,"Aptana, NotePad++ (software livre para Windows), Sublime Text, vim"
+1/1/2013 22:02:00,Spyder,Windows,"Eclipse + PyDev, Geany, Gedit, Netbeans"
+1/1/2013 22:14:27,Sublime Text,Windows,"NotePad++ (software livre para Windows), Sublime Text"
+1/1/2013 22:15:00,vim,GNU/Linux,Sublime Text
+1/1/2013 22:16:33,IDLE,Windows,"NotePad (acessório incluído no Windows), NotePad++ (software livre para Windows)"
+1/1/2013 22:16:59,NotePad++ (software livre para Windows),Windows,
+1/1/2013 22:21:21,Sublime Text,Mac OSX,Aptana
+1/1/2013 22:26:03,Sublime Text,Windows,IDLE
+1/1/2013 22:28:51,Sublime Text,GNU/Linux,"Aptana, Eclipse + PyDev, Gedit, NotePad++ (software livre para Windows), Sublime Text"
+1/1/2013 22:32:39,Sublime Text,GNU/Linux,vim
+1/1/2013 22:46:15,Emacs e derivados,Mac OSX,TextMate
+1/1/2013 22:57:34,Emacs e derivados,*BSD,
+1/1/2013 23:06:18,Sublime Text,Mac OSX,"Eclipse + PyDev, TextMate, vim"
+1/1/2013 23:06:53,Sublime Text,GNU/Linux,"Aptana, vim"
+1/1/2013 23:09:10,vim,GNU/Linux,"Gedit, vim"
+1/1/2013 23:38:56,vim,GNU/Linux,"Eclipse + PyDev, Sublime Text"
+1/1/2013 23:55:53,Sublime Text,Windows,"Eclipse + PyDev, Gedit, NotePad++ (software livre para Windows)"
+1/2/2013 0:34:27,vim,GNU/Linux,Emacs e derivados
+1/2/2013 0:38:05,Sublime Text,GNU/Linux,NotePad++ (software livre para Windows)
+1/2/2013 0:53:53,Emacs e derivados,GNU/Linux,vim
+1/2/2013 1:04:06,vim,GNU/Linux,Sublime Text
+1/2/2013 1:40:25,PyCharm,Mac OSX,vim
+1/2/2013 2:40:54,Sublime Text,GNU/Linux,"Gedit, IDLE, Sublime Text"
+1/2/2013 4:56:30,PyCharm,GNU/Linux,"Geany, Sublime Text"
+1/2/2013 7:38:25,PyCharm,Mac OSX,"vim, Visual Studio"
+1/2/2013 7:51:46,Sublime Text,Windows,"NotePad++ (software livre para Windows), Sublime Text, vim"
+1/2/2013 8:13:18,Eclipse + PyDev,Windows,NotePad++ (software livre para Windows)
+1/2/2013 8:48:43,vim,GNU/Linux,"Eclipse + PyDev, Netbeans, Sublime Text, Visual Studio"
+1/2/2013 9:06:41,Eclipse + PyDev,GNU/Linux,"PyCharm, Sublime Text"
+1/2/2013 9:21:30,Aptana,Mac OSX,"Aptana, Eclipse + PyDev, Gedit, PyCharm, TextMate"
+1/2/2013 9:24:09,vim,GNU/Linux,
+1/2/2013 9:30:58,Aptana,GNU/Linux,Kate e derivados
+1/2/2013 9:56:41,vim,GNU/Linux,"Eclipse + PyDev, NotePad++ (software livre para Windows)"
+1/2/2013 10:03:43,Aptana,GNU/Linux,Gedit
+1/2/2013 10:12:12,Kate e derivados,GNU/Linux,Kate e derivados
+1/2/2013 10:35:45,Eclipse + PyDev,GNU/Linux,"Geany, Gedit, Kate e derivados, Kdevelop, Komodo Edit (gratuito), vim"
+1/2/2013 11:00:47,Eclipse + PyDev,Windows,
+1/2/2013 11:06:32,PyCharm,GNU/Linux,vim
+1/2/2013 11:21:12,TextMate,Mac OSX,"PyCharm, Sublime Text, vim"
+1/2/2013 11:27:30,Sublime Text,Windows,"NotePad++ (software livre para Windows), PyCharm"
+1/2/2013 11:31:23,Sublime Text,GNU/Linux,"Emacs e derivados, IDLE, Netbeans, vim"
+1/2/2013 11:43:46,Kate e derivados,GNU/Linux,Netbeans
+1/2/2013 12:10:32,Eclipse + PyDev,GNU/Linux,Gedit
+1/2/2013 12:43:42,PyCharm,Mac OSX,Sublime Text
+1/2/2013 12:46:03,Sublime Text,GNU/Linux,Gedit
+1/2/2013 12:48:31,Sublime Text,GNU/Linux,Gedit
+1/2/2013 12:58:29,vim,GNU/Linux,"Sublime Text, vim"
+1/2/2013 13:00:29,PyCharm,Mac OSX,TextMate
+1/2/2013 13:03:09,Sublime Text,GNU/Linux,Gedit
+1/2/2013 13:03:48,vim,GNU/Linux,"Aptana, Netbeans, Sublime Text"
+1/2/2013 13:19:07,Sublime Text,Mac OSX,"Emacs e derivados, vim"
+1/2/2013 13:21:24,vim,Mac OSX,"PyCharm, Sublime Text, vim"
+1/2/2013 13:30:05,vim,Mac OSX,
+1/2/2013 13:36:24,PyCharm,GNU/Linux,PyCharm
+1/2/2013 13:38:19,Sublime Text,Mac OSX,"Eclipse + PyDev, vim"
+1/2/2013 14:07:25,vim,Mac OSX,Visual Studio
+1/2/2013 14:23:25,Geany,GNU/Linux,
+1/2/2013 14:34:39,vim,Mac OSX,
+1/2/2013 14:36:42,TextMate,Mac OSX,"Sublime Text, vim"
+1/2/2013 14:58:52,PyCharm,Windows,"Eclipse + PyDev, NotePad++ (software livre para Windows)"
+1/2/2013 15:19:30,Jape,GNU/Linux,
+1/2/2013 15:26:27,vim,Mac OSX,"Sublime Text, TextMate"
+1/2/2013 15:28:10,Gedit,GNU/Linux,"Eclipse + PyDev, IDLE, Kate e derivados, NotePad++ (software livre para Windows)"
+1/2/2013 15:34:32,Aptana,GNU/Linux,"Gedit, NotePad++ (software livre para Windows)"
+1/2/2013 16:12:15,Sublime Text,GNU/Linux,vim
+1/2/2013 16:38:01,Sublime Text,Mac OSX,"PyCharm, TextMate"
+1/2/2013 17:17:41,Sublime Text,GNU/Linux,PyCharm
+1/2/2013 18:44:12,Gedit,GNU/Linux,vim
+1/2/2013 20:56:49,Sublime Text,GNU/Linux,"Eclipse + PyDev, PyCharm, Sublime Text, vim"
+1/2/2013 21:12:24,vim,Mac OSX,"Emacs e derivados, Sublime Text, TextMate"
+1/2/2013 21:13:05,vim,GNU/Linux,Gedit
+1/2/2013 21:19:53,Sublime Text,Mac OSX,vim
+1/2/2013 21:35:30,vim,Mac OSX,"Sublime Text, TextMate"
+1/2/2013 21:40:50,vim,*BSD,Sublime Text
+1/2/2013 22:04:47,Eclipse + PyDev,Mac OSX,Sublime Text
+1/2/2013 22:16:52,PyCharm,Windows,"Komodo Edit (gratuito), Sublime Text"
+1/2/2013 22:50:04,vim,Mac OSX,"Emacs e derivados, vim"
+1/2/2013 23:17:19,Sublime Text,GNU/Linux,vim
+1/2/2013 23:17:40,WingIDE,GNU/Linux,"Emacs e derivados, Geany, Gedit, Komodo Edit (gratuito), PyCharm"
+1/2/2013 23:18:27,vim,Mac OSX,"Aptana, vim"
+1/2/2013 23:18:32,Komodo Edit (gratuito),GNU/Linux,NotePad++ (software livre para Windows)
+1/2/2013 23:19:04,Sublime Text,GNU/Linux,Eclipse + PyDev
+1/2/2013 23:19:08,Sublime Text,Mac OSX,"Eclipse + PyDev, TextMate, vim"
+1/2/2013 23:19:13,PyCharm,GNU/Linux,WingIDE
+1/2/2013 23:19:38,Sublime Text,Mac OSX,"TextMate, vim"
+1/2/2013 23:19:48,Emacs e derivados,GNU/Linux,
+1/2/2013 23:20:37,vim,GNU/Linux,
+1/2/2013 23:20:40,Spyder,GNU/Linux,"Aptana, Gedit, JEdit, Kate e derivados, NotePad (acessório incluído no Windows), NotePad++ (software livre para Windows), vim"
+1/2/2013 23:21:18,vim,GNU/Linux,
+1/2/2013 23:24:12,vim,Mac OSX,"Eclipse + PyDev, Emacs e derivados, NotePad++ (software livre para Windows), Sublime Text"
+1/2/2013 23:24:27,PyCharm,GNU/Linux,"Eclipse + PyDev, vim"
+1/2/2013 23:25:16,vim,Mac OSX,Aptana
+1/2/2013 23:25:30,Emacs e derivados,GNU/Linux,Netbeans
+1/2/2013 23:26:38,vim,GNU/Linux,"Aptana, Eclipse + PyDev"
+1/2/2013 23:27:42,PyCharm,Mac OSX,"Aptana, Eclipse + PyDev, PyCharm, Sublime Text"
+1/2/2013 23:28:14,vim,GNU/Linux,"Aptana, Gedit"
+1/2/2013 23:30:41,Emacs e derivados,GNU/Linux,Spyder
+1/2/2013 23:31:22,vim,GNU/Linux,Gedit
+1/2/2013 23:31:44,vim,GNU/Linux,"PyCharm, Sublime Text, Visual Studio"
+1/2/2013 23:32:00,Aptana,GNU/Linux,vim
+1/2/2013 23:34:02,PyCharm,GNU/Linux,"Gedit, PyCharm, Sublime Text"
+1/2/2013 23:34:32,Sublime Text,Mac OSX,"Gedit, TextMate"
+1/2/2013 23:36:17,Aptana,GNU/Linux,"Gedit, Sublime Text, vim"
+1/2/2013 23:40:08,vim,Mac OSX,
+1/2/2013 23:44:32,BBEdit,Mac OSX,Eclipse + PyDev
+1/2/2013 23:44:55,vim,GNU/Linux,"PyCharm, Sublime Text"
+1/2/2013 23:46:55,Sublime Text,GNU/Linux,"Aptana, Eclipse + PyDev, Geany, Gedit, NotePad++ (software livre para Windows), Spyder"
+1/2/2013 23:49:34,Emacs e derivados,GNU/Linux,
+1/2/2013 23:49:57,Eclipse + PyDev,GNU/Linux,vim
+1/2/2013 23:50:09,Sublime Text,Mac OSX,Sublime Text
+1/2/2013 23:52:40,vim,GNU/Linux,vim
+1/2/2013 23:54:00,Sublime Text,Mac OSX,"Eclipse + PyDev, JEdit"
+1/2/2013 23:57:52,Geany,GNU/Linux,Sublime Text
+1/2/2013 23:57:58,Sublime Text,GNU/Linux,"TextMate, vim"
+1/3/2013 0:00:04,Sublime Text,Windows,NotePad++ (software livre para Windows)
+1/3/2013 0:00:24,Sublime Text,Mac OSX,PyCharm
+1/3/2013 0:01:59,Sublime Text,Mac OSX,PyCharm
+1/3/2013 0:02:23,PyCharm,Windows,"Aptana, Emacs e derivados, Visual Studio"
+1/3/2013 0:03:30,vim,GNU/Linux,"Gedit, IDLE"
+1/3/2013 0:06:37,vim,GNU/Linux,Gedit
+1/3/2013 0:07:09,vim,GNU/Linux,"Geany, Gedit, Sublime Text, vim, WingIDE"
+1/3/2013 0:11:27,PyCharm,GNU/Linux,"Gedit, vim"
+1/3/2013 0:16:10,vim,GNU/Linux,"Aptana, Eclipse + PyDev, Gedit, Kate e derivados, Kdevelop, Komodo Edit (gratuito), Sublime Text, TextMate, WingIDE"
+1/3/2013 0:17:57,vim,Mac OSX,
+1/3/2013 0:36:06,Sublime Text,Mac OSX,vim
+1/3/2013 0:40:33,Sublime Text,Windows,"NotePad++ (software livre para Windows), PyCharm"
+1/3/2013 0:44:23,Sublime Text,GNU/Linux,vim
+1/3/2013 0:49:04,TextMate,Mac OSX,"Gedit, NotePad++ (software livre para Windows), vim"
+1/3/2013 1:02:18,Gedit,GNU/Linux,vim
+1/3/2013 1:29:36,Sublime Text,GNU/Linux,vim
+1/3/2013 1:31:23,TextMate,Mac OSX,"Emacs e derivados, Sublime Text"
+1/3/2013 1:39:10,vim,GNU/Linux,Sublime Text
+1/3/2013 2:00:19,Kate e derivados,GNU/Linux,"IDLE, NotePad++ (software livre para Windows)"
+1/3/2013 2:14:26,vim,GNU/Linux,
+1/3/2013 2:23:15,Sublime Text,Mac OSX,vim
+1/3/2013 2:38:35,Sublime Text,Mac OSX,"Eclipse + PyDev, TextMate, vim"
+1/3/2013 2:48:01,PyCharm,Mac OSX,vim
+1/3/2013 3:12:56,TextMate,Mac OSX,Sublime Text
+1/3/2013 3:15:41,Visual Studio,Windows,Sublime Text
+1/3/2013 3:33:40,PyCharm,Mac OSX,"IDLE, Sublime Text, TextMate, vim"
+1/3/2013 4:15:18,Sublime Text,GNU/Linux,vim
+1/3/2013 4:15:19,Sublime Text,GNU/Linux,vim
+1/3/2013 5:39:51,PyCharm,Mac OSX,TextMate
+1/3/2013 6:34:59,PyCharm,GNU/Linux,vim
+1/3/2013 6:45:02,Sublime Text,GNU/Linux,WingIDE
+1/3/2013 6:51:58,WingIDE,Windows,
+1/3/2013 7:22:51,Sublime Text,GNU/Linux,Eclipse + PyDev
+1/3/2013 7:44:41,Sublime Text,GNU/Linux,
+1/3/2013 7:53:16,Sublime Text,Windows,
+1/3/2013 7:58:00,Aptana,GNU/Linux,Eclipse + PyDev
+1/3/2013 8:06:51,Sublime Text,Mac OSX,TextMate
+1/3/2013 8:10:13,Emacs e derivados,GNU/Linux,Sublime Text
+1/3/2013 8:19:12,IDLE,GNU/Linux,"IDLE, Sublime Text"
+1/3/2013 8:19:55,Sublime Text,Windows,vim
+1/3/2013 8:20:14,vim,GNU/Linux,"Aptana, Eclipse + PyDev"
+1/3/2013 8:22:21,Komodo Edit (gratuito),Windows,NotePad (acessório incluído no Windows)
+1/3/2013 8:35:40,Aptana,GNU/Linux,"Gedit, vim"
+1/3/2013 8:44:25,Eclipse + PyDev,GNU/Linux,
+1/3/2013 8:51:48,Sublime Text,Mac OSX,PyCharm
+1/3/2013 8:56:42,PyCharm,Mac OSX,"Aptana, Sublime Text, TextMate"
+1/3/2013 8:57:04,vim,GNU/Linux,TextMate
+1/3/2013 8:58:56,PyCharm,GNU/Linux,vim
+1/3/2013 9:01:18,Netbeans,GNU/Linux,Netbeans
+1/3/2013 9:04:28,joe,GNU/Linux,
+1/3/2013 9:05:57,PyCharm,Windows,PyCharm
+1/3/2013 9:06:18,Sublime Text,GNU/Linux,"Eclipse + PyDev, Kate e derivados"
+1/3/2013 9:09:43,Komodo Edit (gratuito),GNU/Linux,Gedit
+1/3/2013 9:14:28,Komodo IDE (pago),Mac OSX,"PyCharm, vim"
+1/3/2013 9:21:08,Emacs e derivados,Mac OSX,
+1/3/2013 9:33:03,Sublime Text,GNU/Linux,Emacs e derivados
+1/3/2013 9:33:48,Sublime Text,Mac OSX,"Komodo Edit (gratuito), TextMate, vim"
+1/3/2013 9:34:43,Sublime Text,GNU/Linux,Eclipse + PyDev
+1/3/2013 9:37:04,Sublime Text,Windows,
+1/3/2013 9:40:52,Sublime Text,Mac OSX,vim
+1/3/2013 9:45:59,vim,Mac OSX,"Eclipse + PyDev, vim, Visual Studio"
+1/3/2013 10:17:02,vim,GNU/Linux,PyCharm
+1/3/2013 10:26:47,Gedit,GNU/Linux,Kate e derivados
+1/3/2013 10:27:15,Eclipse + PyDev,Mac OSX,"Aptana, IDLE, NotePad++ (software livre para Windows), TextMate, vim"
+1/3/2013 10:53:23,PyCharm,Mac OSX,Sublime Text
+1/3/2013 11:02:31,Komodo Edit (gratuito),Windows,"NotePad++ (software livre para Windows), PyCharm"
+1/3/2013 11:05:11,Sublime Text,Windows,"Eclipse + PyDev, Netbeans, NotePad++ (software livre para Windows)"
+1/3/2013 11:13:16,Geany,GNU/Linux,Sublime Text
+1/3/2013 11:23:22,Eclipse + PyDev,GNU/Linux,"Komodo Edit (gratuito), NotePad++ (software livre para Windows), Sublime Text"
+1/3/2013 11:25:05,Eclipse + PyDev,GNU/Linux,vim
+1/3/2013 11:37:33,Eclipse + PyDev,GNU/Linux,"Kate e derivados, Sublime Text"
+1/3/2013 11:48:52,PyCharm,GNU/Linux,PyCharm
+1/3/2013 11:56:12,Sublime Text,Windows,"IDLE, Sublime Text"
+1/3/2013 12:20:58,Gedit,GNU/Linux,Komodo Edit (gratuito)
+1/3/2013 12:37:42,NotePad++ (software livre para Windows),Windows,Gedit
+1/3/2013 12:43:10,Spyder,GNU/Linux,
+1/3/2013 13:01:17,NotePad++ (software livre para Windows),Windows,vim
+1/3/2013 13:14:44,PyCharm,GNU/Linux,Sublime Text
+1/3/2013 13:22:10,Sublime Text,GNU/Linux,Eclipse + PyDev
+1/3/2013 14:03:37,Sublime Text,GNU/Linux,vim
+1/3/2013 14:20:29,WingIDE,Windows,"Eclipse + PyDev, IDLE, NotePad++ (software livre para Windows)"
+1/3/2013 14:24:34,NotePad++ (software livre para Windows),Windows,Aptana
+1/3/2013 14:25:41,NinjaIDE,Windows,"IDLE, NotePad++ (software livre para Windows), vim"
+1/3/2013 14:29:13,PyCharm,GNU/Linux,Geany
+1/3/2013 14:31:31,Sublime Text,GNU/Linux,"Netbeans, vim"
+1/3/2013 14:32:59,vim,Mac OSX,"Aptana, Gedit, Netbeans, Sublime Text, vim"
+1/3/2013 14:34:43,Gedit,GNU/Linux,"Geany, NotePad++ (software livre para Windows)"
+1/3/2013 14:36:48,PyCharm,GNU/Linux,Sublime Text
+1/3/2013 14:39:06,PyCharm,Windows,WingIDE
+1/3/2013 14:42:57,PyCharm,Windows,Eclipse + PyDev
+1/3/2013 14:46:13,PyScripter,Windows,"Aptana, IDLE"
+1/3/2013 14:48:14,Sublime Text,Mac OSX,vim
+1/3/2013 14:48:48,PyCharm,Windows,"Emacs e derivados, NotePad++ (software livre para Windows), Visual Studio"
+1/3/2013 14:50:31,PyCharm,GNU/Linux,Sublime Text
+1/3/2013 14:50:34,Sublime Text,Mac OSX,vim
+1/3/2013 14:53:26,Geany,GNU/Linux,Komodo Edit (gratuito)
+1/3/2013 14:55:27,PyCharm,GNU/Linux,"Kate e derivados, vim"
+1/3/2013 15:16:18,Geany,GNU/Linux,"Emacs e derivados, Gedit, Kdevelop, Netbeans"
+1/3/2013 15:26:20,PyCharm,Mac OSX,"NotePad++ (software livre para Windows), Sublime Text, TextMate, vim"
+1/3/2013 15:31:20,vim,GNU/Linux,
+1/3/2013 15:43:16,Netbeans,Mac OSX,IDLE
+1/3/2013 15:49:48,WingIDE,GNU/Linux,"Eclipse + PyDev, Gedit, Komodo Edit (gratuito), Netbeans, Sublime Text"
+1/3/2013 16:14:45,Smultron,GNU/Linux,"Gedit, Sublime Text"
+1/3/2013 16:19:49,Sublime Text,GNU/Linux,vim
+1/3/2013 17:13:28,Sublime Text,GNU/Linux,"Geany, Gedit"
+1/3/2013 17:20:46,vim,GNU/Linux,Gedit
+1/3/2013 17:52:02,Emacs e derivados,Mac OSX,vim
+1/3/2013 19:48:35,Geany,GNU/Linux,WingIDE
+1/3/2013 23:39:44,Emacs e derivados,GNU/Linux,"Eclipse + PyDev, Gedit, JEdit, Kate e derivados, Netbeans, vim, Visual Studio"
+1/4/2013 1:31:21,NotePad++ (software livre para Windows),Windows,"vim, Visual Studio"
+1/4/2013 8:22:41,Eclipse + PyDev,Mac OSX,"Eclipse + PyDev, NotePad++ (software livre para Windows), Sublime Text"
