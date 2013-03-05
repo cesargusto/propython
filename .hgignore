@@ -12,3 +12,4 @@ build/html/*
 build/doctrees/*
 web.py-*
 www/webpy/web
+.~lock.*
