@@ -1,0 +1,107 @@
+body {
+    background-image: url("/images/background.jpg");
+    background-repeat: no-repeat;
+    background-color: black;
+    margin: 0px 0px 30px;
+    padding: 0px;
+}
+
+div #technorati {
+    display: none;
+    color: black;
+}
+
+a:visited {
+    color: #090;
+}
+
+a:link, a:active {
+    color: #0C0;
+}
+
+.navMenu {
+    margin: 120px 0 0 15px;
+    padding: 0;
+    float: left;
+}
+
+.navMenu a:link, .navMenu a:active, .navMenu a:visited {
+    color: #0C0;
+    margin-left: 10px;
+    font-size: 30px;
+    font-family: monospace;
+    font-weight: normal;
+    line-height: 50px;
+    text-decoration: none;
+}
+
+.navMenu a:hover, a:hover {
+    color: #60F044;
+}
+
+.content {
+    float: left;
+    background: black;
+    margin: 10% 20px 10px 5%;
+    padding: 10px;
+    border: solid white 1px;
+    color: white;
+    font-size: 100%;
+    width: 60%;
+}
+
+td  {
+    vertical-align: top;
+    color: white;
+}
+
+.content h1 {
+    margin: 0;
+    margin-bottom: 1em;
+    font-size: 150%;
+    font-weight: normal;
+}
+
+.content h2 {
+    margin: 0;
+    margin-top: 2ex;
+    margin-bottom: 1ex;
+    font-size: 125%;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+.content dt {
+    color: white;
+    font-weight: bold;
+}
+
+.date-header {
+    color: #999;
+    text-align: right;
+    float: right;
+}
+
+.post {
+}
+
+.post-body {
+}
+
+.post-footer {
+    padding-bottom: 5px;
+    border-bottom: 1px dashed gray;
+}
+
+.content .outlined {
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+.nobreak { white-space: nowrap; }
+
+a img {
+    border: 0;
+}

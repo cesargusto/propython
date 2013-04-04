@@ -1,7 +1,7 @@
 # coding: utf-8
 '''
 http://effbot.org/tkinterbook/canvas.htm
-''' 
+'''
 
 from __future__ import unicode_literals
 
@@ -24,17 +24,17 @@ LATERAL = CEL * 6
 DIST_APROX = 2 # distancia considerada suficientemente proxima para ser igual
 
 ESTILO_ROTULO = dict(anchor='center', font='courier 24', fill='gray')
-ESTILO_CAR = dict(anchor='center', font='times 32', fill='black')        
+ESTILO_CAR = dict(anchor='center', font='times 32', fill='black')
 ESTILO_LEGENDA = dict(anchor='w', font='helvetica 32', fill='black')
 
-CODEPAGES = ['ASCII', 
-    'cp437', 'cp850', 'MacRoman', 'ISO-8859-1', 
-    'ISO-8859-15', 'Windows-1252', 'ISO-8859-2',  'ISO-8859-7', 
+CODEPAGES = ['ASCII',
+    'cp437', 'cp850', 'MacRoman', 'ISO-8859-1',
+    'ISO-8859-15', 'Windows-1252', 'ISO-8859-2',  'ISO-8859-7',
     'ISO-8859-8', 'ISO-8859-5', 'Windows-1251', 'KOI8-R', 'cp437', ]
 
 COLORS = ['blue', '#700', '#070', 'orange']
 
-INTERVALO = 40
+INTERVALO = 60
 FATOR_ACEL = .2
 
 class Glifo(object):
@@ -50,7 +50,7 @@ class Glifo(object):
         self.x_dest = self.y_dest = None
         Glifo.ativos[self.unicar] = self
         ESTILO_CAR['fill'] = color
-        self.handle = self.canvas.create_text(x, y, 
+        self.handle = self.canvas.create_text(x, y,
                         text=unicar, **ESTILO_CAR)
 
     def partir(self, x_dest, y_dest):
@@ -83,7 +83,7 @@ class Glifo(object):
         self.vx = self.vy = self.ax = self.ay = 0
         del Glifo.movendo[self.unicar]
         if hasattr(self, 'saindo') and self.saindo:
-            del Glifo.ativos[self.unicar]    
+            del Glifo.ativos[self.unicar]
             self.canvas.delete(self.handle)
 
     def sair(self):
@@ -177,7 +177,7 @@ class Janela(tk.Tk):
                         self.cels[i][j] = c.create_text((j+1.5)*CEL, (i+1.5)*CEL, text=chr(code), **ESTILO_CAR)
                     elif code == 128:
                         break
-                    
+
 
 
 
