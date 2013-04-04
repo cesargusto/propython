@@ -6,6 +6,7 @@ Analisador simples de syslog
 
 import io
 import sys
+import operator
 
 def contar_linhas(nome_arq_log):
     arq_log = io.open(nome_arq_log, encoding='utf-8')
@@ -14,7 +15,7 @@ def contar_linhas(nome_arq_log):
     print len(linhas), 'linhas'
 
 def extrair_nomes_prog(nome_arq_log, qtd_linhas=None):
-    progs = set()
+    progs = {}
 
     arq_log = io.open(nome_arq_log, encoding='utf-8')
 
@@ -38,19 +39,24 @@ def extrair_nomes_prog(nome_arq_log, qtd_linhas=None):
             prog, proc = proc.split('[', 1)
         else:
             prog = proc
-        progs.add(prog)
+        if prog in progs:
+            progs[prog] += 1
+        else:
+            progs[prog] = 1
+
         if qtd_linhas is not None:
             if num_linha == qtd_linhas:
                 break
 
     arq_log.close()
 
-    for i, prog in enumerate(sorted(progs), 1):
-        print i, prog
+    itens = progs.items()
+    # iterar pelos itens (k, v) ordenados pelo valor v
+    for i, (prog, qtd) in enumerate(sorted(itens,
+                            key=operator.itemgetter(1),
+                            reverse=True), 1):
+        print '%3d %5d %s' % (i, qtd, prog)
 
 nome_arq_log = sys.argv[1]
 #contar_linhas(nome_arq_log)
-extrair_nomes_prog(nome_arq_log, 100)
-
-
-
+extrair_nomes_prog(nome_arq_log)
