@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# coding: utf-8
 
 # solução pythonica para a dicotomia de zeno
 
@@ -8,9 +9,9 @@ def zeno(num_termos):
         try:
             yield float(1)/2**i
         except OverflowError:
-            raise StopIteration    
+            raise StopIteration
         i += 1
-        
+
 for i in range(10):
     print sum(zeno(2**i))
 

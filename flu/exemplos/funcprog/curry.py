@@ -1,11 +1,11 @@
 #!/usr/bin/env python
-
+# coding: utf-8
 '''
-Exemplo da técnica de currying. 
+Exemplo da técnica de currying.
 
-A função rectFactory é um "curry" que retorna uma função que realiza o 
+A função rectFactory é um "curry" que retorna uma função que realiza o
 serviço de rect fixando um dos parâmetros para que ele não precise ser
-fornecidos a cada invocação.
+fornecido a cada invocação.
 
 Em rectFactory2 temos um exemplo que demonstra a mesma técnica implementada
 com o comando lambda.
@@ -20,12 +20,12 @@ def rect(larg, alt):
             for i in range(alt-2):
                 print '*' + ' '*(larg-2) + '*'
             print '*' * larg
-    
+
 def rectFactory(larg):
     def func(alt):
         return rect(larg, alt)
     return func
- 
+
 def rectFactory2(larg):
     return lambda alt: rect(larg, alt)
 
