@@ -34,7 +34,7 @@ CODEPAGES = ['ASCII',
 
 COLORS = ['blue', '#700', '#070', 'orange']
 
-INTERVALO = 60
+INTERVALO = 40
 FATOR_ACEL = .2
 
 class Glifo(object):
