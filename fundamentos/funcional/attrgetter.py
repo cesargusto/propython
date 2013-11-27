@@ -9,7 +9,7 @@ class Foo:
     def __init__(self, prioridade):
         self.prioridade = prioridade
 N = %d
-bar_list = [Foo(randrange(N)) for i in xrange(N)]
+bar_list = [Foo(randrange(N)) for i in range(N)]
 """
 
 cmd1 = """bar_list.sort(key=attrgetter('prioridade'))"""
@@ -18,6 +18,6 @@ cmd2 = """bar_list.sort(key=lambda x: x.prioridade)"""
 N = 10**6
 
 for cmd in (cmd1, cmd2):
-    print cmd
-    print Timer(cmd, setup%N).timeit(10)
+    print(cmd)
+    print(Timer(cmd, setup%N).timeit(10))
 

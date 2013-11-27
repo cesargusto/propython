@@ -19,7 +19,7 @@ cache = {}
 
 def fat_cache(n):
     valor = 1
-    for i in xrange(2,n+1):
+    for i in range(2,n+1):
         valor = cache.setdefault(i,i*valor)
     return valor
 
@@ -27,7 +27,7 @@ def crono(nome_func, *args):
     cmd = '%s(%s)' % (nome_func, ','.join([repr(a) for a in args]))
     prep = 'from __main__ import %s, cache' % nome_func
     t = Timer(cmd, prep)
-    print cmd, '->', min(t.repeat(3,100000))
+    print(cmd, '->', min(t.repeat(3,100000)))
 
 if __name__=='__main__':
     from timeit import Timer
@@ -38,4 +38,4 @@ if __name__=='__main__':
     crono('fat_cache', 20)
     crono('fat_cache', 30)
 
-    
+
