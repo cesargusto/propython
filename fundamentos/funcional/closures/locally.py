@@ -2,9 +2,14 @@
 from: http://www.builderau.com.au/blogs/byteclub/viewblogpost.htm?p=339270875
 user "sth" wrote:
 
-You can wrap the value in a function closure. This way the value itself doesn't show up in dict(), just the function that produces the value.
+You can wrap the value in a function closure. This way the value itself
+doesn't show up in dict(), just the function that produces the value.
 
-That said, I wouldn't recommend anyone to actually use this. For normal class interface purposes it should be absolutely enough to make clear to the user which variables are "private", like by prefixing their names with "_". So everybody who wants to use/change them knows this is dangerous/unsafe/unsupported.
+That said, I wouldn't recommend anyone to actually use this. For normal
+class interface purposes it should be absolutely enough to make clear to
+the user which variables are "private", like by prefixing their names
+with "_". So everybody who wants to use/change them knows this is
+dangerous/unsafe/unsupported.
 
 LR: updated exceptions from plain strings to AttributeError, and added doctest here::
 
@@ -54,7 +59,7 @@ def test_function():
     e = Example()
     e.setValue(7)
     print e.getValue()
-        
+
 if __name__=='__main__':
     import doctest
     doctest.testmod()
